@@ -52,6 +52,7 @@
 
 }
 
+/*Dark_Day Mode*/
 
 .day-theme{
     --primary-color:rgb(255, 255, 255);
@@ -71,6 +72,27 @@
 }
 
 
+@media (prefers-color-scheme:ligth) {
+
+    body{
+    --primary-color:rgb(255, 255, 255);
+    --secondary-color: rgba(0, 0, 0, 0.856);
+    --pink:#81c0ff;
+    --secondary-color-1:rgba(0, 0, 0, 0.747);
+    transition: 0.4s;
+    }
+}
+
+@media (prefers-color-scheme:dark) {
+
+    body{
+        --primary-color: #000;
+        --pink: #f08eb7;
+        --secondary-color: #f0e9f2;
+        --secondary-color-1: #e5e5e6da;
+        transition: 0.4s;
+    }
+}
 .dark-theme .header{
     background: linear-gradient(rgba(44, 44, 44, 0), rgba(131, 131, 131, 0));
     height: 100vh;
@@ -85,20 +107,16 @@ html {
     scroll-behavior: smooth;
 }
 
-
-.dark-theme ~ #modo{
-    color: var(--pink);
-    transition: 0.4s;
-}
 #modo{
-    width: 30px;
-    font-size: 70px;
-    margin: left;
+    
+    font-size: 30px;
+    margin:center;
     float:center;
     color: var(--pink);
     border-radius: 90px;
     cursor: pointer;
     transition: 0.5s;
+    position: relative;
    
 }
 
@@ -111,6 +129,33 @@ html {
     }
 }
 
+/*Brillo*/
+.glowing-circle {
+    margin-bottom: var(--gutter-normal);
+    
+    border-radius:50%;
+    background-color: #fff;
+    -webkit-animation: glowing 1s ease-in-out infinite alternate;
+    -moz-animation: glowing 1s ease-in-out infinite alternate;
+    animation: glowing 1s ease-in-out infinite alternate;
+  }
+
+  @-webkit-keyframes glowing {
+    from {
+      box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--pink), 0 0 40px var(--pink), 0 0 50px var(--pink), 0 0 60px var(--pink), 0 0 70px var(--pink);
+    }
+    to {
+      box-shadow: 0 0 20px #fff, 0 0 30px var(--pink), 0 0 40px var(--pink), 0 0 50px var(--pink), 0 0 60px var(--pink), 0 0 70px var(--pink), 0 0 80px var(--pink);
+    }
+  }
+
+  .glowing-circle {
+    margin-bottom: var(--gutter-normal);
+    
+    border-radius:50%;
+    background-color: #fff;
+    box-shadow: 0 0 60px 30px #fff, 0 0 100px 60px var(--pink), 0 0 140px 90px var(--pink);
+  }
 body {
     font-size: var(--font-size-small);
     font-family: var(--font-stack);
@@ -608,9 +653,7 @@ body:not(.user-is-tabbing) a:focus {
         cursor: pointer;
         transition: all ease-out 0.2s;
     }
-    .about__photo-container:hover{
-        transform: scale(1.05);
-    }
+   
 }
 
 /* --------------------------------------- */
@@ -654,16 +697,6 @@ body:not(.user-is-tabbing) a:focus {
     height: 4rem;
 }
 
-.footer__github-buttons {
-    display: flex;
-    justify-content: center;
-}
-
-.footer__github-buttons iframe {
-    height: 2.5rem;
-    width: 84px;
-    transform: translateY(3px);
-}
 
 @media(max-width: 500px) {
     .footer {

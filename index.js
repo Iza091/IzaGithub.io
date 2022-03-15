@@ -23,10 +23,9 @@ modo.addEventListener("click", function(){
 let valor=localStorage.getItem("modo")
 
 if (valor=="true") {
-  body.classList.add("dark-theme")
   body.classList.remove("day-theme")
-    
-    
+  body.classList.add("dark-theme")
+  
 } else {
   body.classList.remove("dark-theme")
   body.classList.add("day-theme")
