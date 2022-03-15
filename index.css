@@ -23,6 +23,7 @@
 }
 
 :root {
+    
     --font-size-small: 1.8rem;
     --font-size-normal: 2.2rem;
     --font-size-medium: 2.8rem;
@@ -33,13 +34,8 @@
 
     --line-height-normal: 1.7;
     --line-height-small: 1.2;
-
-    --black: #000;
-    --pink: #ff3258;
-    --white: #f0e9f2;
-    --white-1: #e5e5e6da;
-
-
+ 
+    --header:var(--secondary-color);
     --container-max-width: 1180px;
     --container-normal-width: 800px;
     --container-medium-width: 700px; 
@@ -50,16 +46,65 @@
     --gutter-normal: 3rem;
     --gutter-small-1: 2.5rem;
     --gutter-small: 2rem; 
+    --border-light: 1px solid rgb(104, 101, 101);
     
-    --border-light: 1px solid rgb(36, 35, 35);
+
+
 }
 
+
+.day-theme{
+    --primary-color:rgb(255, 255, 255);
+    --secondary-color: rgba(0, 0, 0, 0.856);
+    --pink:#81c0ff;
+    --secondary-color-1:rgba(0, 0, 0, 0.747);
+    transition: 0.4s;
+}
+
+.dark-theme{
+
+    --primary-color: #000;
+    --pink: #f08eb7;
+    --secondary-color: #f0e9f2;
+    --secondary-color-1: #e5e5e6da;
+    transition: 0.4s;
+}
+
+
+.dark-theme .header{
+    background: linear-gradient(rgba(44, 44, 44, 0), rgba(131, 131, 131, 0));
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-size: var(--font-size-normal);
+}
 html {
     font-size: 62.5%; /* (16/10)*100 = 62.5% => 1rem = 10px */
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
 
+
+.dark-theme ~ #modo{
+    color: var(--pink);
+    transition: 0.4s;
+}
+#modo{
+    width: 30px;
+    font-size: 70px;
+    margin: left;
+    float:center;
+    color: var(--pink);
+    border-radius: 90px;
+    cursor: pointer;
+    transition: 0.5s;
+   
+}
+
+#logo{
+    width: 99px;;
+}
 @media(max-width: 1000px) {
     html {
         font-size: 52%;
@@ -70,9 +115,9 @@ body {
     font-size: var(--font-size-small);
     font-family: var(--font-stack);
     font-weight: 400;
-    color: var(--white-1);
+    color: var(--secondary-color-1);
     line-height: var(--line-height-normal);
-    background: var(--black);
+    background: var(--primary-color);
     overflow-x: hidden;
 }
 
@@ -125,7 +170,7 @@ h3 {
     font-family: 'Jost', sans-serif;
     font-weight: 400;
     line-height: var(--line-height-small);
-    color: var(--white);
+    color: var(--secondary-color);
 }
 
 .heading-primary {
@@ -188,7 +233,7 @@ p {
 /* --------------------------------------- */
 
 a {
-    color: var(--white);
+    color: var(--secondary-color);
     font-weight: 400;
     font-family: 'Jost', sans-serif;
     transition: all .2s;
@@ -234,7 +279,7 @@ body:not(.user-is-tabbing) a:focus {
     top: 0;
     left: 0;
     right: 100%;
-    background: var(--white);
+    background: var(--secondary-color);
     height: 100%;
     z-index: -1;
     transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
@@ -276,7 +321,7 @@ body:not(.user-is-tabbing) a:focus {
     top: 0;
     left: 0;
     right: 100%;
-    background: var(--white);
+    background: var(--secondary-color);
     height: 100%;
     z-index: -1;
     transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
@@ -385,7 +430,7 @@ body:not(.user-is-tabbing) a:focus {
     right: 100%;
     display: inline-block;
     height: 1rem;
-    background: var(--white);
+    background: var(--secondary-color);
     transition: all 0.25s cubic-bezier(1, 0.68, 0.16, 0.9);
 }
 
@@ -404,14 +449,14 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 
 .header {
-    background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)), 
-        url('./images/header.jpg');
+    background: linear-gradient(rgba(44, 44, 44, 0), rgba(131, 131, 131, 0));
     height: 100vh;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     font-size: var(--font-size-normal);
 }
+
 
 .header__text {
     position: absolute;
@@ -560,15 +605,29 @@ body:not(.user-is-tabbing) a:focus {
     .about__photo-container {
         flex: 1;
         margin: 0 var(--gutter-huge) 0 0;
+        cursor: pointer;
+        transition: all ease-out 0.2s;
+    }
+    .about__photo-container:hover{
+        transform: scale(1.05);
     }
 }
 
 /* --------------------------------------- */
 /* ----- Contact ----- */
 /* --------------------------------------- */
-
+.fa:hover{
+    color: var(--pink);
+}
 .contact__info {
     max-width: var(--container-medium-width);
+}
+.form-contact{
+    max-width: var(--container-medium-width);
+}
+.form-control{
+    max-width: var(--container-medium-width);
+    flex: 0 0 35%;
 }
 
 /* --------------------------------------- */

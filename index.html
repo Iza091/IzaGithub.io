@@ -1,13 +1,4 @@
 <!-- 
-  Hello 😊.
-
-  This template is designed and developed by Nisar Hassan Naqvi
-  for anyone to use for free or customize the way they like.
-
-  Github Repo: https://github.com/nisarhassan12/portfolio-template/
-  My Website: https://nisar.dev
-
-  For business & inquires, contact me => syednisarhassan12@gmail.com
 -->
 
 <!--
@@ -25,7 +16,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+<script src="https://kit.fontawesome.com/03a89292db.js" crossorigin="anonymous"></script>
   <!-- Put your site title here -->
   <title>
     Isaías Ortiz | Izdev
@@ -45,18 +36,16 @@
 
   <header class="header" role="banner" id="top">
     <div class="row">
-  
-      <nav class="nav" role="navigation">
-        
-        <ul class="nav__items ml-auto">
-          <li class="nav__item"><a href="#work" class="nav__link">Trabajos</a></li>
-          <li class="nav__item">
+      <img class="navbar-brand-transparent d-none d-md-block" src="./images/favicon.png" alt="" title="Izdev" id="log" width="75"/>
+        <ul class="nav__items ml-auto" >
+          <li class="nav__item "><a href="#work" class="nav__link">Trabajos</a></li>
+          <li class="nav__item ">
             <a href="#doc" class="nav__link">Certificaciones</a>
           </li>
           <li class="nav__item">
             <a href="#about" class="nav__link">Acerca de</a>
           </li>
-          <li class="nav__item">
+          <li class="nav__item ">
             <a href="#contact" class="nav__link">Contacto</a>
           </li>
         </ul>
@@ -68,11 +57,15 @@
         <h1 class="heading-primary">
           <!-- Replace the following name with your name -->
           <span> Isaías Ortiz</span>
+          <!---->
         </h1>
-        <!-- Put a small paragraph about yourself -->
-        <p> Un desarrollador 👨🏻‍💻 nacido en San Salvador, El Salvador y desarrollado en Usulután, El Salvador.</p>
+       
+       
+        <p class="heading-primary"> Un desarrollador 👨🏻‍💻 nacido en San Salvador, El Salvador y desarrollado en Usulután, El Salvador.</p>
         
-
+        <div class="modo" id="modo">
+          <i class="fas fa-toggle-on"></i>
+      </div>   
       </div>
     </div>
   </header>
@@ -80,7 +73,6 @@
   <main role="main">
 
     <!-- ***** Work ***** -->
-
     <section class="work" id="work">
       <div class="row">
         <h2>Mis trabajos y colaboraciones </h2>
@@ -102,13 +94,13 @@
               </ul>
 
               <div class="work__links">
-                <a href="https://github.com/Iza091/SuperKidsProyectoFinal2021" title="Ver el código" target="_blank">
-                  <img src="./images/github.svg" class="work__code" alt="GitHub">
+                <a >
+                  <i href="https://github.com/Iza091/SuperKidsProyectoFinal2021" title="Ver el código" target="_blank" class=" fa fa-github work__code" alt="GitHub"> </i>
                 </a>
               </div>
             </div>
             <div class="work__image-box">
-              <img src="./images/project-1.png" class="work__image" alt="Project 1" />
+              <img src="./images/project-1.png" class=" work__image" alt="Project 1" />
             </div>
           </div>
 
@@ -124,8 +116,8 @@
               </ul>
 
               <div class="work__links">
-                <a href="https://github.com/Iza091/SistemaAcademicoINU">
-                  <img src="./images/github.svg" class="work__code" title="Ver el código" alt="GitHub">
+                <a >
+                  <i href="https://github.com/Iza091/SistemaAcademicoINU" src="./images/github.svg" class=" fa fa-github work__code" title="Ver el código" alt="GitHub"> </i>
                 </a>
               </div>
             </div>
@@ -146,13 +138,13 @@
               </ul>
 
               <div class="work__links">
-                <a href="https://github.com/Iza091/TiendadeMascotas">
-                  <img src="./images/github.svg" class="work__code" title="Ver el código" alt="GitHub">
+                <a>
+                  <i href="https://github.com/Iza091/TiendadeMascotas" src="./images/github.svg" class=" fa fa-github work__code" title="Ver el código" alt="GitHub"> </i>
                 </a>
               </div>
             </div>
             <div class="work__image-box">
-              <img src="./images/project-3.png" class="work__image" alt="Project 3" />
+              <img src="./images/project-3.png" class="fa fa-github work__image" alt="Project 3" />
             </div>
           </div>
         </div>
@@ -236,9 +228,12 @@
 
           <div class="about__photo-container">
             <!-- Add a nice photo of yourself -->
-            <img class="about__photo" src="./images/izaortiz.jpg" alt="" />
+            <div class="row justify-content-center align-items-center">
+              <div class="d-none d-md-block">
+            <img class="about__photo" src="./images/izaortiz.png" alt="" title="Iza"/>
           </div>
-        
+            </div>
+          </div>
         </div>
 
       </div>
@@ -260,22 +255,19 @@
             La manera más rápida de contactarme es por email o si lo prefiere por Linkedin
           </p>
           </h1>
-
-
-
+          
+          </a>
           
           <a href="mailto:izagithub26@gmail.com?subject=IzDev%20Contacto%Gmail">
-            <img src="./images/gmail.svg" title="Envíar correo" class="footer__social-image" alt="Gmail">
-          </a>
-  
-          </a>
-            <a href="https://www.linkedin.com/in/e-isa%C3%ADasvllgsortiz/">
-              <img src="./images/linkedin.svg" title="in Perfil" class="footer__social-image" alt="Linkedin">
+            <i title="Correo" class=" fa fa-google footer__social-image" alt="Gmail"> </i>
             </a>
-           
+            <a href="https://www.linkedin.com/in/e-isa%C3%ADasvllgsortiz/">
+              <i  title="in Perfil" class=" fa fa-linkedin footer__social-image" alt="Linkedin"> </i>
+            </a>
+            
         </div>
       </h2>
-     
+    </div>
     </div>
     
   </section>
@@ -285,19 +277,58 @@
 
     <h2> Curriculum Vitae
       <div class="contact__info div">         
-      <a class="btn btn-download"  href="download/Curriculum Vitae Isa.pdf"> 
-        <img src="./images/download.svg" title="CV Descargar"   class="footer__social-image" alt="CV">
+      <a class=""  href="download/Curriculum Vitae Isa.pdf">       
+          <i title="CV Descargar"   class=" fa fa-download footer__social-image" alt="CV"></i>
       </a>
+    
     </div>
     </h1>
     
   </div>
   
   </section>
-<!-- form.123formbuilder.com script begins here --><script 
+<!-- form.123formbuilder.com script begins here <script 
 type="text/javascript" defer src="https://form.123formbuilder.com/embed/6105434.js" 
-data-role="form" data-default-width="650px"></script><!-- form.123formbuilder.com script ends here -->
-  
+data-role="form" data-default-width="650px"></script>  form.123formbuilder.com script ends here -->
+  <!----->
+
+<!-- .page-section -->
+
+<div class="page-section">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="title-section mb-3 " id="Dev">IzDev</h2>
+    </div>
+    <div class="row justify-content-center mt-5">
+      <div class="col-lg-8">
+        <form action="#Dev" class="form-contact">
+          <div class="row">
+            <div class="col-sm-6 py-2">
+              <label for="name" class="fg-grey">Nombre</label>
+              <input type="text" class="form-control" required pattern="[A-ZÑña-z0-9, ]{5,65}"id="name" placeholder="Nombre">
+            </div>
+            <div class="col-sm-6 py-2">
+              <label for="email" class="fg-grey">Correo</label>
+              <input type="text" class="form-control" id="email" placeholder="Correo">
+            </div>
+            <div class="col-12 py-2">
+              <label for="subject" class="fg-grey">Asunto</label>
+              <input type="text" class="form-control" required pattern="[A-ZÑña-z0-9, ]{5,65}" id="subject" placeholder="Asunto">
+            </div>
+            <div class="col-12 py-2">
+              <label for="message" class="fg-grey">Mensaje</label>
+              <textarea id="message" rows="8" class="form-control" placeholder="Escribe un mensaje..."></textarea>
+            </div>
+            <div class="col-12 mt-3">
+              <button type="submit" class="btn btn-transparent px-5">Enviar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div> <!-- .container -->
+</div> <!-- .page-section -->
+
   <!-- ***** Footer ***** -->
 
   <footer role="contentinfo" class="footer">
@@ -306,18 +337,18 @@ data-role="form" data-default-width="650px"></script><!-- form.123formbuilder.co
       <ul class="footer__social-links">
         <li class="footer__social-link-item">
           <a href="https://twitter.com/Iza_091" title="@Iza_091">
-            <img src="./images/twitter.svg" class="footer__social-image" alt="Twitter">
+            <i class=" fa fa-twitter footer__social-image" alt="Twitter"></i>
           </a>
         </li>
         <li class="footer__social-link-item">
           <a href="https://github.com/Iza091/" title="@Iza091">
-            <img src="./images/github.svg" class="footer__social-image" alt="Github">
+            <i class="fa fa-github footer__social-image" alt="Github"> </i>
           </a>
         </li>
         </li>
         <li class="footer__social-link-item">
           <a href="https://www.linkedin.com/in/e-isa%C3%ADasvllgsortiz/">
-            <img src="./images/linkedin.svg" title="in Perfil" class="footer__social-image" alt="Linkedin">
+            <i title="in Perfil" class="fa fa-linkedin footer__social-image" alt="Linkedin"> </i>
           </a>
         </li>
         
@@ -326,6 +357,10 @@ data-role="form" data-default-width="650px"></script><!-- form.123formbuilder.co
     
   </footer>
 
+  
+ 
+  
+ 
   <a href="#top" class="back-to-top" title="Subir">
     <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
   </a>

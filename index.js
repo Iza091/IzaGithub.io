@@ -12,7 +12,27 @@ const handleFirstTab = (e) => {
 
 }
 
- 
+let modo=document.getElementById("modo");
+let body=document.body;
+
+modo.addEventListener("click", function(){
+    let val=body.classList.toggle("dark-theme")
+    localStorage.setItem("modo",val)
+})
+
+let valor=localStorage.getItem("modo")
+
+if (valor=="true") {
+  body.classList.add("dark-theme")
+  body.classList.remove("day-theme")
+    
+    
+} else {
+  body.classList.remove("dark-theme")
+  body.classList.add("day-theme")
+    
+    
+}
 
 
 const handleMouseDownOnce = () => {
@@ -43,4 +63,5 @@ window.addEventListener("scroll", () => {
     isBackToTopRendered = false;
     alterStyles(isBackToTopRendered);
   }
+
 });
