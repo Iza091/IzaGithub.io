@@ -10,7 +10,7 @@
   
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width , initial-scale=1.0" />
   <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -30,59 +30,92 @@
 
 
 <body>
-
+<!-- Back to top button -->
+<!--<div class="back-to-top"></div> -->
+<a href="#top" class="back-to-top" title="Subir">
+  <img src="" alt="" class="back-to-top__image"/>
+</a>
   <!-- ***** Header ***** -->
-
   <header class="header" role="banner" id="top">
-    <div class="row">
-      <img class="navbar-brand-transparent d-none d-md-block" src="./images/favicon.png" alt="" title="Izdev" id="log" width="75"/>
-        <ul class="nav__items ml-auto  " >
-          <li class="nav__item "><a href="#work" class="nav__link">Trabajos</a></li>
-          <li class="nav__item ">
-            <a href="#doc" class="nav__link">Certificaciones</a>
-          </li>
-          <li class="nav__item">
-            <a href="#about" class="nav__link">Acerca de</a>
-          </li>
-          <li class="nav__item ">
-            <a href="#contact" class="nav__link">Contacto</a>
-          </li>
 
-         
-        </ul>
-        
-      </nav>
-    </div>
-    <div class="header__text-box row">
-      <div class="header__text">
-        <h1 class="heading-primary">
+    <nav class="navbar navbar-expand-md navbar-transparent row" id="navbar">
+      <div class=" container container-fluid">
+        <a class="navbar-brand d-none d-md-block" href="#top">
+          <img src="images/favicon.png" alt="" width="75">
+      </a>
 
-         
-          <!-- Replace the following name with your name -->
-          <span> Isaías Ortiz</span>
-          <!---->
-        </h1>
-       
-       
-        <p class="heading-primary"> Un desarrollador 👨🏻‍💻 nacido en San Salvador, El Salvador y desarrollado en Usulután, El Salvador.</p>
-        
-        <div class="modo" id="modo">
-          <i class="auto fa fa-lightbulb-o"></i>
-      </div>   
-       
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="fa fa-bars" id="span"></span>
+      </button>
+      
+      <div class="navbar-collapse collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav  ml-auto nav__items ">
+              <li class="nav-item"><a class="nav-link nav__link active" href="#work" >Trabajos</a></li>
+              <li class="nav-item"><a class="nav-link nav__link" href="#doc">Certificaciones</a></li>
+              <li class="nav-item"><a class="nav-link nav__link" href="#about">Acerca de</a></li>
+              <li class="nav-item"><a class="nav-link nav__link" href="#contact">Contacto</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </header>
+        </ul>
+      </div>
+   
 
+    </nav>
+
+
+
+    <div class="page home-banner mb-5">
+      <div class="slider-wrapper">
+        <div class="owl-carousel hero-carousel">
+          <div class="hero-carousel-item">
+            <img src="./images/"  alt="">
+            <div class="img-caption">
+              <div class="subhead"></div>
+             </div>
+          </div>
+        </div>
+      </div> <!-- .slider-wrapper -->
+    </div> <!-- .page-banner -->
+
+    <div class="page home-banner ml-auto row mb-5">
+      <div class="slider-wrapper">
+        <div class="owl-carousel hero-carousel">
+          <div class="hero-carousel-item">
+              <div class="subhead"></div>
+              <h1 class="heading-primary ">
+
+                <span> Isaías Ortiz</span>
+                <!---->
+              </h1>
+
+              
+        <p class="row" > Un desarrollador 👨🏻‍💻 nacido en San Salvador, El Salvador y desarrollado en Usulután, El Salvador.</p>
+       
+    
+          
+        </div>
+        
+      </div> <!-- .slider-wrapper -->
+    </div> 
+    <div class="container slider-wrapper  -sm p-5 w-100">
+      <div class="modo" id="modo">
+        <i class="auto fa fa-lightbulb-o"></i>
+    </div> </div>
+
+    </div>
+    </div>
+   
+  
+    <section></section>
   <main role="main">
 
-    <!-- ***** Work ***** -->
     <section class="work" id="work">
       <div class="row">
         <h2>Mis trabajos y colaboraciones </h2>
         <div class="work__boxes">
-
-          <!-- Each div with the work__box class is a project. -->
 
           <div class="work__box">
             <div class="work__text">
@@ -98,8 +131,8 @@
               </ul>
 
               <div class="work__links">
-                <a href="https://github.com/Iza091/SuperKidsProyectoFinal2021" title="Ver el código"  target="_blank" class="fa fa-github  work__code footer__social-link-item"  alt="GitHub">
-                 
+                <a href="https://github.com/Iza091/SuperKidsProyectoFinal2021"  target="_blank">
+                  <i  title="Ver el código" target="_blank" class=" center fa fa-github work__code" alt="GitHub"> </i>
                 </a>
               </div>
             </div>
@@ -120,7 +153,8 @@
               </ul>
 
               <div class="work__links">
-                <a href="https://github.com/Iza091/SistemaAcademicoINU"  target="_blank" class=" fa fa-github work__code" title="Ver el código" alt="GitHub">
+                <a href="https://github.com/Iza091/SistemaAcademicoINU"  target="_blank">
+                  <i  title="Ver el código" target="_blank" class=" fa fa-github work__code" alt="GitHub"> </i>
                 </a>
               </div>
             </div>
@@ -141,7 +175,8 @@
               </ul>
 
               <div class="work__links">
-                <a href="https://github.com/Iza091/TiendadeMascotas" target="_blank"  class=" fa fa-github work__code" title="Ver el código" alt="GitHub">
+                <a href="https://github.com/Iza091/TiendadeMascotas" target="_blank">
+                  <i  title="Ver el código" target="_blank" class=" fa fa-github work__code" alt="GitHub"> </i>
                 </a>
               </div>
             </div>
@@ -153,7 +188,7 @@
       </div>
     </section>
 
-
+  
 <section class="doc" id="doc">
 
   <div class="row">
@@ -217,13 +252,13 @@
           <div class="about__text">
             <!-- Replace the below paragraph with info about yourself -->
             <p>
-              🧑🏻 Estudiante de la Universidad Gerardo Barrios de Usulután. Mí rama favorita es la programación
-              front y back end 👨🏻‍💻, Inicié en la Universidad Gerardo Barrios. 
-              Me gusta estar desarrollando proyectos y a medida avence el proyecto aprender más frameworks.
-              Aparte de sentarme enfrente de la computadora. 
-              Me gusta jugar voleibol 🏐, juegos de mesa entre ellos el ajedrez ♟,
-              amante de los 🎮 videojuegos y música 🎶 así de tanto como para bailar sus coreografías 💃🏻, para desconectar de todo,
-              me gusta ir a algún bosque 🌄 o un lugar con su tématica similar.
+              Estudiante de la Universidad Gerardo Barrios de Usulután. El inicio y avance de nuevos proyectos
+              es algo que me apasiona al igual que el front y back end. 
+              Me gusta mucho aprender cosas nuevas, más entornos de desarrollo integrados​ y frameworks .
+             <p> Aparte de sentarme enfrente de la computadora.
+              Me gusta jugar voleibol, juegos de mesa entre ellos el ajedrez ♟,
+              amante de los 🎮 videojuegos y música 🎶 así de tanto como para bailar sus coreografías, para desconectar de todo,
+              me gusta ir a algún bosque 🌄 o un lugar con su tématica similar. </p>
             </p>
             
           </div>
@@ -274,7 +309,7 @@
     
   </section>
 
-  <section class="contact" id="contact">
+  <section class="contact" id="curriv">
     <div class="row">
 
     <h2> Curriculum Vitae
@@ -287,7 +322,7 @@
     </h1>
     
   </div>
-  
+
   </section>
 <!-- form.123formbuilder.com script begins here <script 
 type="text/javascript" defer src="https://form.123formbuilder.com/embed/6105434.js" 
@@ -358,16 +393,15 @@ data-role="form" data-default-width="650px"></script>  form.123formbuilder.com s
     </div>
     
   </footer>
-
+</header>
   
  
   
  
-  <a href="#top" class="back-to-top" title="Subir">
-    <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
-  </a>
+  
   <script src="./index.js"></script>
-
+  <script src="./wow.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
 </html>

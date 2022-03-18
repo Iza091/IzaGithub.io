@@ -52,6 +52,69 @@
 
 }
 
+*/TO THE TOP*/
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(175, 183, 193, 0.7);
+  visibility: hidden;
+  cursor: pointer;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  z-index: 1100;
+}
+
+.back-to-top::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: -4px auto;
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid var(--primary-color);
+  border-right: 2px solid var(--primary-color);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.back-to-top:hover {
+  background: var(--pink);
+}
+
+.back-to-top:hover::after {
+  border-color: var(--secondary-color);
+}
+
+.top-bar {
+  display: block;
+  height: 35px;
+  border-bottom: 1px solid var(--secondary-color-1);
+  font-size: 14px;
+}
+
+.top-bar .container,
+.top-bar .row {
+  height: 100%;
+}
+
+.top-bar a {
+  color: #6D728B;
+}
+
+.top-bar a:hover {
+  color: var(--pink);
+  text-decoration: none;
+}
+
+/*----------*/
+
 /*Dark_Day Mode*/
 
 .day-theme{
@@ -101,6 +164,13 @@
     background-attachment: fixed;
     font-size: var(--font-size-normal);
 }
+#span {
+    width: 150vw;
+    height: 85px;
+   position:absolute;
+   
+}
+
 html {
     font-size: 62.5%; /* (16/10)*100 = 62.5% => 1rem = 10px */
     box-sizing: border-box;
@@ -119,16 +189,31 @@ html {
     position: relative;
    
 }
-
+/*----------*/
 #logo{
     width: 99px;;
 }
+
+#span{
+    color:  var(--secondary-color);
+    margin-right: 30px;
+    font-size: 30px;
+    cursor: pointer;
+  
+
+}
+#span:hover{
+    color:var(--pink)
+}
+
+
+
 @media(max-width: 1000px) {
     html {
         font-size: 52%;
     }
 }
-
+/*----------*/
 /*Brillo*/
 .glowing-circle {
     margin-bottom: var(--gutter-normal);
@@ -504,7 +589,7 @@ body:not(.user-is-tabbing) a:focus {
 
 
 .header__text {
-    position: absolute;
+    position: fixed;
     top: 50%;
     transform: translateY(-50%);
 }
