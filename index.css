@@ -182,12 +182,16 @@ html {
     font-size: 30px;
     margin:center;
     float:center;
-    color: var(--pink);
+    color: var(--secondary-color);
     border-radius: 90px;
     cursor: pointer;
     transition: 0.5s;
     position: relative;
    
+}
+
+#modo:hover{
+    color: var(--pink);
 }
 /*----------*/
 #logo{
@@ -472,8 +476,77 @@ body:not(.user-is-tabbing) a:focus {
     font-family: sans-serif;
 }
 
-/* ----- Back to Top ----- */
+/* ----- Back to Top ----- 
 
+.to-top{
+    background-color:var(--pink);
+    position: fixed;
+    bottom: 16px;
+    right: 32px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: var(--primary-color);
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    transition:  all .4s;
+
+}
+.to-top:active{
+    bottom: 32px;
+    pointer-events: auto;
+    opacity: 1;
+
+}*/
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    visibility: hidden;
+    cursor: pointer;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    z-index: 1100;
+  }
+  
+  .back-to-top::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: -4px auto;
+    width: 12px;
+    height: 12px;
+    border-top: 2px solid var(--primary-color);
+    border-right: 2px solid var(--primary-color);
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  
+  .back-to-top:hover {
+    background:var(--pink);
+  }
+  
+  .back-to-top:hover::after {
+    border-color: #fff;
+  }
+  
+
+
+  
+
+/*
 .back-to-top {
     position: fixed;
     bottom: 4rem;
@@ -488,6 +561,7 @@ body:not(.user-is-tabbing) a:focus {
     z-index: 10;
     visibility: hidden;
     transition: all .4s;
+   
 }
 
 .back-to-top__image {
@@ -505,6 +579,7 @@ body:not(.user-is-tabbing) a:focus {
         right: 1rem;
     }
 }
+*/
 
 /* --------------------------------------- */
 /* ----- Navigation ----- */
