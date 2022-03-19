@@ -17,8 +17,8 @@
 }
 
 * {
-    margin: 0;
-    padding: 0;
+    margin: auto;
+    padding: auto;
     box-sizing: inherit;
 }
 
@@ -215,6 +215,7 @@ html {
 @media(max-width: 1000px) {
     html {
         font-size: 52%;
+        scroll-behavior: smooth;
     }
 }
 /*----------*/
@@ -539,7 +540,7 @@ body:not(.user-is-tabbing) a:focus {
   }
   
   .back-to-top:hover::after {
-    border-color: #fff;
+    border-color: var(--primary-color);
   }
   
 
@@ -671,9 +672,9 @@ body:not(.user-is-tabbing) a:focus {
 
 .header__text p {
     margin: 1.5rem 0 3.5rem;
-    max-width: var(--container-medium-width);
+    max-width: var(--container-small-width);
     font-family: 'Jost', sans-serif;
-    font-size: var(--font-size-medium);
+    font-size: var(--font-size-small);
 }
 
 @media(max-width: 500px) {
@@ -693,7 +694,19 @@ body:not(.user-is-tabbing) a:focus {
 .work__box {
     display: flex;
     align-items: center;
+    
 }
+.card-groups{
+    background-color: var(--primary-color);
+}
+.card-title{
+background-color: var(--primary-color);
+}
+.card{
+    background-color: var(--primary-color);
+}
+
+
 
 @media(max-width: 900px) {
     .work__box {

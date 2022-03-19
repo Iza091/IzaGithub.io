@@ -6,7 +6,7 @@
 -->
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-SV">
   
 <head>
   <meta charset="UTF-8" />
@@ -32,13 +32,13 @@
 
 <body>
 <!-- Back to top button -->
-<!---<div  href="#top"class="back-to-top" ></div>-->
-<a href="#top" class="back-to-top" title="Subir"> <img src="" alt="" class="back-to-top__image"/> </a>
-<!--<a href="#" class="to-top"> <i class="fas fas chevron-up"></i></a>-->
+<!---->
+<a href="#top"  class="back-to-top " title="Subir"> </a>
+<!-- -->
   <!-- ***** Header ***** -->
   <header class="header" role="banner" id="top">
 
-    <nav class="navbar navbar-expand-md navbar-transparent row" id="navbar">
+    <nav class="navbar navbar-expand-md navbar-transparent col-md row" id="navbar">
       <div class=" container container-fluid">
         <a class="navbar-brand d-none d-md-block" href="#top">
           <img src="images/favicon.png" alt="" width="75">
@@ -51,7 +51,7 @@
       </button>
       
       <div class="navbar-collapse collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav  ml-auto nav__items ">
+          <ul class="navbar-nav  md-auto nav__items ">
               <li class="nav-item"><a class="nav-link nav__link active" href="#work" >Trabajos</a></li>
               <li class="nav-item"><a class="nav-link nav__link" href="#doc">Certificaciones</a></li>
               <li class="nav-item"><a class="nav-link nav__link" href="#about">Acerca de</a></li>
@@ -80,7 +80,7 @@
       </div> <!-- .slider-wrapper -->
     </div> <!-- .page-banner -->
 
-    <div class="page home-banner ml-auto row mb-5">
+    <div class="page home-banner ml-auto  col-sm-6 row mb-5">
       <div class="slider-wrapper">
         <div class="owl-carousel hero-carousel">
           <div class="hero-carousel-item">
@@ -100,7 +100,7 @@
         
       </div> <!-- .slider-wrapper -->
     </div> 
-    <div class="container slider-wrapper  -sm p-5 w-100">
+    <div class="container slider-wrapper row col-sm p-5 w-100">
       <div class="modo" id="modo">
         <i class="auto fa fa-lightbulb-o"></i>
     </div> </div>
@@ -108,17 +108,22 @@
     </div>
     </div>
    
-  
+
     <section></section>
   <main role="main">
 
     <section class="work" id="work">
-      <div class="row">
+      <div class="row col-md">
         <h2>Mis trabajos y colaboraciones </h2>
-        <div class="work__boxes">
+        <div class="card-groups-transparent work__boxes">
 
-          <div class="work__box">
-            <div class="work__text">
+
+          <div class="card col-md work__box">
+            <div class=" card-img-top ">
+              <img src="./images/project-1.png" class=" work__image" alt="Project 1" />
+            </div>
+            
+            <div class="card-title work__text">
               <h3>SuperKids</h3>
               <p>
                 Una plataforma para el cuidado de los niños contra los virus
@@ -130,19 +135,22 @@
                 <li>Laravel</li>
               </ul>
 
-              <div class="work__links">
-                <a href="https://github.com/Iza091/SuperKidsProyectoFinal2021"  target="_blank">
-                  <i  title="Ver el código" target="_blank" class=" center fa fa-github work__code" alt="GitHub"> </i>
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/project-1.png" class=" work__image" alt="Project 1" />
-            </div>
+          <div class="  work__links">
+            <a href="https://github.com/Iza091/SuperKidsProyectoFinal2021"  target="_blank">
+              <i  title="Ver el código" target="_blank" class=" center fa fa-github work__code" alt="GitHub"> </i>
+            </a>
           </div>
 
-          <div class="work__box">
-            <div class="work__text">
+            </div>
+            
+          </div>
+
+          <div class="card work__box">
+
+            <div class=" card-img-top ">
+              <img src="./images/project-2.png" class="work__image" alt="Project 2" />
+            </div>
+            <div class=" card-title work__text">
               <h3>Sistema Academico INU</h3>
               <p>
                Sistema Academico del Instituto Nacional de Usulután (No final)
@@ -158,13 +166,14 @@
                 </a>
               </div>
             </div>
-            <div class="work__image-box">
-              <img src="./images/project-2.png" class="work__image" alt="Project 1" />
-            </div>
+            
           </div>
 
-          <div class="work__box">
-            <div class="work__text">
+          <div class="card work__box">
+            <div class="card-img-top ">
+              <img src="./images/project-3.png" class="fa fa-github work__image" alt="Project 3" />
+            </div>
+            <div class=" card-title work__text">
               <h3>Tienda de Mascotas</h3>
               <p>
                 Un lugar dónde poder comprar regalos, premios o comida para tu mascota
@@ -180,9 +189,7 @@
                 </a>
               </div>
             </div>
-            <div class="work__image-box">
-              <img src="./images/project-3.png" class="fa fa-github work__image" alt="Project 3" />
-            </div>
+           
           </div>
         </div>
       </div>
@@ -191,13 +198,13 @@
   
 <section class="doc" id="doc">
 
-  <div class="row">
+  <div class="col-md row">
     <h2> Certificaciones </h2>
 
   
   </div>
   
-  <div class="about__photo-container">
+  <div class="col-md about__photo-container">
     
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -245,7 +252,7 @@
     <!-- ***** About ***** -->
 
     <section class="about" id="about">
-      <div class="row">
+      <div class=" col-md row">
         <h2>Acerca de mí </h2>
 
         <div class="about__content">
@@ -280,12 +287,11 @@
   <!-- ***** Contact ***** -->
 
   <section class="contact" id="contact">
-    <div class="row">
-      <h2>Contacta
-
+    <div class="jumbotron-fluid col-md row">
+      <h2 class="display 3">Contacta </h2>
         <div class="contact__info div">
           <h1>
-          <p>
+          <p class=" ">
             Si está buscando a alguien  que pueda cumplir con su satisfacción puede decirme
             "Hola 👋 mi buen amigo"  y con gusto veremos el desarrollo de cada proyecto, 
             me sentiré honrado de recibir su mensaje, brindando siempre mí mayor esfuerzo en sus solicitudes 😊 
@@ -294,33 +300,34 @@
           </h1>
           
           </a>
-          
-          <a href="mailto:izagithub26@gmail.com?subject=IzDev%20Contacto%Gmail">
-            <i title="Correo" class=" fa fa-google footer__social-image" alt="Gmail"> </i>
+          <h2>
+          <a href="mailto:izagithub26@gmail.com?subject=IzDev%20Contacto%Gmail" target="_blank">
+            <i title="Correo" class=" display-4 fa fa-google footer__social-image"  alt="Gmail"> </i>
             </a>
-            <a href="https://www.linkedin.com/in/e-isa%C3%ADasvllgsortiz/">
-              <i  title="in Perfil" class=" fa fa-linkedin footer__social-image" alt="Linkedin"> </i>
+            <a href="https://www.linkedin.com/in/e-isa%C3%ADasvllgsortiz/" target="_blank">
+              <i  title="in Perfil" class=" display-4 fa fa-linkedin footer__social-image"  alt="Linkedin"> </i>
             </a>
-            
+          </h2>
         </div>
-      </h2>
     </div>
     </div>
     
   </section>
 
   <section class="contact" id="curriv">
-    <div class="row">
+    <div class=" jumbotron-fluid col-md row">
 
-    <h2> Curriculum Vitae
-      <div class="contact__info div">         
+    <h2> Curriculum Vitae  </h2>
+      <h2>
+    <div class="display-4 contact__info div">         
       <a class=""  href="download/Curriculum Vitae Isa.pdf" target="_blank" >       
           <i title="CV Descargar"   class=" fa fa-download footer__social-image" alt="CV"></i>
       </a>
     
     </div>
+  </h2>
     </h1>
-    
+ 
   </div>
 
   </section>
@@ -332,13 +339,13 @@ data-role="form" data-default-width="650px"></script>  form.123formbuilder.com s
 <!-- .page-section -->
 
 <div class="page-section">
-  <div class="container">
+  <div class=" mb-3 container">
     <div class="text-center">
-      <h2 class="title-section mb-3 " id="Dev">IzDev</h2>
+      <h2 class="title-section mb-3 col-md " id="Dev">IzDev</h2>
     </div>
     <div class="row justify-content-center mt-5">
       <div class="col-lg-8">
-        <form action="#Dev" class="form-contact">
+        <form action="#Dev" class="form-contact form-group">
           <div class="row">
             <div class="col-sm-6 py-2">
               <label for="name" class="fg-grey">Nombre</label>
@@ -369,7 +376,7 @@ data-role="form" data-default-width="650px"></script>  form.123formbuilder.com s
   <!-- ***** Footer ***** -->
 
   <footer role="contentinfo" class="footer">
-    <div class="row">
+    <div class="col-md row">
       <!-- Update the links to point to your accounts -->
       <ul class="footer__social-links">
         <li class="footer__social-link-item">
@@ -395,12 +402,12 @@ data-role="form" data-default-width="650px"></script>  form.123formbuilder.com s
   </footer>
 </header>
   
- 
-  
+
  
   
   <script src="./index.js"></script>
   <script src="./wow.min.js"></script>
+  <script src="./Js/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
