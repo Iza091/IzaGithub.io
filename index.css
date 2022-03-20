@@ -32,14 +32,14 @@
     --font-size-huge: 7.5rem;
     --font-stack: 'Hk Grotesk', sans-serif;
 
-    --line-height-normal: 1.7;
-    --line-height-small: 1.2;
- 
+    --line-height-normal: auto;
+    --line-height-small: fixed;
+     max-height: max-content;
     --header:var(--secondary-color);
     --container-max-width: 1180px;
-    --container-normal-width: 800px;
+    --container-normal-width: 960px;
     --container-medium-width: 700px; 
-    --container-small-width: 500px;
+    --container-small-width: 540px;
 
     --gutter-huge: 12rem;
     --gutter-medium: 6rem;
@@ -92,6 +92,15 @@
   border-color: var(--secondary-color);
 }
 
+
+#btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    border-radius: 50%;
+  }
+
 .top-bar {
   display: block;
   height: 35px;
@@ -101,7 +110,7 @@
 
 .top-bar .container,
 .top-bar .row {
-  height: 100%;
+  height:auto;
 }
 
 .top-bar a {
