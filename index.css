@@ -235,6 +235,7 @@ html {
 }
 
 body {
+    margin-top: calc(100vh + var(--offset));
     font-size: var(--font-size-small);
     font-family: var(--font-stack);
     font-weight: 400;
@@ -468,7 +469,8 @@ body:not(.user-is-tabbing) a:focus {
 /* ----- Back to Top -----*/
 
 .back-to-top {
-    position: fixed;
+    place-self:end;
+    position:sticky;
     bottom: 4rem;
     right: 4rem;
     display: flex;
@@ -481,6 +483,10 @@ body:not(.user-is-tabbing) a:focus {
     z-index: 10;
     visibility: hidden;
     transition: all .4s;
+    place-self: end;
+    margin-top: calc(100vh + var(--offset));
+    margin-right:20px;
+    
    
 }
 /*
