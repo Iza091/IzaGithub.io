@@ -155,6 +155,20 @@
    
 }
 
+#frame{
+    font-size: 30px;
+    margin:center;
+    float:center;
+    color: var(--secondary-color);
+    border-radius: 90px;
+    cursor: pointer;
+    transition: 0.5s;
+    position: relative;
+}
+#frame:hover{
+    color: var(--pink);
+}
+
 #modo{
     
     font-size: 30px;
@@ -230,7 +244,7 @@ html {
 @media(max-width: 1000px) {
     html {
         font-size: 52%;
-        scroll-behavior: smooth;
+        
     }
 }
 
@@ -489,24 +503,6 @@ body:not(.user-is-tabbing) a:focus {
     
    
 }
-/*
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 25px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: var(--primary-color);
-    visibility: hidden;
-    cursor: pointer;
-    -webkit-transition: all .2s ease;
-    transition: all .2s ease;
-    z-index: 1100;
-    
-  }*/
-
-
   
   .back-to-top::after {
     content: "";
@@ -543,7 +539,7 @@ body:not(.user-is-tabbing) a:focus {
 
 @media(max-width: 900px) {
     .back-to-top {
-        right: 2rem;
+        right: 2rem;       
     }
 }
 
@@ -725,6 +721,7 @@ background-color: var(--primary-color);
 
 .work__image-box {
     margin-bottom: var(--gutter-normal);
+    transition: all .2s ease-in;
 }
 
 @media(min-width: 901px) {
@@ -757,7 +754,7 @@ background-color: var(--primary-color);
 
 @media(max-width: 1240px) {
     .client__logos {
-        overflow-x: scroll;
+        overflow-x: scroll; 
         padding: var(--gutter-normal);
     }
 
