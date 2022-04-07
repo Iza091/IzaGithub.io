@@ -21,8 +21,8 @@
 
 * {
     margin: auto;
-    padding: 1,4;
-    box-sizing: inherit;
+    padding: 1.4;
+    box-sizing:border-box  ;
 }
 
 :root {
@@ -300,6 +300,9 @@
 }
 #span:hover{
     color:var(--pink)
+}
+.pink{
+    background-color:var(--pinki)
 }
 
 /*----------*/

@@ -30,6 +30,7 @@
 </head>
 
 
+  
 
 <body>
  
@@ -83,12 +84,21 @@
       </div> <!-- .slider-wrapper -->
       
     </div> 
-    <div class="container slider-wrapper row col-sm p-5 w-100">
+
+    <div class="row" id="google_translate_element"></div>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+   new google.translate.TranslateElement({pageLanguage: 'es'}, 'google_translate_element');
+  } 
+  </script>
+  
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <div class="container-fluid slider-wrapper row col-sm p-5 w-100">
       <div class="modo" id="modo">
         <i class="auto fa fa-lightbulb-o"></i>
     </div> 
   </div> 
-  <div class="page-banner bg-img bg-img-parallax overlay-dark" style="background-image: url(./images/header_.jpg); width: 100%; height: 600px; background-attachment: fixed;">
+  <div class="page-banner col-lg  bg-img bg-img-parallax overlay-dark" style="background-image: url(./images/header_.jpg); width: 100%; height: 600px; background-attachment: fixed;">
     <div class="container-fluid h-100">
       <div class="row justify-content-center align-items-center h-100">
         <div class="col-lg-8">
@@ -203,7 +213,7 @@
   
   </div>
   
-  <div class="col-md about__photo-container">
+  <div class="col-md about__photo-container rows">
     
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -390,6 +400,10 @@
     </div>
   </div> <!-- .container -->
 </div> <!-- .page-section -->
+<!-- Back to top button -->
+<!---->
+
+<a  href="#top" class="back-to-top btn-lg " title="Subir" id="btn-back-to-top"> </a>
 
   <!-- ***** Footer ***** -->
   
@@ -419,10 +433,6 @@
     
   </footer>
   
-<!-- Back to top button -->
-<!---->
-
-<a  href="#top" class="back-to-top btn-lg " title="Subir" id="btn-back-to-top"> </a>
 
 
 <!---->
