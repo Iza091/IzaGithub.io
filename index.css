@@ -50,7 +50,7 @@
     --gutter-small-1: 2.5rem;
     --gutter-small: 2rem; 
     --border-light: 1px solid rgb(104, 101, 101);
-    
+    flex-direction: column;
 
 
 }
@@ -105,6 +105,7 @@
 /*Dark_Day Mode*/
 
 .day-theme{
+    flex-direction:row ;
     --primary-color:rgb(255, 255, 255);
     --secondary-color: rgba(0, 0, 0, 0.856);
     --pink:#81c0ff;
@@ -114,6 +115,7 @@
 }
 
 .dark-theme {
+    flex-direction: row;
     --primary-color: #000;
     --pink: #f08eb7;
     --secondary-color: #f0e9f2;
@@ -127,12 +129,16 @@
  color: var(--invers);
 }
 
+/*----------*/
+
+/*Dark_Day Mode native
 @media (prefers-color-scheme:light) {
 
     body{
     --primary-color:rgb(255, 255, 255);
     --secondary-color: rgba(0, 0, 0, 0.856);
     --pink:#81c0ff;
+    --invers:#f0e9f2;
     --secondary-color-1:rgba(0, 0, 0, 0.747);
     transition: .4s;
     }
@@ -143,19 +149,22 @@
     body{
         --primary-color: #000;
         --pink: #f08eb7;
+        --invers:#f0e9f2;
         --secondary-color: #f0e9f2;
         --secondary-color-1: #e5e5e6da;
         transition: .4s;
     }
 }
-.dark-theme .header{
+*/
+/*
+.header{
     background: linear-gradient(rgba(44, 44, 44, 0), rgba(131, 131, 131, 0));
     height: 100vh;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     font-size: var(--font-size-normal);
-}
+}*/
 #span {
     width: 150vw;
     height: 85px;
@@ -347,6 +356,7 @@ html {
 @media(max-width: 1000px) {
     html {
         font-size: 52%;
+        position: absolute;
         
     }
 }
@@ -363,18 +373,21 @@ body {
 }
 
 .row {
+    position:relative;
     max-width: var(--container-max-width);
     margin: 0 auto;
 }
 
 @media(max-width: 1340px) {
     .row {
+        position:relative;
         max-width: 1100px;
     }
 }
 
 @media(max-width: 1240px) {
     .row {
+        position:relative;
         padding: 0 var(--gutter-medium);
     }
 }
@@ -382,12 +395,16 @@ body {
 @media(max-width: 600px) {
     .row {
         padding: 0 var(--gutter-normal);
+        position:relative;
+        justify-content: space-between;
     }
 }
 
 @media(max-width: 600px) {
     .row {
         padding: 0 var(--gutter-small);
+        position:relative;
+        justify-content: space-between;
     }
 }
 
@@ -659,7 +676,8 @@ body:not(.user-is-tabbing) a:focus {
 
 .nav {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    flex-wrap: wrap;
     padding: var(--gutter-normal) 0;
 }
 
@@ -675,6 +693,7 @@ body:not(.user-is-tabbing) a:focus {
 @media(max-width: 500px) {
     .nav {
         justify-content: center;
+        flex-wrap: wrap;
     }
 }
 
@@ -842,7 +861,7 @@ background-color: var(--primary-color);
 
 /* --------------------------------------- */
 /* ----- Clients ----- */
-/* --------------------------------------- */
+/* --------------------------------------- 
 
 .client__logos {
     display: flex;
@@ -865,7 +884,7 @@ background-color: var(--primary-color);
         margin-right: var(--gutter-medium);
     }
 }
-
+*/
 /* --------------------------------------- */
 /* ----- About ----- */
 /* --------------------------------------- */
