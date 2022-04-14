@@ -2,8 +2,8 @@
   Have focus outline only for keyboard users 
  ---------------------------------------- */
 
- const handleFirstTab = (e) => {
-  if(e.key === 'Tab') {
+const handleFirstTab = (e) => {
+  if (e.key === 'Tab') {
     document.body.classList.add('user-is-tabbing')
 
     window.removeEventListener('keydown', handleFirstTab)
@@ -27,9 +27,9 @@ let isBackToTopRendered = false;
 let alterStyles = (isBackToTopRendered) => {
   backToTopButton.style.visibility = isBackToTopRendered ? "visible" : "hidden";
   backToTopButton.style.opacity = isBackToTopRendered ? 1 : 0;
-  backToTopButton.style.transform = isBackToTopRendered
-    ? "scale(1)"
-    : "scale(0)";
+  backToTopButton.style.transform = isBackToTopRendered ?
+    "scale(1)" :
+    "scale(0)";
 };
 
 window.addEventListener("scroll", () => {
@@ -45,23 +45,23 @@ window.addEventListener("scroll", () => {
 /*
 
 */
-let modo=document.getElementById("modo");
-let body=document.body;
+let modo = document.getElementById("modo");
+let body = document.body;
 
-modo.addEventListener("click", function(){
-    let val=body.classList.toggle("dark-theme")
-    localStorage.setItem("modo",val)
+modo.addEventListener("click", function () {
+  let val = body.classList.toggle("dark-theme")
+  localStorage.setItem("modo", val)
 })
 
-let valor=localStorage.getItem("modo")
+let valor = localStorage.getItem("modo")
 
-if (valor=="true") {
+if (valor == "true") {
   body.classList.remove("day-theme")
   body.classList.add("dark-theme")
-  
+
 } else {
   body.classList.remove("dark-theme")
   body.classList.add("day-theme")
-    
-    
+
+
 }
