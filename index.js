@@ -1,8 +1,8 @@
 /* -----------------------------------------
   Have focus outline only for keyboard users 
  ---------------------------------------- */
-
-const handleFirstTab = (e) => {
+ 
+ const handleFirstTab = (e) => {
   if (e.key === 'Tab') {
     document.body.classList.add('user-is-tabbing')
 
@@ -43,7 +43,6 @@ window.addEventListener("scroll", () => {
 });
 
 /*
-
 */
 let modo = document.getElementById("modo");
 let body = document.body;

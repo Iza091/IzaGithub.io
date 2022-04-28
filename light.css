@@ -1,0 +1,9 @@
+root {
+    flex-direction: row;
+    background-color: var(--primary-color);
+    --primary-color: rgb(255, 255, 255);
+    --secondary-color: rgba(0, 0, 0, 0.856);
+    --pink: #81c0ff;
+    --invers: #f0e9f2;
+    --secondary-color-1: rgba(0, 0, 0, 0.747);
+}
