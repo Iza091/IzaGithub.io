@@ -332,7 +332,31 @@
     -moz-animation: glowing 1s ease-in-out infinite alternate;
     animation: glowing 1s ease-in-out infinite alternate;
 }
+/*----------*/
 
+/*Testimonios*/
+
+.container-test {
+    border: 2px solid var(--secondary-color);
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    padding: 16px;
+    margin: 16px 0;
+  }
+  .container-test img {
+    width: 120px;
+    float: left;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
+  .container-test span {
+    font-size: 20px;
+    margin-right: 15px;
+  }
+.container-test span:hover{
+    color:var(--pink)
+}
+ 
 @-webkit-keyframes glowing {
     from {
         box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--pink), 0 0 40px var(--pink), 0 0 50px var(--pink), 0 0 60px var(--pink), 0 0 70px var(--pink);
@@ -406,6 +430,9 @@ body {
         padding: 0 var(--gutter-medium);
         overflow-x: hidden;
     }
+    .container-test img{
+        width: 85px;
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -414,6 +441,9 @@ body {
         position: relative;
         justify-content: space-between;
         overflow-x: hidden;
+    }
+    .container-test img{
+        width: 75px;
     }
 }
 
@@ -424,6 +454,12 @@ body {
         justify-content: space-between;
         overflow-x: hidden;
     }
+    .container-test {
+        text-align: center;
+      }
+      .container-test img{
+          width: 90px;
+      }
 }
 
 @media screen and (max-width: 360px) {
@@ -433,7 +469,9 @@ body {
         justify-content: space-between;
         overflow-x: hidden;
     }
-
+    .container-test img{
+        width: 80px;
+    }
 }
 
 section {
