@@ -131,8 +131,6 @@
 
 /*----------*/
 
-/*Dark_Day Mode native
-
 @media (prefers-color-scheme:light) {
     body{
         flex-direction: row;
@@ -157,7 +155,7 @@
         transition: .4s;
     }
 }
-*/
+
 /**/
 .header{
     background: linear-gradient(rgba(44, 44, 44, 0), rgba(131, 131, 131, 0));
@@ -284,7 +282,8 @@
 #modo {
 
     font-size: 30px;
-    margin: center;
+    width: 30px;
+    margin: auto;
     float: center;
     color: var(--secondary-color);
     border-radius: 90px;
