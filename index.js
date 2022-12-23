@@ -43,7 +43,7 @@ window.addEventListener("scroll", () => {
 });
 
 /*
-*/
+
 let modo = document.getElementById("modo");
 let body = document.body;
 
@@ -71,4 +71,15 @@ if (val == "false") {
   body.classList.remove("day-theme")
   body.classList.add("dark-theme")
 }
+*/
 
+//Años UGB  https://codepen.io/eucm2/pen/PZOKQE
+/*
+$(document).ready(function(){
+  //var hoy_formato=moment().format('MMMM Do YYYY, h:mm:ss a');
+  //var dia_formato=moment("2022-01-01").format('dddd');
+  var ingreso=Date("2017-01-16");
+  var hoy=Date();
+  var anios=hoy.diff(ingreso,"years");
+  $("#res").text(anios);
+});*/
