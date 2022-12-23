@@ -73,13 +73,4 @@ if (val == "false") {
 }
 */
 
-//Años UGB  https://codepen.io/eucm2/pen/PZOKQE
-/*
-$(document).ready(function(){
-  //var hoy_formato=moment().format('MMMM Do YYYY, h:mm:ss a');
-  //var dia_formato=moment("2022-01-01").format('dddd');
-  var ingreso=Date("2017-01-16");
-  var hoy=Date();
-  var anios=hoy.diff(ingreso,"years");
-  $("#res").text(anios);
-});*/
+//Años UGB  
