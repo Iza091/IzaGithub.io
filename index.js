@@ -1,5 +1,5 @@
 /* -----------------------------------------
-  Have focus outline only for keyboard users 
+  Barra
  ---------------------------------------- */
  const handleFirstTab = (e) => {
   if (e.key === 'Tab') {
@@ -41,38 +41,14 @@ window.addEventListener("scroll", () => {
   }
 });
 
-/*
+/* -----------------------------------------
+    Modo
+ ---------------------------------------- */
+const setTheme = theme => document.documentElement.className = theme;
 
-let modo = document.getElementById("modo");
-let body = document.body;
-
-modo.addEventListener("click", function () {
-  let val = body.classList.toggle("dark-theme")
-  localStorage.setItem("modo", val)
-})
-
-if (val == "true") {
-  body.classList.remove("day-theme")
-  body.classList.add("dark-theme")
-
-} else {
-  body.classList.remove("dark-theme")
-  body.classList.add("day-theme")
-
-
-}
-
-if (val == "false") {
-  body.classList.remove("dark-theme")
-  body.classList.add("day-theme")
-
-} else {
-  body.classList.remove("day-theme")
-  body.classList.add("dark-theme")
-}
-*/
-
-//Años UGB  
+/* -----------------------------------------
+  Años UGB
+ ---------------------------------------- */
 
 $(document).ready(function(){
   var nacimiento=moment("2017-01-16");

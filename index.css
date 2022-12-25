@@ -104,42 +104,97 @@
 
 
 /*Dark_Day Mode*/
+/**/    
+:root.light {
+    flex-direction: row;
+    --primary-color: white;
+    --secondary-color: black;
+    --pink: #81c0ff;
+    --invers: white;
+    --secondary-color-1: black;
+    transition: .4s;
+  }
+  
+  :root.dark {
+    flex-direction: row;
+    --primary-color: black;
+    --pink: #f08eb7;
+    --secondary-color: white;
+    --invers: white;
+    --secondary-color-1: white;
 
+    transition: .4s;
+  }
+  
+.toggle-container {
+    position: sticky;
+    color: var(--primary-color);
+  }
+  
+  .theme-btn {
+    width: 6em;
+    height: 6em;
+    padding: 0.5em;
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--secondary-color);
+    border: none;
+    background-color: transparent;
+  }
+  
+  .theme-btn.light {
+    display: none;
+    color: var(--secondary-color);
+  }
+  
+  .dark .theme-btn.dark {
+    display: none;
+    color: var(--secondary-color);
+  }
+  
+  .dark .theme-btn.light {
+    display: block;
+    
+  }
+  
+
+  
+/*
 .day-theme {
     flex-direction: row;
-    --primary-color: rgb(255, 255, 255);
-    --secondary-color: rgba(0, 0, 0, 0.856);
+    --primary-color: white;
+    --secondary-color: black;
     --pink: #81c0ff;
-    --invers: #f0e9f2;
-    --secondary-color-1: rgba(0, 0, 0, 0.747);
+    --invers: white;
+    --secondary-color-1: black;
     transition: .4s;
 }
 .dark-theme {
     flex-direction: row;
-    --primary-color: #000;
+    --primary-color: black;
     --pink: #f08eb7;
-    --secondary-color: #f0e9f2;
-    --invers: #f0e9f2;
-    --secondary-color-1: #e5e5e6da;
+    --secondary-color: white;
+    --invers: white;
+    --secondary-color-1: white;
 
     transition: .4s;
-}
+}*/
 
 .colors {
     color: var(--invers);
 }
 
-/*----------*/
+/*----------
 
 @media (prefers-color-scheme:light) {
-    body{
+    body{ 
         flex-direction: row;
-    --primary-color:rgb(255, 255, 255);
-    --secondary-color: rgba(0, 0, 0, 0.856);
-    --pink:#81c0ff;
-    --invers:#f0e9f2;
-    --secondary-color-1:rgba(0, 0, 0, 0.747);
-    transition: .4s;
+        --primary-color:rgb(255, 255, 255);
+        --secondary-color: rgba(0, 0, 0, 0.856);
+        --pink:#81c0ff;
+        --invers:#f0e9f2;
+        --secondary-color-1:rgba(0, 0, 0, 0.747);
+        transition: .4s;
     }
 }
 
@@ -155,7 +210,7 @@
         transition: .4s;
     }
 }
-
+*/
 /**/
 .header{
     background: linear-gradient(rgba(44, 44, 44, 0), rgba(131, 131, 131, 0));
