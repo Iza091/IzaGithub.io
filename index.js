@@ -1,7 +1,6 @@
 /* -----------------------------------------
   Have focus outline only for keyboard users 
  ---------------------------------------- */
- 
  const handleFirstTab = (e) => {
   if (e.key === 'Tab') {
     document.body.classList.add('user-is-tabbing')
@@ -74,3 +73,10 @@ if (val == "false") {
 */
 
 //Años UGB  
+
+$(document).ready(function(){
+  var nacimiento=moment("2017-01-16");
+  var hoy=moment();
+  var anios=hoy.diff(nacimiento,"years");
+  $("#res").text(anios);
+});
