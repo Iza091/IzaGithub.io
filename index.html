@@ -2,7 +2,7 @@
 -->
 
 <!--
-  Follow the instructions written in comments to create your stunning portfolio
+@Iza091
 -->
 
 <!DOCTYPE html>
@@ -30,13 +30,13 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="./index.css" />
-  <!-- Put your site title here -->
+  <!-- Nombre -->
   <title>
     Isaías Ortiz | Izdev
   </title>
 
   <meta name="description" content="Un desarrollador más en este mundo">
-  <!-- Add some coding keywords below, Ex: (React, CSS etc) -->
+  <!---->
   <meta name="keywords" content="Iza, Css, JavaScript, Html, C#, etc" />
 
 </head>
@@ -51,7 +51,7 @@
 
     <nav class="navbar navbar-expand-md navbar-transparent col-md row" id="navbar">
       <div class=" container container-fluid">
-        <a class="navbar-brand d-none d-lg-block" href="#top">
+        <a class="navbar-brand d-none d-lg-block" href="./assets/testimonios.html">
           <img src="images/favicon.webp" alt="" width="75">
         </a>
         <div class="row">
@@ -64,11 +64,11 @@
               <li class="nav__item d-none d-lg-block"><a href="#about" class="nav__link">Acerca</a></li>
               <li class="nav__item "><a href="#contact" class="nav__link">Contacto</a></li>
               <!--Botón-->
-                <div class="toggle-container row text-center">
-                  <button class="theme-btn light fa fa-sun-o text-center" onclick="setTheme('light')" title="Light mode">
-                  </button>
-                  <button class="theme-btn dark fa fa-moon-o" onclick="setTheme('dark')" title="Dark mode"> 
-                  </button>
+              <div class="toggle-container row text-center">
+                <button class="theme-btn light fa fa-sun-o text-center" onclick="setTheme('light')" title="Light mode">
+                </button>
+                <button class="theme-btn dark fa fa-moon-o" onclick="setTheme('dark')" title="Dark mode">
+                </button>
               </div>
             </ul>
           </nav>
@@ -95,12 +95,12 @@
           </div>
 
         </div>
-       
+
       </div> <!-- .slider-wrapper -->
     </div>
     </div>
-    
-    
+
+
 
     <div class="row text-center" id="google_translate_element"></div>
     <script type="text/javascript">
@@ -117,12 +117,12 @@
     <div class="card-body card-header">
       <p class="card-text text text-center col-lg row "><em> "Exprésate siempre, podrás encontrar la respuesta dentro de
           ti." - Kim Namjoon de BTS </em></p>
-      <!--<p class="col-lg row"> </p>-->
+      
     </div>
-    
+
 
     <div class="container-fluid slider-wrapper row col-sm p-5 w-100 bg-transparent">
-   
+
 
     </div>
     <div class="page-banner col-lg   bg-img bg-img-parallax overlay-dark"
@@ -376,50 +376,68 @@
       </div>
     </section>
 
-    <!-- ***** Testimonios ***** -->
-    <section class="testimonial" id="testimonial">
-      <div class=" col-md row section">
-        <h2> Testimonios </h2>
-
-        <div class="container container-test">
-          <img src="./images/t1.png" alt="Testimonio 1">
-          <p><span>Nayeli Pineda</span> Técnica en sistemas y redes informáticas</p>
-          <p>Es un buen compañero, responsable, trabajador y honesto, es dedicado y apasionado a su carrera y a la
-            programación pero más que todo a la programación, sabe trabajar bajo presión.</p>
+     <!-- ***** Testimonios ***** -->
+     <section class=" testimonial testim" id="testim">
+      <div class="">
+        <div class="wrap rows">
+          <span id="right-arrow" class="arrow right fa fa-chevron-right"></span>
+          <span id="left-arrow" class="arrow left fa fa-chevron-left "></span>
+        <!----><ul id="testim-dots" class="dots">
+            <li class="dot active"></li>
+            <li class="dot"></li>
+            <li class="dot"></li>
+            <li class="dot"></li>
+            <li class="dot"></li>
+          </ul>
+          <section class="rows">  </section>
+          <div class=" col-md row section"> 
+            <h2>Testimonios</h2>
+          <div id="testim-content" class="cont container-test row">  
+            <div class="active">
+              <div class="img d-none d-md-block"><img src="./images/t1.png" alt=""></div>
+              <h3>Nayeli Pineda | Técnica en sistemas y redes informáticas </h3>
+              <p>Es un buen compañero, responsable, trabajador y honesto, es dedicado y apasionado a su carrera y a la
+                programación pero más que todo a la programación, sabe trabajar bajo presión</p>
+            </div>
+    
+            <div>
+              <div class="img d-none d-md-block"><img src="./images/t2.png" alt=""></div>
+              <h3>Fernando González | Ingeniero en sistemas y redes informáticas. </h3>
+              <p>Considero que él trabaja exelente. Lo que se le pide que tiene que realizar, lo realiza. Sinceramente lo
+                recomiendo ya que además de ser responsable es honesto y de confianza. En el área de electrónica y programación lo veo como un buen tutor ya que si no tienen conocimiento de
+                  algún contenido no se queda de brazos cruzados sino que busca información para seguir ampliando sus
+                  conocimientos</p>
+            </div>
+    
+            <div>
+              <div class="img d-none d-md-block"><img src="./images/t3.png" alt=""></div>
+              <h3>Louise Iraheta | Licenciada en idioma inglés </h3>
+              <p>Siempre saca adelante cada proyecto y trabajo que se le pide hacer, Lo hace a la perfección.</p>
+            </div>
+    
+            <div>
+              <div class="img d-none d-md-block"><img src="../images/t4.png" alt=""></div>
+              <h3>Jackson Borja | Artista visual para la expresión plástica.</h3>
+              <p>Es muy apasionado cuando se trata de trabajar.</p>
+            </div>
+    
+            <div>
+              <div class="img d-none d-md-block"><img src="../images/t5.png" alt=""></div>
+              <h3>Cristina Rodríguez | Ingeniera en sistemas y redes informáticas. </h3>
+              <p>Brinda siempre con lo requerido y cumple todos los requisitos asignados.</p>
+            </div>
+    
+          </div>
+          
         </div>
+       </div>
 
-        <div class="container container-test">
-          <img src="./images/t2.png" alt="Testimonio 2">
-          <p><span>Fernando González</span> Ingeniero en sistemas y redes informáticas.</p>
-          <p> Considero que él trabaja exelente. Lo que se le pide que tiene que realizar, lo realiza. Sinceramente lo
-            recomiendo ya que además de ser responsable es honesto y de confianza.</p>
-          <p>En el área de electrónica y programación lo veo como un buen tutor ya que si no tienen conocimiento de
-            algún contenido no se queda de brazos cruzados sino que busca información para seguir ampliando sus
-            conocimientos</p>
-        </div>
-
-        <div class=" container container-test">
-          <img src="./images/t3.png" alt="Testimonio 3">
-          <p><span>Louise Iraheta</span> Licenciada en idioma inglés</p>
-          <p>Siempre saca adelante cada proyecto y trabajo que se le pide hacer, Lo hace a la perfección.</p>
-        </div>
-        <div class="container container-test">
-          <img src="./images/t4.png" alt="Testimonio 4">
-          <p><span>Jackson Borja</span> Artista visual para la expresión plástica.</p>
-          <p>Es muy apasionado cuando se trata de trabajar y lo hace todo bien.</p>
-        </div>
-
-        <div class="container container-test">
-          <img src="./images/t5.png" alt="Testimonio 5">
-          <p><span>Cristina Rodríguez </span> Ingeniera en sistemas y redes informáticas.</p>
-          <p> Brinda siempre con lo requerido y cumple todos los requisitos asignados.</p>
-        </div>
-    </section>
-  </main>
-
+      </div>
+</section>
+<script src="https://use.fontawesome.com/1744f3f671.js"></script>
 
   <!-- ***** Contact ***** -->
-  <section class="contact" id="contact">
+  <section class="contact rows" id="contact">
     <div class="jumbotron-fluid col-md row">
       <h2 class="display 3">Contacta </h2>
       <div class="contact__info div">
@@ -465,7 +483,7 @@
 
   </section>
 
-
+<section>
   <div class="page-section">
     <div class=" mb-3 container">
       <div class="text-center">
@@ -505,7 +523,7 @@
   </div> <!-- .page-section -->
   <!-- Back to top button -->
   <!---->
-
+</section>
   <a href="#top" class="back-to-top btn-lg " title="Subir" id="btn-back-to-top"> </a>
 
   <!-- ***** Footer ***** -->
@@ -540,10 +558,8 @@
     <p>Hecho con <img src="images/heart.svg" alt="amor" title="amor" width="20"> por Iza091 </p>
   </footer>
 
-
-
   <!---->
-
+  <script src="https://use.fontawesome.com/1744f3f671.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
