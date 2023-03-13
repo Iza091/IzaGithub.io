@@ -24,6 +24,9 @@
     crossorigin="anonymous"></script>
   <script src="https://use.fontawesome.com/82eb904f04.js"></script>
   <script src="https://momentjs.com/downloads/moment.js"></script>
+  <script>
+    console.log(moment.version);
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="./index.js" defer></script>
   <!---Csss-->
@@ -64,12 +67,11 @@
               <li class="nav__item d-none d-lg-block"><a href="#about" class="nav__link">Acerca</a></li>
               <li class="nav__item "><a href="#contact" class="nav__link">Contacto</a></li>
               <!--Botón-->
-              <div class="toggle-container row text-center">
-                <button class="theme-btn light fa fa-sun-o text-center" onclick="setTheme('light')" title="Light mode">
-                </button>
-                <button class="theme-btn dark fa fa-moon-o" onclick="setTheme('dark')" title="Dark mode">
-                </button>
-              </div>
+              <!-- <button id="color-mode-btn">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+              </button> -->
+              
             </ul>
           </nav>
         </div>
@@ -143,90 +145,82 @@
     </div>
   </header>
 
+<section></section>
 
-  <section></section>
-
-  <main role="main">
-    <!-- ***** Trabajos ***** -->
-    <section class=" work" id="work">
-      <div class="row col-md">
-        <h2>Mis trabajos y colaboraciones </h2>
-        <div class="card-groups-transparent work__boxes">
-
-
-          <div class="card col-md work__box">
-            <div class=" card-img-top ">
-              <img src="./images/project-1.webp" class="work__image" alt="Project 1" />
-            </div>
-
-            <div class="card-title work__text">
-              <h3>SuperKids</h3>
-              <p>
-                Una plataforma para el cuidado de los niños contra los virus
-              </p>
-              <h3>Desarrolado con:</h3>
-              <ul class="work__list">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>Laravel</li>
-              </ul>
-              <h3>Rol:</h3>
-              <ul class="work__list">
-                <li>Desarrollador Front-End</li>
-                <li>Desarrollador Back-End, hasta cierta parte del proyecto</li>
-              </ul>
-
-              <div class="  work__links">
+<main role="main">
+  <section class="work" id="work">
+    <div class="container">
+      <h2 class="section-title">Mis trabajos y colaboraciones</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card work__box">
+            <img src="./images/project-1.webp" class="card-img-top work__image" alt="Project 1">
+            <div class="card-body work__text">
+              <h3 class="card-title">SuperKids</h3>
+              <p class="card-text">Una plataforma para el cuidado de los niños contra los virus.</p>
+              <div class="work__tech">
+                <h3 class="tech-title">Desarrollado con:</h3>
+                <ul class="tech-list">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                  <li>Laravel</li>
+                </ul>
+              </div>
+              <div class="work__role">
+                <h3 class="role-title">Rol:</h3>
+                <ul class="role-list">
+                  <li>Desarrollador Front-End</li>
+                  <li>Desarrollador Back-End, hasta cierta parte del proyecto</li>
+                </ul>
+              </div>
+              <div class="work__links">
                 <a href="https://github.com/Iza091/SuperKidsProyectoFinal2021" target="_blank">
-                  <i title="Ver el código" target="_blank" class=" center fa fa-github work__code" alt="GitHub"> </i>
+                  <i class="fa fa-github work__code" title="Ver el código"></i>
                 </a>
               </div>
             </div>
-
           </div>
-
+        </div>
+        <div class="col-md-4">
           <div class="card work__box">
-
-            <div class=" card-img-top ">
-              <img src="./images/project-2.webp" class="work__image" alt="Project 2" />
-            </div>
-            <div class=" card-title work__text">
-              <h3>Sistema Académico INU</h3>
-              <p>
-                Sistema Académico del Instituto Nacional de Usulután (No final)
-              </p>
-              <h3>Desarrolado con:</h3>
-              <ul class="work__list">
-                <li>C#</li>
-                <li>SQLServer</li>
-              </ul>
-              <h3>Rol:</h3>
-              <ul class="work__list">
-                <li>Desarrollador Back-End</li>
-              </ul>
+            <img src="./images/project-2.webp" class="card-img-top work__image" alt="Project 2">
+            <div class="card-body work__text">
+              <h3 class="card-title">Sistema Académico INU</h3>
+              <p class="card-text">Sistema Académico del Instituto Nacional de Usulután (No final).</p>
+              <div class="work__tech">
+                <h3 class="tech-title">Desarrollado con:</h3>
+                <ul class="tech-list">
+                  <li>C#</li>
+                  <li>SQLServer</li>
+                </ul>
+              </div>
+              <div class="work__role">
+                <h3 class="role-title">Rol:</h3>
+                <ul class="role-list">
+                  <li>Desarrollador Back-End</li>
+                </ul>
+              </div>
               <div class="work__links">
                 <a href="https://github.com/Iza091/SistemaAcademicoINU" target="_blank">
-                  <i title="Ver el código" target="_blank" class=" fa fa-github work__code" alt="GitHub"> </i>
+                  <i class="fa fa-github work__code" title="Ver el código"></i>
                 </a>
               </div>
             </div>
-
           </div>
-
+        </div>
+        <div class="col-md-4">
           <div class="card work__box">
-            <div class="card-img-top ">
-              <img src="./images/project-3.webp" class="fa fa-github work__image" alt="Project 3" />
-            </div>
-            <div class=" card-title work__text">
-              <h3>Tienda de Mascotas</h3>
-              <p>
-                Un lugar dónde poder comprar regalos, premios o comida para tu mascota
-              </p>
-              <h3>Desarrolado con:</h3>
-              <ul class="work__list">
-                <li>Android Studio</li>
-                <li>Firebase</li>
+            <img src="./images/project-3.webp" class="card-img-top work__image" alt="Project 3">
+            <div class="card-body work__text">
+              <h3 class="card-title">Tienda de Mascotas</h3>
+                <p>Un lugar donde poder comprar regalos, premios o comida para tu mascota</p>
+        
+                <div class="work__tech">
+                  <h3>Desarrollado con:</h3>
+                  <ul>
+                    <li>Android Studio</li>        
+                    <li>Firebase</li>
               </ul>
               <h3>Rol:</h3>
               <ul class="work__list">
@@ -250,60 +244,57 @@
     <!-- ***** Docs ***** -->
 
     <section class="doc" id="doc">
-      <div class="col-md row">
-        <h2> Certificaciones </h2>
-
-
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-center">Certificaciones</h2>
+        </div>
       </div>
-
-      <div class="col-md about__photo-container rows">
-
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="images/s1.webp" class="d-block w-100" title="CLIC 2021" alt="CLIC2021">
-            </div>
-
-            <div class="carousel-item">
-              <img src="images/s3.webp" class="d-block w-100" title="Junior Tech, 2014" alt="JTECH">
-            </div>
-            <div class="carousel-item">
-              <img src="images/s4.webp" class="d-block w-100" title="Master Tech, 2015" alt="MTECH">
-            </div>
-            <div class="carousel-item">
-              <img src="images/s5.webp" class="d-block w-100"
-                title="Mantenimiento e instalación del sistema operativo Windows 7, 2016" alt="CRA">
-            </div>
-            <div class="carousel-item">
-              <img src="images/s6.webp" class="d-block w-100" title="HTML5 ADF, 2016" alt="HTML5ADF">
-            </div>
-            <div class="carousel-item">
-              <img src="images/s2.webp" class="d-block w-100" title="Inglés A1, 2016" alt="IA1">
-            </div>
-            <div class="carousel-item">
-              <img src="images/s7.webp" class="d-block w-100" title="Aprendiendo Ciencias, 2017"
-                alt="Aprendiendo Ciencias">
-            </div>
-            <div class="carousel-item">
-              <img src="images/s8.webp" class="d-block w-100" title="CLIC 2022" alt="CLIC2022">
-            </div>
-            <div class="carousel-item">
-              <img src="images/s9.webp" class="d-block w-100" title="Feria Emprendimiento 2022"
-                alt="Emprendimiento2022">
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Anterior</span>
+    
+      <div class="row">
+        <div class="col-md-12">
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="images/s1.webp" class="d-block w-100" title="CLIC 2021" alt="CLIC2021">
+              </div>
+    
+              <div class="carousel-item">
+                <img src="images/s3.webp" class="d-block w-100" title="Junior Tech, 2014" alt="JTECH">
+              </div>
+              <div class="carousel-item">
+                <img src="images/s4.webp" class="d-block w-100" title="Master Tech, 2015" alt="MTECH">
+              </div>
+              <div class="carousel-item">
+                <img src="images/s5.webp" class="d-block w-100" title="Mantenimiento e instalación del sistema operativo Windows 7, 2016" alt="CRA">
+              </div>
+              <div class="carousel-item">
+                <img src="images/s6.webp" class="d-block w-100" title="HTML5 ADF, 2016" alt="HTML5ADF">
+              </div>
+              <div class="carousel-item">
+                <img src="images/s2.webp" class="d-block w-100" title="Inglés A1, 2016" alt="IA1">
+              </div>
+              <div class="carousel-item">
+                <img src="images/s7.webp" class="d-block w-100" title="Aprendiendo Ciencias, 2017" alt="Aprendiendo Ciencias">
+              </div>
+              <div class="carousel-item">
+                <img src="images/s8.webp" class="d-block w-100" title="CLIC 2022" alt="CLIC2022">
+              </div>
+              <div class="carousel-item">
+                <img src="images/s9.webp" class="d-block w-100" title="Feria Emprendimiento 2022" alt="Emprendimiento2022">
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span  class="sr-only">Anterior</span>
             </a>
             <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
@@ -348,9 +339,8 @@
           <div class="about__text article">
             <!-- Info -->
             <a>
-              <p> <a id="res"></a> años estudiando la carrera de Ingeniería en Sistemas y Redes Informáticas en
-                la Universidad Gerardo Barrios
-                (UGB) de Usulután. </p>
+              <p> <span class="years"></span> años estudiando la carrera de Ingeniería en Sistemas y Redes Informáticas en
+                la Universidad Gerardo Barrios (UGB) de Usulután. </p>                
               <p>El inicio y avance de nuevos proyectos
                 es algo que me apasiona al igual que el front y back end.
                 Me gusta mucho aprender cosas nuevas, más entornos de desarrollo integrados​ y frameworks. </p>
@@ -377,63 +367,48 @@
     </section>
 
      <!-- ***** Testimonios ***** -->
-     <section class=" testimonial testim" id="testim">
+     <section class="testimonial testim" id="testim">
       <div class="">
-        <div class="wrap rows">
-          <span id="right-arrow" class="arrow right fa fa-chevron-right"></span>
-          <span id="left-arrow" class="arrow left fa fa-chevron-left "></span>
-        <!----><ul id="testim-dots" class="dots">
-            <li class="dot active"></li>
-            <li class="dot"></li>
-            <li class="dot"></li>
-            <li class="dot"></li>
-            <li class="dot"></li>
-          </ul>
-          <section class="rows">  </section>
-          <div class=" col-md row section"> 
-            <h2>Testimonios</h2>
-          <div id="testim-content" class="cont container-test row">  
+        <section class="rows">
+          <h2>Testimonios</h2>
+          <div id="testim-content" class="cont container-test row">
             <div class="active">
-              <div class="img d-none d-md-block"><img src="./images/t1.png" alt=""></div>
-              <h3>Nayeli Pineda | Técnica en sistemas y redes informáticas </h3>
-              <p>Es un buen compañero, responsable, trabajador y honesto, es dedicado y apasionado a su carrera y a la
-                programación pero más que todo a la programación, sabe trabajar bajo presión</p>
+              <img src="images/t1.png" id="testim-image-1">
+              <h3>Nayeli Pineda | Técnica en sistemas y redes informáticas</h3>
+              <p>Es un buen compañero, responsable, trabajador y honesto, es dedicado y apasionado a su carrera y a la programación pero más que todo a la programación, sabe trabajar bajo presión</p>
             </div>
     
             <div>
-              <div class="img d-none d-md-block"><img src="./images/t2.png" alt=""></div>
-              <h3>Fernando González | Ingeniero en sistemas y redes informáticas. </h3>
-              <p>Considero que él trabaja exelente. Lo que se le pide que tiene que realizar, lo realiza. Sinceramente lo
-                recomiendo ya que además de ser responsable es honesto y de confianza. En el área de electrónica y programación lo veo como un buen tutor ya que si no tienen conocimiento de
-                  algún contenido no se queda de brazos cruzados sino que busca información para seguir ampliando sus
-                  conocimientos</p>
+              <img src="images/t2.png" id="testim-image-2">
+              <h3>Fernando González | Ingeniero en sistemas y redes informáticas.</h3>
+              <p>Considero que él trabaja excelente. Lo que se le pide que tiene que realizar, lo realiza. Sinceramente lo recomiendo ya que además de ser responsable es honesto y de confianza. En el área de electrónica y programación lo veo como un buen tutor ya que si no tienen conocimiento de algún contenido no se queda de brazos cruzados sino que busca información para seguir ampliando sus conocimientos</p>
             </div>
     
             <div>
-              <div class="img d-none d-md-block"><img src="./images/t3.png" alt=""></div>
-              <h3>Louise Iraheta | Licenciada en idioma inglés </h3>
+              <img src="images/t3.png" id="testim-image-3">
+              <h3>Louise Iraheta | Licenciada en idioma inglés</h3>
               <p>Siempre saca adelante cada proyecto y trabajo que se le pide hacer, Lo hace a la perfección.</p>
             </div>
     
             <div>
-              <div class="img d-none d-md-block"><img src="./images/t4.png" alt=""></div>
+              <img src="images/t4.png"id="testim-image-4">
               <h3>Jackson Borja | Artista visual para la expresión plástica.</h3>
               <p>Es muy apasionado cuando se trata de trabajar.</p>
             </div>
     
             <div>
-              <div class="img d-none d-md-block"><img src="./images/t5.png" alt=""></div>
-              <h3>Cristina Rodríguez | Ingeniera en sistemas y redes informáticas. </h3>
+              <img src="images/t5.png" id="testim-image-5">
+              <h3>Cristina Rodríguez | Ingeniera en sistemas y redes informáticas.</h3>
               <p>Brinda siempre con lo requerido y cumple todos los requisitos asignados.</p>
             </div>
-    
           </div>
-          
-        </div>
-       </div>
-
+        </section>
       </div>
-</section>
+    </section>
+    
+    
+
+  
 <script src="https://use.fontawesome.com/1744f3f671.js"></script>
 
   <!-- ***** Contact ***** -->
