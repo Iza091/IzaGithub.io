@@ -1,4 +1,16 @@
 /* -----------------------------------------
+  Años UGB
+ ---------------------------------------- */
+
+ $(document).ready(function(){
+  var nacimiento=moment("2017-01-16");
+  var hoy=moment();
+  var anios=hoy.diff(nacimiento,"years");
+  $("#res").text(anios);
+});
+ 
+
+/* -----------------------------------------
   Barra
  ---------------------------------------- */
  const handleFirstTab = (e) => {
@@ -34,7 +46,8 @@ window.addEventListener('scroll', handleScroll);
 
 /* -----------------------------------------
   Testimonios
- ---------------------------------------- */const testimContent = [...document.getElementById("testim-content").children];
+ ---------------------------------------- */
+const testimContent = [...document.getElementById("testim-content").children];
 const testimDots = [...document.getElementById("testim-dots").children];
 const testimImages = [...document.getElementById("testim-images").children];
 let currentSlide = 0;
@@ -108,15 +121,3 @@ for (const [i, dot] of testimDots.entries()) {
     Modo
  ---------------------------------------- */
 
-/* -----------------------------------------
-  Años UGB
- ---------------------------------------- */
-
- $(document).ready(function(){
-  var nacimiento=moment("2017-01-16");
-  var hoy=moment();
-  var anios=hoy.diff(nacimiento,"years");
-  $(".years").text(anios);
-});
-
- 
