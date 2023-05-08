@@ -47,76 +47,77 @@ window.addEventListener('scroll', handleScroll);
 /* -----------------------------------------
   Testimonios
  ---------------------------------------- */
-const testimContent = [...document.getElementById("testim-content").children];
-const testimDots = [...document.getElementById("testim-dots").children];
-const testimImages = [...document.getElementById("testim-images").children];
-let currentSlide = 0;
-let currentActive = 0;
-const testimSpeed = 5000;
-let testimTimer;
 
-function playSlide(slide) {
-  for (const [i, content] of testimContent.entries()) {
-    content.classList.remove("active");
-    content.classList.remove("inactive");
-    testimDots[i].classList.remove("active");
-  }
+const testimWrapper = document.querySelector(".testim-wrapper");
+const testimBtnPrev = document.querySelector(".testim-btn-prev");
+const testimBtnNext = document.querySelector(".testim-btn-next");
+const testimItem = document.querySelectorAll(".testim-item");
+let testimWidth = parseFloat(getComputedStyle(document.querySelector(".testim-container")).getPropertyValue("--testim-width"));
+let testimIndex = 0;
 
-  for (const [i, image] of testimImages.entries()) {
-    image.classList.remove("active");
-  }
+// Array de objetos con la información de cada testimonio
+const testimonios = [  {    imagen: "images/t1.png",    nombre: "Nayeli Pineda | Técnica en sistemas y redes informáticas",    texto: "Es un buen compañero, responsable, trabajador y honesto, es dedicado y apasionado a su carrera y a la programación pero más que todo a la programación, sabe trabajar bajo presión",  },  {    imagen: "images/t4.png",    nombre: "Jackson Borja | Artista visual para la expresión plástica.",    texto: "Es muy apasionado cuando se trata de trabajar.",  },  {    imagen: "images/t5.png",    nombre: "Cristina Rodríguez | Ingeniera en sistemas y redes informáticas.",    texto: "Brinda siempre con lo requerido y cumple todos los requisitos asignados.",  },];
 
-  if (slide < 0) {
-    slide = currentSlide = testimContent.length - 1;
-  }
 
-  if (slide > testimContent.length - 1) {
-    slide = currentSlide = 0;
-  }
+// Función para crear los elementos HTML de los testimonios
+function crearTestimonio(testimonio) {
+  const testimItem = document.createElement("div");
+  testimItem.classList.add("testim-item");
 
-  if (currentActive !== currentSlide) {
-    testimContent[currentActive].classList.add("inactive");
-  }
+  // const img = document.createElement("img");
+  // img.src = testimonio.imagen;
+  // img.id = `testim-image-${testimonios.indexOf(testimonio) + 1}`;
+  // testimItem.appendChild(img);
 
-  testimContent[slide].classList.add("active");
-  testimDots[slide].classList.add("active");
-  testimImages[slide].classList.add("active");
+  const h3 = document.createElement("h3");
+  h3.textContent = testimonio.nombre;
+  testimItem.appendChild(h3);
 
-  currentActive = currentSlide;
+  const p = document.createElement("p");
+  p.textContent = testimonio.texto;
+  testimItem.appendChild(p);
 
-  clearTimeout(testimTimer);
-  testimTimer = setTimeout(() => {
-    playSlide(currentSlide += 1);
-  }, testimSpeed);
+  const testimContainer = document.createElement("div");
+  testimContainer.classList.add("testim-container");
+  testimContainer.appendChild(testimItem);
+
+  testimWrapper.appendChild(testimContainer);
 }
 
-playSlide(currentSlide);
-
-for (const [i, dot] of testimDots.entries()) {
-  dot.addEventListener("click", () => {
-    playSlide(i);
-  });
+// Crear los elementos HTML de los testimonios usando un bucle
+for (const testimonio of testimonios) {
+  crearTestimonio(testimonio);
 }
 
- // Function to initialize the slideshow
- function initTestim() {
-   testimContent[0].classList.add("active");
-   testimDots[0].classList.add("active");
-   testimImages[0].classList.add("active");
- 
-   playSlide(currentSlide);
- 
-   for (const [i, dot] of testimDots.entries()) {
-     dot.addEventListener("click", () => {
-       playSlide(i);
-       currentSlide = i;
-     });
-   }
- }
- 
- // Initialize the slideshow
- initTestim();
- 
+function showTestim(index) {
+  const testimItems = document.querySelectorAll(".testim-item");
+  
+  if (index < 0) {
+    testimIndex = testimItems.length - 1;
+  }
+  if (index >= testimItems.length) {
+    testimIndex = 0;
+  }
+  testimWrapper.style.transform = `translateX(-${testimWidth * testimIndex}px)`;
+}
+
+showTestim(testimIndex);
+
+// testimBtnPrev.addEventListener("click", () => {
+//   testimIndex--;
+//   showTestim(testimIndex);
+// });
+
+// testimBtnNext.addEventListener("click", () => {
+//   testimIndex++;
+//   showTestim(testimIndex);
+// });
+
+// setInterval(() => {
+//   testimIndex++;
+//   showTestim(testimIndex);
+// }, 5000);
+
 /* -----------------------------------------
     Modo
  ---------------------------------------- */
