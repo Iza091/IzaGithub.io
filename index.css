@@ -426,7 +426,7 @@ body {
  /* --------------------------------------- */
 /* -----  Coso de luz ----- */
 /* --------------------------------------- */
-@-webkit-keyframes glowing {
+@keyframes glowing {
     from {
         box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--pink), 0 0 40px var(--pink), 0 0 50px var(--pink), 0 0 60px var(--pink), 0 0 70px var(--pink);
     }
