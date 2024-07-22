@@ -1,14 +1,3 @@
-/* -----------------------------------------
-  Años UGB.
- ---------------------------------------- */
-
- $(document).ready(function(){
-  var nacimiento=moment("2017-01-16");
-  var hoy=moment();
-  var anios=hoy.diff(nacimiento,"years");
-  $("#res").text(anios);
-});
- 
 
 /* -----------------------------------------
   Barra.
