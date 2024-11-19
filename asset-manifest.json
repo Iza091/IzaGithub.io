@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/IzaGithub.io/static/css/main.d2a2ae68.css",
+    "main.js": "/IzaGithub.io/static/js/main.b03302ee.js",
+    "static/js/453.b7f67525.chunk.js": "/IzaGithub.io/static/js/453.b7f67525.chunk.js",
+    "static/media/s6.webp": "/IzaGithub.io/static/media/s6.9f7542f706780bb22929.webp",
+    "static/media/CV.pdf": "/IzaGithub.io/static/media/CV.e77bb8ae41fb4498c3a9.pdf",
+    "static/media/s3.webp": "/IzaGithub.io/static/media/s3.7f49b4113e74401c4972.webp",
+    "static/media/s4.webp": "/IzaGithub.io/static/media/s4.6dd06ad6ef0b6c140895.webp",
+    "static/media/s5.webp": "/IzaGithub.io/static/media/s5.27e11765423b443401b9.webp",
+    "static/media/s2.webp": "/IzaGithub.io/static/media/s2.42d893d821c0c27b1891.webp",
+    "static/media/s8.webp": "/IzaGithub.io/static/media/s8.05363aba3f98f84cd5a5.webp",
+    "static/media/s9.webp": "/IzaGithub.io/static/media/s9.a2176bbf9ec38a43ac60.webp",
+    "static/media/s1.webp": "/IzaGithub.io/static/media/s1.04c65212e2e795401022.webp",
+    "static/media/s7.webp": "/IzaGithub.io/static/media/s7.bb1dea3270feebbc7e05.webp",
+    "static/media/project-1.webp": "/IzaGithub.io/static/media/project-1.2f184f252d75aabd1d80.webp",
+    "static/media/project-2.webp": "/IzaGithub.io/static/media/project-2.8d3ee0547a06e6abe6cc.webp",
+    "static/media/project-3.webp": "/IzaGithub.io/static/media/project-3.998649cb00325342abf4.webp",
+    "static/media/izaortiz.webp": "/IzaGithub.io/static/media/izaortiz.66fbf690db123606a5d6.webp",
+    "index.html": "/IzaGithub.io/index.html",
+    "main.d2a2ae68.css.map": "/IzaGithub.io/static/css/main.d2a2ae68.css.map",
+    "main.b03302ee.js.map": "/IzaGithub.io/static/js/main.b03302ee.js.map",
+    "453.b7f67525.chunk.js.map": "/IzaGithub.io/static/js/453.b7f67525.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d2a2ae68.css",
+    "static/js/main.b03302ee.js"
+  ]
+}
