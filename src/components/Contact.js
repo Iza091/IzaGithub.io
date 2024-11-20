@@ -81,7 +81,7 @@ const Contact = () => {
                                     onChange={handleChange}
                                     required
                                     placeholder="Nombre"
-                                    className="w-full px-4 py-2 border border-light-secondaryBorderSubtle dark:border-dark-secondaryBorderSubtle rounded-md focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary"
+                                    className="w-full px-4 py-2 border  text-light-text dark:text-light-text"
                                 />
                             </div>
                             <div>
@@ -99,7 +99,7 @@ const Contact = () => {
                                     onChange={handleChange}
                                     required
                                     placeholder="Correo"
-                                    className="w-full px-4 py-2 border border-light-secondaryBorderSubtle dark:border-dark-secondaryBorderSubtle rounded-md focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary"
+                                    className="w-full px-4 py-2 border text-light-text dark:text-light-text"
                                 />
                             </div>
                         </div>
@@ -107,7 +107,7 @@ const Contact = () => {
                         <div>
                             <label
                                 htmlFor="subject"
-                                className="block text-sm font-medium text-light-text dark:text-dark-text mb-1"
+                                className="block text-sm font-medium text-light-text dark:text-light-text mb-1"
                             >
                                 Asunto
                             </label>
