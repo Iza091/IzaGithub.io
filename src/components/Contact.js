@@ -107,7 +107,7 @@ const Contact = () => {
                         <div>
                             <label
                                 htmlFor="subject"
-                                className="block text-sm font-medium text-light-text dark:text-light-text mb-1"
+                                className="block text-sm font-medium text-light-text dark:text-dark-text mb-1"
                             >
                                 Asunto
                             </label>
@@ -119,7 +119,7 @@ const Contact = () => {
                                 onChange={handleChange}
                                 required
                                 placeholder="Asunto"
-                                className="w-full px-4 py-2 border text-light-text dark:text-dark-text "
+                                className="w-full px-4 py-2 border text-light-text dark:text-light-text "
                             />
                         </div>
 
