@@ -9,37 +9,38 @@ import C7 from './img/s7.webp';
 import C8 from './img/s8.webp';
 import C9 from './img/s9.webp';
 
+
 const Certificates = () => {
     const [selectedCertificate, setSelectedCertificate] = useState(null);
 
 
-// Add this useEffect to handle Escape key
-useEffect(() => {
-    const handleEscapeKey = (event) => {
-        if (event.key === 'Escape' && selectedCertificate) {
-            closeModal();
+    // Add this useEffect to handle Escape key
+    useEffect(() => {
+        const handleEscapeKey = (event) => {
+            if (event.key === 'Escape' && selectedCertificate) {
+                closeModal();
+            }
+        };
+
+        // Add event listener when a certificate is selected
+        if (selectedCertificate) {
+            document.addEventListener('keydown', handleEscapeKey);
         }
+
+        // Cleanup the event listener
+        return () => {
+            document.removeEventListener('keydown', handleEscapeKey);
+        };
+    }, [selectedCertificate]);
+
+    const openModal = (certificate) => {
+        setSelectedCertificate(certificate);
     };
 
-    // Add event listener when a certificate is selected
-    if (selectedCertificate) {
-        document.addEventListener('keydown', handleEscapeKey);
-    }
-
-    // Cleanup the event listener
-    return () => {
-        document.removeEventListener('keydown', handleEscapeKey);
+    const closeModal = () => {
+        setSelectedCertificate(null);
     };
-}, [selectedCertificate]);
 
-const openModal = (certificate) => {
-    setSelectedCertificate(certificate);
-};
-
-const closeModal = () => {
-    setSelectedCertificate(null);
-};
-    
     const certificates = [
         {
             title: "Junior Tech",
@@ -59,7 +60,7 @@ const closeModal = () => {
             date: "2016",
             image: C2
         },
-       
+
         {
             title: "Mantenimiento e Instalación de Computadoras",
             issuer: "Instituto Nacional de Usulután (INU)",
@@ -84,7 +85,7 @@ const closeModal = () => {
             date: "2021",
             image: C1
         },
-        
+
         {
             title: "Congreso Latinoamericano de Informática y Comunicaciones (CLIC)",
             issuer: "Universidad Gerardo Barrios (UGB)",
@@ -93,35 +94,42 @@ const closeModal = () => {
         },
         {
             title: "Feria de Emprendimiento Tecnológico. ",
-            proyect:"Proyecto: MyCouple",
+            proyect: "Proyecto: MyCouple",
             issuer: "Universidad Gerardo Barrios (UGB), Usulután",
             date: "2022",
             image: C9
         }
     ];
 
-    
+
     return (
-        <section id="certificados" className="py-20 bg-white">
+        <section id="certificados" className="py-20 bg-light-secondaryBg dark:bg-dark-secondaryBg">
             <div className="max-w-6xl mx-auto px-4">
-                <h2 className="text-3xl font-bold text-center mb-12">Certificados</h2>
+                <h2 className="text-3xl font-bold text-center mb-12 text-light-text dark:text-dark-text">
+                    Certificados
+                </h2>
                 <div className="grid md:grid-cols-3 gap-8">
                     {certificates.map((cert, index) => (
-                        <div 
-                            key={index} 
-                            className="bg-gray-50 rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105 cursor-pointer"
+                        <div
+                            key={index}
+                            className="bg-light-body dark:bg-dark-body rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105 cursor-pointer"
                             onClick={() => openModal(cert)}
                         >
-                            <img 
-                                src={cert.image} 
-                                alt={cert.title} 
+                            <img
+                                src={cert.image}
+                                alt={cert.title}
                                 className="w-full h-48 object-cover"
                             />
                             <div className="p-6">
-                                <h3 className="text-xl font-semibold mb-2">{cert.title}</h3>
-                                <span>{cert.proyect}</span>
-                                <div className="flex justify-between text-gray-600">
-                                    
+                                <h3 className="text-xl font-semibold mb-2 text-light-text dark:text-dark-text">
+                                    {cert.title}
+                                </h3>
+                                {cert.proyect && (
+                                    <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
+                                        {cert.proyect}
+                                    </p>
+                                )}
+                                <div className="flex justify-between text-gray-600 dark:text-gray-400">
                                     <span>{cert.issuer}</span>
                                     <span>{cert.date}</span>
                                 </div>
@@ -130,31 +138,33 @@ const closeModal = () => {
                     ))}
                 </div>
 
-                {/* Native Modal */}
+                {/* Modal */}
                 {selectedCertificate && (
-                    <div 
+                    <div
                         className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50 p-4"
                         onClick={closeModal}
                     >
-                        <div 
-                            className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden relative"
+                        <div
+                            className="bg-light-body dark:bg-dark-body rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden relative"
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <button 
-                                onClick={closeModal} 
-                                className="absolute top-4 right-4 text-2xl text-gray-700 hover:text-black z-10"
+                            <button
+                                onClick={closeModal}
+                                className="absolute top-4 right-4 text-2xl text-light-text dark:text-dark-link hover:text-red-500 transition-colors duration-200"
                             >
                                 ✕
                             </button>
                             <div className="flex flex-col">
-                                <img 
-                                    src={selectedCertificate.image} 
+                                <img
+                                    src={selectedCertificate.image}
                                     alt={selectedCertificate.title}
                                     className="w-full max-h-[70vh] object-contain"
                                 />
                                 <div className="p-6 text-center">
-                                    <h3 className="text-2xl font-semibold mb-2">{selectedCertificate.title}</h3>
-                                    <div className="text-gray-600">
+                                    <h3 className="text-2xl font-semibold mb-2 text-light-text dark:text-dark-text">
+                                        {selectedCertificate.title}
+                                    </h3>
+                                    <div className="text-gray-600 dark:text-gray-400">
                                         {selectedCertificate.issuer} - {selectedCertificate.date}
                                     </div>
                                 </div>
