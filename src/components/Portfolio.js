@@ -68,16 +68,27 @@ const Portfolio = () => {
                         </button>
 
 
-
-
                         {/* Desktop menu */}
-                        <div className="hidden md:flex space-x-8">
+                        <div
+                            className="hidden md:flex space-x-8"
+                            onClick={(e) => {
+                                e.preventDefault(); // Evita el comportamiento predeterminado del enlace
+                                const targetId = e.target.getAttribute('href')?.slice(1); // Obtén el ID del destino
+                                if (targetId) {
+                                    const targetElement = document.getElementById(targetId);
+                                    targetElement?.scrollIntoView({ behavior: 'smooth' }); // Desplazamiento suave
+                                }
+                            }}
+                        >
                             <a href="#inicio" className="text-light-text dark:text-dark-text">Inicio</a>
                             <a href="#proyectos" className="text-light-text dark:text-dark-text">Proyectos</a>
                             <a href="#habilidades" className="text-light-text dark:text-dark-text">Habilidades</a>
                             <a href="#certificados" className="text-light-text dark:text-dark-text">Certificados</a>
                             <a href="#contacto" className="text-light-text dark:text-dark-text">Contacto</a>
                         </div>
+
+
+
                         {/* Theme toggle button */}
                         <button
                             onClick={toggleTheme}
@@ -94,54 +105,34 @@ const Portfolio = () => {
                         </button>
                     </div>
                 </div>
+
                 {/* Mobile menu */}
                 {isMenuOpen && (
                     <div
                         className="fixed inset-0 z-50 bg-black bg-opacity-50 md:hidden"
-                        onClick={() => setIsMenuOpen(false)} // Cierra el menú al hacer clic fuera
+                        onClick={() => setIsMenuOpen(false)}
                     >
                         <div
                             className="bg-light-secondaryBg dark:bg-dark-secondaryBg w-64 px-2 pt-2 pb-3 space-y-1 absolute top-0 right-0 h-full shadow-lg"
-                            onClick={(e) => e.stopPropagation()} // Evita cerrar el menú al hacer clic dentro
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                const targetId = e.target.getAttribute('href')?.slice(1);
+                                if (targetId) {
+                                    const targetElement = document.getElementById(targetId);
+                                    targetElement?.scrollIntoView({ behavior: 'smooth' });
+                                    setIsMenuOpen(false); // Cierra el menú después de desplazarse
+                                }
+                            }}
                         >
-                            <a
-                                href="#inicio"
-                                className="block px-3 py-2 text-light-text dark:text-dark-text"
-                                onClick={() => setIsMenuOpen(false)} // Cierra el menú al seleccionar
-                            >
-                                Inicio
-                            </a>
-                            <a
-                                href="#proyectos"
-                                className="block px-3 py-2 text-light-text dark:text-dark-text"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                Proyectos
-                            </a>
-                            <a
-                                href="#habilidades"
-                                className="block px-3 py-2 text-light-text dark:text-dark-text"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                Habilidades
-                            </a>
-                            <a
-                                href="#certificados"
-                                className="block px-3 py-2 text-light-text dark:text-dark-text"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                Certificados
-                            </a>
-                            <a
-                                href="#contacto"
-                                className="block px-3 py-2 text-light-text dark:text-dark-text"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                Contacto
-                            </a>
+                            <a href="#inicio" className="block px-3 py-2 text-light-text dark:text-dark-text">Inicio</a>
+                            <a href="#proyectos" className="block px-3 py-2 text-light-text dark:text-dark-text">Proyectos</a>
+                            <a href="#habilidades" className="block px-3 py-2 text-light-text dark:text-dark-text">Habilidades</a>
+                            <a href="#certificados" className="block px-3 py-2 text-light-text dark:text-dark-text">Certificados</a>
+                            <a href="#contacto" className="block px-3 py-2 text-light-text dark:text-dark-text">Contacto</a>
                         </div>
                     </div>
                 )}
+
 
             </nav>
 
