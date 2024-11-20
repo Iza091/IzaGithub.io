@@ -119,7 +119,7 @@ const Contact = () => {
                                 onChange={handleChange}
                                 required
                                 placeholder="Asunto"
-                                className="w-full px-4 py-2 border border-light-secondaryBorderSubtle dark:border-dark-secondaryBorderSubtle rounded-md focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary"
+                                className="w-full px-4 py-2 border text-light-text dark:text-dark-text "
                             />
                         </div>
 
@@ -138,7 +138,7 @@ const Contact = () => {
                                 onChange={handleChange}
                                 required
                                 placeholder="Escribe un mensaje..."
-                                className="w-full px-4 py-2 border border-light-secondaryBorderSubtle dark:border-dark-secondaryBorderSubtle rounded-md focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary"
+                                className="w-full px-4 py-2 border text-light-text dark:text-light-text "
                             ></textarea>
                         </div>
 
