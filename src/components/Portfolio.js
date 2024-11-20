@@ -7,6 +7,7 @@ import izaortizImage from './img/izaortiz.webp';
 import CV from './download/IsaiasOrtiz.pdf';
 import { useTheme } from '../ThemeContext';
 import { Sun, Moon } from 'lucide-react';
+import ScrollToTopButton from './ScrollToTopButton';
 
 
 
@@ -65,20 +66,7 @@ const Portfolio = () => {
                         >
                             <Menu className="h-6 w-6 text-light-text dark:text-dark-text" />
                         </button>
-                        {/* Theme toggle button */}
-                        <button
-                            onClick={toggleTheme}
-                            className={`flex items-center gap-2 p-2 rounded transition-colors duration-300 
-        ${theme === 'light' ? 'bg-light-primary text-white hover:bg-light-link' : 'bg-dark-link text-white hover:bg-dark-link'}
-    `}
-                        >
-                            {theme === 'light' ? (
-                                <Moon className="w-5 h-5" />
-                            ) : (
-                                <Sun className="w-5 h-5" />
-                            )}
-                            <span>{theme === 'light' ? 'Modo Oscuro' : 'Modo Claro'}</span>
-                        </button>
+
 
 
 
@@ -90,21 +78,71 @@ const Portfolio = () => {
                             <a href="#certificados" className="text-light-text dark:text-dark-text">Certificados</a>
                             <a href="#contacto" className="text-light-text dark:text-dark-text">Contacto</a>
                         </div>
+                        {/* Theme toggle button */}
+                        <button
+                            onClick={toggleTheme}
+                            className={`p-2 rounded transition-colors duration-300 
+        ${theme === 'light' ? 'bg-light-primary text-white hover:bg-light-link' : 'bg-dark-link text-white hover:bg-dark-link'}
+    `}
+                            aria-label="Toggle Theme"
+                        >
+                            {theme === 'light' ? (
+                                <Moon className="w-5 h-5" />
+                            ) : (
+                                <Sun className="w-5 h-5" />
+                            )}
+                        </button>
                     </div>
                 </div>
-
                 {/* Mobile menu */}
                 {isMenuOpen && (
-                    <div className="md:hidden">
-                        <div className="px-2 pt-2 pb-3 space-y-1">
-                            <a href="#inicio" className="block px-3 py-2 text-light-text dark:text-dark-text">Inicio</a>
-                            <a href="#proyectos" className="block px-3 py-2 text-light-text dark:text-dark-text">Proyectos</a>
-                            <a href="#habilidades" className="block px-3 py-2 text-light-text dark:text-dark-text">Habilidades</a>
-                            <a href="#certificados" className="block px-3 py-2 text-light-text dark:text-dark-text">Certificados</a>
-                            <a href="#contacto" className="block px-3 py-2 text-light-text dark:text-dark-text">Contacto</a>
+                    <div
+                        className="fixed inset-0 z-50 bg-black bg-opacity-50 md:hidden"
+                        onClick={() => setIsMenuOpen(false)} // Cierra el menú al hacer clic fuera
+                    >
+                        <div
+                            className="bg-light-secondaryBg dark:bg-dark-secondaryBg w-64 px-2 pt-2 pb-3 space-y-1 absolute top-0 right-0 h-full shadow-lg"
+                            onClick={(e) => e.stopPropagation()} // Evita cerrar el menú al hacer clic dentro
+                        >
+                            <a
+                                href="#inicio"
+                                className="block px-3 py-2 text-light-text dark:text-dark-text"
+                                onClick={() => setIsMenuOpen(false)} // Cierra el menú al seleccionar
+                            >
+                                Inicio
+                            </a>
+                            <a
+                                href="#proyectos"
+                                className="block px-3 py-2 text-light-text dark:text-dark-text"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                Proyectos
+                            </a>
+                            <a
+                                href="#habilidades"
+                                className="block px-3 py-2 text-light-text dark:text-dark-text"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                Habilidades
+                            </a>
+                            <a
+                                href="#certificados"
+                                className="block px-3 py-2 text-light-text dark:text-dark-text"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                Certificados
+                            </a>
+                            <a
+                                href="#contacto"
+                                className="block px-3 py-2 text-light-text dark:text-dark-text"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                Contacto
+                            </a>
                         </div>
                     </div>
                 )}
+
             </nav>
 
             {/* Hero Section */}
@@ -133,7 +171,7 @@ const Portfolio = () => {
 
                 </div>
             </section>
-
+            <ScrollToTopButton />
             {/* Projects Section */}
             <section id="proyectos" className="py-20 bg-light-secondaryBg dark:bg-dark-secondaryBg">
                 <div className="max-w-6xl mx-auto px-4">
