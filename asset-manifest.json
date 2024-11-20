@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/IzaGithub.io/static/css/main.39509433.css",
-    "main.js": "/IzaGithub.io/static/js/main.6d76a1b1.js",
+    "main.js": "/IzaGithub.io/static/js/main.a183615c.js",
     "static/js/453.b7f67525.chunk.js": "/IzaGithub.io/static/js/453.b7f67525.chunk.js",
     "static/media/s6.webp": "/IzaGithub.io/static/media/s6.9f7542f706780bb22929.webp",
     "static/media/IsaiasOrtiz.pdf": "/IzaGithub.io/static/media/IsaiasOrtiz.e77bb8ae41fb4498c3a9.pdf",
@@ -19,11 +19,11 @@
     "static/media/izaortiz.webp": "/IzaGithub.io/static/media/izaortiz.66fbf690db123606a5d6.webp",
     "index.html": "/IzaGithub.io/index.html",
     "main.39509433.css.map": "/IzaGithub.io/static/css/main.39509433.css.map",
-    "main.6d76a1b1.js.map": "/IzaGithub.io/static/js/main.6d76a1b1.js.map",
+    "main.a183615c.js.map": "/IzaGithub.io/static/js/main.a183615c.js.map",
     "453.b7f67525.chunk.js.map": "/IzaGithub.io/static/js/453.b7f67525.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.39509433.css",
-    "static/js/main.6d76a1b1.js"
+    "static/js/main.a183615c.js"
   ]
 }
