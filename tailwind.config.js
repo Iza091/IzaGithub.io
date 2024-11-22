@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      transitionProperty: {
+        'colors': 'background-color, border-color, color, fill, stroke',
+      },
       colors: {
         // Colores del modo oscuro
         dark: {
@@ -34,5 +37,35 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addComponents }) {
+      addComponents({
+          // Dots para modo claro
+          '.slick-dots  li button:before': {
+              color: 'gray',
+              fontSize: '12px',
+          },
+          '.slick-dots li.slick-active button:before': {
+              color: 'black',
+          },
+
+          // Dots para modo oscuro
+          '.dark .slick-dots li button:before': {
+              color: 'white',
+          },
+          '.dark .slick-dots  li.slick-active button:before': {
+              color: 'yellow',
+          },
+
+          // Transiciones y escalado para los dots
+          '.slick-dots li button:before': {
+              transition: 'color 0.3s ease, transform 0.3s ease',
+          },
+          '.slick-dots li.slick-active button:before': {
+              transform: 'scale(1.3)',
+          },
+      });
+  },
+
+  ],
 };

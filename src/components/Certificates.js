@@ -8,6 +8,9 @@ import C6 from './img/s6.webp';
 import C7 from './img/s7.webp';
 import C8 from './img/s8.webp';
 import C9 from './img/s9.webp';
+import C10 from './img/s10.jpg';
+import C11 from './img/s11.jpg';
+import C12 from './img/s12.jpg';
 
 
 const Certificates = () => {
@@ -98,6 +101,24 @@ const Certificates = () => {
             issuer: "Universidad Gerardo Barrios (UGB), Usulután",
             date: "2022",
             image: C9
+        },
+        {
+            title: "Congreso Latinoamericano de Informática y Comunicaciones (CLIC)",
+            issuer: "Universidad Gerardo Barrios (UGB)",
+            date: "2023",
+            image: C10
+        },
+        {
+            title: "Habilidades en la Nube para El Salvador",
+            issuer: "Ministerio de Economía",
+            date: "2023",
+            image: C11
+        },
+        {
+            title: "Concientización sobre la Ciberseguridad",
+            issuer: "CERTRIPROF",
+            date: "2024",
+            image: C12
         }
     ];
 

@@ -13,6 +13,14 @@
   }
 }
 
+body {
+  transition: background-color 0.7s ease, color 0.7s ease;
+}
+
+.dark body {
+  transition: background-color 0.7s ease, color 0.7s ease;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -35,4 +43,33 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Dots en modo claro */
+.slick-dots li button:before {
+  color: gray; /* Color base de los dots */
+  font-size: 12px; /* Tamaño del punto */
+}
+
+.slick-dots li.slick-active button:before {
+  color: black; /* Color del dot activo */
+}
+
+/* Dots en modo oscuro */
+.dark .slick-dots li button:before {
+  color: white; /* Dots base para modo oscuro */
+}
+
+.dark .slick-dots li.slick-active button:before {
+  color: yellow; /* Dot activo en modo oscuro */
+}
+
+/* Transición para los dots */
+.slick-dots li button:before {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Aumentar tamaño del dot activo */
+.slick-dots li.slick-active button:before {
+  transform: scale(1.3); /* Dot activo más grande */
 }

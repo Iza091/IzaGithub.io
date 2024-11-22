@@ -3,7 +3,9 @@ import { Github, Linkedin, Menu } from 'lucide-react';
 import Contact from './Contact';
 import projects from './Projects';
 import Certificates from './Certificates';
+import Testimonials from './Testimonials';
 import izaortizImage from './img/izaortiz.webp';
+import IzDev from './img/favicon.svg';
 import CV from './download/IsaiasOrtiz.pdf';
 import { useTheme } from '../ThemeContext';
 import { Sun, Moon } from 'lucide-react';
@@ -44,21 +46,31 @@ const Portfolio = () => {
     };
 
     const skills = [
-        "React", "JavaScript", "HTML", "CSS", "Node.js", "Python",
-        "Android Studio", "PHP", "VueJs"
+        { name: "React", icon: "devicon-react-original" },
+        { name: "JavaScript", icon: "devicon-javascript-plain" },
+        { name: "HTML5", icon: "devicon-html5-plain" },
+        { name: "CSS3", icon: "devicon-css3-plain" },
+        { name: "Node.js", icon: "devicon-nodejs-plain" },
+        { name: "Python", icon: "devicon-python-plain" },
+        { name: "Android Studio", icon: "devicon-android-plain" },
+        { name: "PHP", icon: "devicon-php-plain" },
+        { name: "Vue.js", icon: "devicon-vuejs-plain" },
     ];
 
 
 
-
     return (
-        <div className="min-h-screen bg-light-body text-light-text dark:bg-dark-body dark:text-dark-text">
+        <div className="min-h-screen bg-light-body text-light-text dark:bg-dark-body dark:text-dark-text transition-colors duration-700">
             {/* Navbar */}
             <nav className="bg-light-secondaryBg dark:bg-dark-secondaryBg text-light-primary dark:text-dark-primary shadow-sm">
                 <div className="max-w-6xl mx-auto px-4">
                     <div className="flex justify-between items-center h-16">
-                        <h1 className="text-xl text-light-text dark:text-dark-text">IzDev</h1>
-
+                        {/* Logo */}
+                        <img
+                            src={IzDev}
+                            alt="IzDev"
+                            className="w-8 h-8 sm:w-8 sm:h-8 lg:w-10 lg:h-10" // Tamaños adaptables
+                        />
                         {/* Mobile menu button */}
                         <button
                             className="md:hidden p-2"
@@ -80,10 +92,10 @@ const Portfolio = () => {
                                 }
                             }}
                         >
-                            <a href="#inicio" className="text-light-text dark:text-dark-text">Inicio</a>
                             <a href="#proyectos" className="text-light-text dark:text-dark-text">Proyectos</a>
                             <a href="#habilidades" className="text-light-text dark:text-dark-text">Habilidades</a>
                             <a href="#certificados" className="text-light-text dark:text-dark-text">Certificados</a>
+                            <a href="#testimonios" className="text-light-text dark:text-dark-text">Testimonios</a>
                             <a href="#contacto" className="text-light-text dark:text-dark-text">Contacto</a>
                         </div>
 
@@ -124,10 +136,10 @@ const Portfolio = () => {
                                 }
                             }}
                         >
-                            <a href="#inicio" className="block px-3 py-2 text-light-text dark:text-dark-text">Inicio</a>
                             <a href="#proyectos" className="block px-3 py-2 text-light-text dark:text-dark-text">Proyectos</a>
                             <a href="#habilidades" className="block px-3 py-2 text-light-text dark:text-dark-text">Habilidades</a>
                             <a href="#certificados" className="block px-3 py-2 text-light-text dark:text-dark-text">Certificados</a>
+                            <a href="#testimonios" className="block px-3 py-2 text-light-text dark:text-dark-text">Testimonios</a>
                             <a href="#contacto" className="block px-3 py-2 text-light-text dark:text-dark-text">Contacto</a>
                         </div>
                     </div>
@@ -163,6 +175,7 @@ const Portfolio = () => {
                 </div>
             </section>
             <ScrollToTopButton />
+
             {/* Projects Section */}
             <section id="proyectos" className="py-20 bg-light-secondaryBg dark:bg-dark-secondaryBg">
                 <div className="max-w-6xl mx-auto px-4">
@@ -171,7 +184,7 @@ const Portfolio = () => {
                         {projects.map((project, index) => (
                             <div
                                 key={index}
-                                className="bg-light-body dark:bg-dark-secondaryBg rounded-lg shadow-md overflow-hidden cursor-pointer"
+                                className="bg-light-body dark:bg-dark-body rounded-lg shadow-md overflow-hidden cursor-pointer transition-transform hover:scale-105"
                                 onClick={() => openModal(project)}
                             >
                                 <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
@@ -198,7 +211,7 @@ const Portfolio = () => {
                         {/* Close Button */}
                         <button
                             onClick={closeModal}
-                            className="absolute top-4 right-4 text-2xl text-light-text dark:text-dark-text z-10 hover:text-red-500 transition-colors duration-200"
+                            className="absolute top-4 right-4 text-2xl text-light-text dark:text-dark-link z-10 hover:text-red-500 transition-colors duration-200"
                             aria-label="Cerrar Modal"
                         >
                             ✕
@@ -246,29 +259,42 @@ const Portfolio = () => {
 
 
             {/* Skills Section */}
-            <section id="habilidades" className="py-20py-20 bg-light-secondaryBg dark:bg-dark-secondaryBg">
+            <section id="habilidades" className="py-20 bg-light-secondaryBg dark:bg-dark-secondaryBg">
                 <div className="max-w-6xl mx-auto px-4">
-                    <h2 className="text-3xl font-bold text-center mb-12">Habilidades</h2>
-                    <div className="flex flex-wrap justify-center gap-4">
+                    <h2 className="text-3xl font-bold text-center mb-12 text-light-text dark:text-dark-text">
+                        Habilidades
+                    </h2>
+                    <div className="flex flex-wrap justify-center gap-8">
                         {skills.map((skill, index) => (
-                            <span
+                            <div
                                 key={index}
-                                className="px-4 py-2 bg-light-secondaryBg dark:bg-dark-secondaryBg text-light-text dark:text-dark-text rounded-full"
+                                className="flex flex-col items-center gap-2 transition-transform hover:scale-105"
                             >
-                                {skill}
-                            </span>
+                                {/* Ícono dinámico */}
+                                <i
+                                    className={`${skill.icon} text-5xl text-light-link dark:text-dark-link`}
+                                    title={skill.name} // Tooltip
+                                ></i>
+                                {/* Nombre de la habilidad */}
+                                <span className="text-sm text-light-text dark:text-dark-text">
+                                    {skill.name}
+                                </span>
+                            </div>
                         ))}
                     </div>
                 </div>
             </section>
-
 
             {/* Certificates Section */}
             <section id="certificados" className="py-20 bg-light-secondaryBg dark:bg-dark-secondaryBg">
                 <Certificates />
             </section>
 
-
+            {/* Testimonial Section */}
+            <section id="testimonios" className=" bg-light-secondaryBg dark:bg-dark-secondaryBg">
+                {/* Testimonial Form */}
+                <Testimonials />
+            </section>
 
             {/* Contact Section */}
             <section id="contacto" className=" bg-light-secondaryBg dark:bg-dark-secondaryBg">
@@ -288,6 +314,7 @@ const Portfolio = () => {
                         <div className="flex space-x-6">
                             <a
                                 target="_blank"
+                                rel="noreferrer"
                                 href="https://github.com/Iza091"
                                 className="text-light-text dark:text-dark-text hover:text-light-primary dark:hover:text-dark-link transition-colors duration-200"
                                 aria-label="Github"
@@ -296,6 +323,7 @@ const Portfolio = () => {
                             </a>
                             <a
                                 target="_blank"
+                                rel="noreferrer"
                                 href="https://www.linkedin.com/in/eisaiasvllgsortiz/"
                                 className="text-light-text dark:text-dark-text hover:text-light-primary dark:hover:text-dark-link transition-colors duration-200"
                                 aria-label="LinkedIn"
