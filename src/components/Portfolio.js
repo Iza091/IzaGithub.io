@@ -4,7 +4,7 @@ import Contact from './Contact';
 import projects from './Projects';
 import Certificates from './Certificates';
 import Testimonials from './Testimonials';
-import izaortizImage from './img/izaortiz.webp';
+import izaortizImage from './img/iza.png';
 import IzDev from './img/favicon.svg';
 import CV from './download/IsaiasOrtiz.pdf';
 import { useTheme } from '../ThemeContext';
@@ -259,7 +259,7 @@ const Portfolio = () => {
 
 
             {/* Skills Section */}
-            <section id="habilidades" className="py-20 bg-light-secondaryBg dark:bg-dark-secondaryBg">
+            <section id="habilidades" className="py-20 bg-light-body dark:bg-dark-body">
                 <div className="max-w-6xl mx-auto px-4">
                     <h2 className="text-3xl font-bold text-center mb-12 text-light-text dark:text-dark-text">
                         Habilidades
@@ -286,7 +286,7 @@ const Portfolio = () => {
             </section>
 
             {/* Certificates Section */}
-            <section id="certificados" className="py-20 bg-light-secondaryBg dark:bg-dark-secondaryBg">
+            <section id="certificados" className="py-20 bg-light-body dark:bg-dark-secondaryBg">
                 <Certificates />
             </section>
 
@@ -297,13 +297,13 @@ const Portfolio = () => {
             </section>
 
             {/* Contact Section */}
-            <section id="contacto" className=" bg-light-secondaryBg dark:bg-dark-secondaryBg">
+            <section id="contacto" className=" bg-light-body dark:bg-dark-body">
                 {/* Contact Form */}
                 <Contact />
             </section>
 
             {/* Footer */}
-            <footer className="bg-light-secondaryBg dark:bg-dark-secondaryBg py-8">
+            <footer className="bg-light-body dark:bg-dark-body py-8">
                 <div className="max-w-6xl mx-auto px-4 space-y-4">
                     {/* Contenedor para alinear verticalmente los elementos */}
                     <div className="flex flex-col items-center space-y-4">

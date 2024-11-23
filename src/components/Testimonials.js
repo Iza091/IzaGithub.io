@@ -42,7 +42,7 @@ const testimonials = [
         name: "Miguel Peñalba",
         image: t1,
         profession: "Ingeniero en Sistemas y Redes Informáticas",
-        feedback: "Un compañero muy comprometido y dedicado a su formación en ingeniería en sistemas, siempre demuestra una gran capacidad para resolver problemas técnicos y una disposición admirable para colaborar con los demás.",
+        feedback: "Es un compañero muy comprometido y dedicado a su formación en ingeniería en sistemas, siempre demuestra una gran capacidad para resolver problemas técnicos y una disposición admirable para colaborar con los demás.",
     },
     {
         name: "Cristian Alemán",
@@ -60,7 +60,7 @@ const testimonials = [
         name: "Nayeli Pineda",
         image: t6,
         profession: "Técnica en Ingenieria en Sistemas y Redes Informáticas",
-        feedback: "Es un buen compañero: responsable, trabajador y honesto. Se dedica con pasión a su carrera, especialmente en el área de programación. Además, tiene la capacidad de trabajar bajo presión de manera efectiva",
+        feedback: "Es un buen compañero: Responsable, trabajador y honesto. Se dedica con pasión a su carrera, especialmente en el área de programación. Además, tiene la capacidad de trabajar bajo presión de manera efectiva",
     },
 ];
 
@@ -97,7 +97,7 @@ const Testimonials = () => {
     };
 
     return (
-        <section className="py-20 bg-light-secondaryBg dark:bg-dark-secondaryBg">
+        <section className="py-20 bg-light-body dark:bg-dark-body">
             <div className="max-w-3xl mx-auto px-4 relative">
                 <h2 className="text-3xl font-bold text-center mb-12 text-light-text dark:text-dark-text">
                     Testimonios
