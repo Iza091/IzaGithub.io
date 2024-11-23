@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/IzaGithub.io/static/css/main.83cda6e5.css",
-    "main.js": "/IzaGithub.io/static/js/main.9d117f9a.js",
+    "main.css": "/IzaGithub.io/static/css/main.0e127917.css",
+    "main.js": "/IzaGithub.io/static/js/main.23bcd761.js",
     "static/js/453.f40f2823.chunk.js": "/IzaGithub.io/static/js/453.f40f2823.chunk.js",
     "static/media/t6.png": "/IzaGithub.io/static/media/t6.bf4b5a7de49f6aea738d.png",
     "static/media/t2.png": "/IzaGithub.io/static/media/t2.7b34047a14200fee189f.png",
-    "static/media/t1.png": "/IzaGithub.io/static/media/t1.6db435406a0fe2925544.png",
     "static/media/t5.png": "/IzaGithub.io/static/media/t5.02a20317c24e2bdb96c3.png",
+    "static/media/iza.png": "/IzaGithub.io/static/media/iza.8c4c38a631acfe737625.png",
+    "static/media/t1.png": "/IzaGithub.io/static/media/t1.7c5ef6b8ec2416b62169.png",
     "static/media/s6.webp": "/IzaGithub.io/static/media/s6.9f7542f706780bb22929.webp",
     "static/media/IsaiasOrtiz.pdf": "/IzaGithub.io/static/media/IsaiasOrtiz.e77bb8ae41fb4498c3a9.pdf",
     "static/media/s3.webp": "/IzaGithub.io/static/media/s3.7f49b4113e74401c4972.webp",
@@ -23,19 +24,18 @@
     "static/media/project-1.webp": "/IzaGithub.io/static/media/project-1.2f184f252d75aabd1d80.webp",
     "static/media/project-2.webp": "/IzaGithub.io/static/media/project-2.8d3ee0547a06e6abe6cc.webp",
     "static/media/project-3.webp": "/IzaGithub.io/static/media/project-3.998649cb00325342abf4.webp",
-    "static/media/izaortiz.webp": "/IzaGithub.io/static/media/izaortiz.66fbf690db123606a5d6.webp",
     "static/media/slick.svg": "/IzaGithub.io/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/IzaGithub.io/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/IzaGithub.io/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/IzaGithub.io/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/IzaGithub.io/index.html",
     "static/media/favicon.svg": "/IzaGithub.io/static/media/favicon.202571c7619e3a1596284bdbc0eecb64.svg",
-    "main.83cda6e5.css.map": "/IzaGithub.io/static/css/main.83cda6e5.css.map",
-    "main.9d117f9a.js.map": "/IzaGithub.io/static/js/main.9d117f9a.js.map",
+    "main.0e127917.css.map": "/IzaGithub.io/static/css/main.0e127917.css.map",
+    "main.23bcd761.js.map": "/IzaGithub.io/static/js/main.23bcd761.js.map",
     "453.f40f2823.chunk.js.map": "/IzaGithub.io/static/js/453.f40f2823.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.83cda6e5.css",
-    "static/js/main.9d117f9a.js"
+    "static/css/main.0e127917.css",
+    "static/js/main.23bcd761.js"
   ]
 }
