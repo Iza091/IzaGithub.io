@@ -15,6 +15,7 @@ import C12 from './img/s12.jpg';
 
 const Certificates = () => {
     const [selectedCertificate, setSelectedCertificate] = useState(null);
+    const [selectedCategory, setSelectedCategory] = useState('Todo');
 
 
     // Add this useEffect to handle Escape key
@@ -49,115 +50,148 @@ const Certificates = () => {
             title: "Junior Tech",
             issuer: "Instituto Nacional de Usulután (INU)",
             date: "2014",
-            image: C3
+            image: C3,
+            category: "Diplomas",
         },
         {
             title: "Master En Tecnología ",
             issuer: "Instituto Nacional de Usulután (INU)",
             date: "2015",
-            image: C4
+            image: C4,
+            category: "Diplomas",
         },
         {
             title: "Competencias Lingüisticas A1",
             issuer: "Universidad Gerardo Barrios (UGB), Usulután",
             date: "2016",
-            image: C2
+            image: C2,
+            category: "Certificados",
         },
 
         {
             title: "Mantenimiento e Instalación de Computadoras",
             issuer: "Instituto Nacional de Usulután (INU)",
             date: "2016",
-            image: C5
+            image: C5,
+            category: "Diplomas",
         },
         {
             title: "Fundamentos de Aplicación y Desarrollo en HTML5",
             issuer: "Alcaldía Municipal de Usulután",
             date: "2016",
-            image: C6
+            image: C6,
+            category: "Diplomas",
         },
         {
             title: "Aprendiendo Ciencias",
             issuer: "Universidad Gerardo Barrios (UGB), Usulután",
             date: "2017",
-            image: C7
+            image: C7,
+            category: "Diplomas",
         },
         {
             title: "Congreso Latinoamericano de Informática y Comunicaciones (CLIC)",
             issuer: "Universidad Gerardo Barrios (UGB)",
             date: "2021",
-            image: C1
+            image: C1,
+            category: "Diplomas",
         },
 
         {
             title: "Congreso Latinoamericano de Informática y Comunicaciones (CLIC)",
             issuer: "Universidad Gerardo Barrios (UGB)",
             date: "2022",
-            image: C8
+            image: C8,
+            category: "Diplomas",
         },
         {
             title: "Feria de Emprendimiento Tecnológico. ",
             proyect: "Proyecto: MyCouple",
             issuer: "Universidad Gerardo Barrios (UGB), Usulután",
             date: "2022",
-            image: C9
+            image: C9,
+            category: "Diplomas",
         },
         {
             title: "Congreso Latinoamericano de Informática y Comunicaciones (CLIC)",
             issuer: "Universidad Gerardo Barrios (UGB)",
             date: "2023",
-            image: C10
+            image: C10,
+            category: "Diplomas",
         },
         {
             title: "Habilidades en la Nube para El Salvador",
             issuer: "Ministerio de Economía",
             date: "2023",
-            image: C11
+            image: C11,
+            category: "Diplomas",
         },
         {
             title: "Concientización sobre la Ciberseguridad",
             issuer: "CERTRIPROF",
             date: "2024",
-            image: C12
+            image: C12,
+            category: "Certificados",
         }
     ];
-
+    const filteredCertificates = certificates.filter((cert) =>
+        selectedCategory === 'Todo' ? true : cert.category === selectedCategory
+    );
 
     return (
         <section id="certificados" className="py-20 bg-light-secondaryBg dark:bg-dark-secondaryBg">
-            <div className="max-w-6xl mx-auto px-4">
-                <h2 className="text-3xl font-bold text-center mb-12 text-light-text dark:text-dark-text">
-                    Certificados
-                </h2>
-                <div className="grid md:grid-cols-3 gap-8">
-                    {certificates.map((cert, index) => (
-                        <div
-                            key={index}
-                            className="bg-light-body dark:bg-dark-body rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105 cursor-pointer"
-                            onClick={() => openModal(cert)}
-                        >
-                            <img
-                                src={cert.image}
-                                alt={cert.title}
-                                className="w-full h-48 object-cover"
-                            />
-                            <div className="p-6">
-                                <h3 className="text-xl font-semibold mb-2 text-light-text dark:text-dark-text">
-                                    {cert.title}
-                                </h3>
-                                {cert.proyect && (
-                                    <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
-                                        {cert.proyect}
-                                    </p>
-                                )}
-                                <div className="flex justify-between text-gray-600 dark:text-gray-400">
-                                    <span>{cert.issuer}</span>
-                                    <span>{cert.date}</span>
-                                </div>
+        <div className="max-w-6xl mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-12 text-light-text dark:text-dark-text">
+                Certificados
+            </h2>
+
+            {/* Filtro de categorías */}
+            <div className="flex justify-center mb-8 space-x-4">
+                {['Todo', 'Certificados', 'Diplomas'].map((category) => (
+                    <button
+                        key={category}
+                        onClick={() => setSelectedCategory(category)}
+                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
+                            selectedCategory === category
+                                ? 'bg-light-link text-white dark:bg-dark-link'
+                                : 'bg-light-body text-ligth-text dark:bg-dark-body dark:text-dark-text'
+                        }`}
+                    >
+                        {category}
+                    </button>
+                ))}
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+                {filteredCertificates.map((cert, index) => (
+                    <div
+                        key={index}
+                        className="bg-light-body dark:bg-dark-body rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105 cursor-pointer"
+                        onClick={() => openModal(cert)}
+                    >
+                        <img
+                            src={cert.image}
+                            alt={cert.title}
+                            className="w-full h-48 object-cover"
+                        />
+                        <div className="p-6">
+                            <h3 className="text-xl font-semibold mb-2 text-light-text dark:text-dark-text">
+                                {cert.title}
+                            </h3>
+                            {cert.proyect && (
+                                <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
+                                    {cert.proyect}
+                                </p>
+                            )}
+                            <div className="flex justify-between text-gray-600 dark:text-gray-400">
+                                <span>{cert.issuer}</span>
+                                <span>{cert.date}</span>
                             </div>
                         </div>
-                    ))}
-                </div>
+                    </div>
+                ))}
+            </div>
+
 
                 {/* Modal */}
                 {selectedCertificate && (

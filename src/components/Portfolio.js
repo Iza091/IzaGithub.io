@@ -4,6 +4,7 @@ import Contact from './Contact';
 import projects from './Projects';
 import Certificates from './Certificates';
 import Testimonials from './Testimonials';
+import Skills from "./Skills";
 import izaortizImage from './img/iza.png';
 import IzDev from './img/favicon.svg';
 import CV from './download/IsaiasOrtiz.pdf';
@@ -44,19 +45,6 @@ const Portfolio = () => {
     const closeModal = () => {
         setSelectedProject(null);
     };
-
-    const skills = [
-        { name: "React", icon: "devicon-react-original" },
-        { name: "JavaScript", icon: "devicon-javascript-plain" },
-        { name: "HTML5", icon: "devicon-html5-plain" },
-        { name: "CSS3", icon: "devicon-css3-plain" },
-        { name: "Node.js", icon: "devicon-nodejs-plain" },
-        { name: "Python", icon: "devicon-python-plain" },
-        { name: "Android Studio", icon: "devicon-android-plain" },
-        { name: "PHP", icon: "devicon-php-plain" },
-        { name: "Vue.js", icon: "devicon-vuejs-plain" },
-    ];
-
 
 
     return (
@@ -159,7 +147,7 @@ const Portfolio = () => {
                     <h1 className="text-4xl font-bold mb-4 text-light-text dark:text-dark-text">Isaías Ortiz</h1>
                     <p className="text-xl  text-light-text dark:text-dark-text mb-8">Desarrollador Full Stack</p>
                     <p className="max-w-2xl mx-auto  text-light-text dark:text-dark-text">
-                        Un desarrollador 👨🏻‍💻 nacido en San Salvador, El Salvador y desarrollado en Usulután, El Salvador.
+                        "Tu eres bueno, sigue adelante."
                     </p>
                     {/* Curriculum */}
                     <div className="flex justify-center mt-5">
@@ -169,9 +157,9 @@ const Portfolio = () => {
                             className="py-2 px-4 rounded transition-colors duration-300 bg-light-link text-white hover:bg-light-link dark:bg-dark-link dark:hover:bg-dark-link"
                         >
                             Descargar CV
-                        </a>
+                        </a>    
                     </div>
-
+                    
                 </div>
             </section>
             <ScrollToTopButton />
@@ -260,29 +248,7 @@ const Portfolio = () => {
 
             {/* Skills Section */}
             <section id="habilidades" className="py-20 bg-light-body dark:bg-dark-body">
-                <div className="max-w-6xl mx-auto px-4">
-                    <h2 className="text-3xl font-bold text-center mb-12 text-light-text dark:text-dark-text">
-                        Habilidades
-                    </h2>
-                    <div className="flex flex-wrap justify-center gap-8">
-                        {skills.map((skill, index) => (
-                            <div
-                                key={index}
-                                className="flex flex-col items-center gap-2 transition-transform hover:scale-105"
-                            >
-                                {/* Ícono dinámico */}
-                                <i
-                                    className={`${skill.icon} text-5xl text-light-link dark:text-dark-link`}
-                                    title={skill.name} // Tooltip
-                                ></i>
-                                {/* Nombre de la habilidad */}
-                                <span className="text-sm text-light-text dark:text-dark-text">
-                                    {skill.name}
-                                </span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                <Skills />
             </section>
 
             {/* Certificates Section */}
