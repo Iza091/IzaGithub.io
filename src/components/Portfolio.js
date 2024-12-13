@@ -5,6 +5,7 @@ import projects from './Projects';
 import Certificates from './Certificates';
 import Testimonials from './Testimonials';
 import Skills from "./Skills";
+import AboutMe from './AboutMe';
 import izaortizImage from './img/iza.png';
 import IzDev from './img/favicon.svg';
 import CV from './download/IsaiasOrtiz.pdf';
@@ -80,6 +81,7 @@ const Portfolio = () => {
                                 }
                             }}
                         >
+                             <a href="#about" className="text-light-text dark:text-dark-text">Sobre Mi</a>
                             <a href="#proyectos" className="text-light-text dark:text-dark-text">Proyectos</a>
                             <a href="#habilidades" className="text-light-text dark:text-dark-text">Habilidades</a>
                             <a href="#certificados" className="text-light-text dark:text-dark-text">Certificados</a>
@@ -124,6 +126,7 @@ const Portfolio = () => {
                                 }
                             }}
                         >
+                            <a href="#about" className="block px-3 py-2 text-light-text dark:text-dark-text">Sobre Mi</a>
                             <a href="#proyectos" className="block px-3 py-2 text-light-text dark:text-dark-text">Proyectos</a>
                             <a href="#habilidades" className="block px-3 py-2 text-light-text dark:text-dark-text">Habilidades</a>
                             <a href="#certificados" className="block px-3 py-2 text-light-text dark:text-dark-text">Certificados</a>
@@ -163,10 +166,14 @@ const Portfolio = () => {
                 </div>
             </section>
             <ScrollToTopButton />
+            {/* Sobre Mi */}
 
+            <section id="about" className='py-20 bg-light-body dark:bg-dark-body'>
+                <AboutMe/>
+            </section>
             {/* Projects Section */}
             <section id="proyectos" className="py-20 bg-light-secondaryBg dark:bg-dark-secondaryBg">
-                <div className="max-w-6xl mx-auto px-4">
+                <div className="max-w-6xl mx-auto px-4 ">
                     <h2 className="text-3xl font-bold text-center mb-12">Proyectos</h2>
                     <div className="grid md:grid-cols-3 gap-8">
                         {projects.map((project, index) => (

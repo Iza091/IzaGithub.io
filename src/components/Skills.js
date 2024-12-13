@@ -1,19 +1,14 @@
 import React from "react";
-import { 
-    MessageSquare, 
-    Users, 
-    Trophy,
+import {
+    MessageSquare,
+    Users,
     Lightbulb,
     Clock,
     Brain,
-    Target,
-    Heart,
-    Presentation,
     Star,
+    Target,
     Shield,
     HandHeart,
-    Glasses,
-    Goal,
     Rocket
 } from "lucide-react";
 
@@ -36,29 +31,24 @@ const Skills = () => {
             icon: MessageSquare, 
             description: "Comunicación efectiva y clara en equipos"
         },
-        { 
-            name: "Trabajo en equipo", 
-            icon: Users, 
+        {
+            name: "Trabajo en equipo",
+            icon: Users,
             description: "Colaboración y sinergia grupal"
         },
-        { 
-            name: "Liderazgo", 
-            icon: Trophy, 
-            description: "Capacidad de guiar y motivar equipos"
-        },
-        { 
-            name: "Resolución de problemas", 
-            icon: Lightbulb, 
+        {
+            name: "Resolución de problemas",
+            icon: Lightbulb,
             description: "Análisis y solución creativa de desafíos"
         },
-        { 
-            name: "Gestión del tiempo", 
-            icon: Clock, 
+        {
+            name: "Gestión del tiempo",
+            icon: Clock,
             description: "Organización y productividad eficiente"
         },
-        { 
-            name: "Pensamiento crítico", 
-            icon: Brain, 
+        {
+            name: "Pensamiento crítico",
+            icon: Brain,
             description: "Análisis profundo y toma de decisiones"
         },
         { 
@@ -66,16 +56,7 @@ const Skills = () => {
             icon: Target, 
             description: "Enfoque en resultados y metas"
         },
-        { 
-            name: "Inteligencia emocional", 
-            icon: Heart, 
-            description: "Empatía y gestión emocional"
-        },
-        { 
-            name: "Habilidades de presentación", 
-            icon: Presentation, 
-            description: "Comunicación efectiva en presentaciones"
-        }
+
     ];
 
     const values = [
@@ -96,7 +77,7 @@ const Skills = () => {
         },
         {
             name: "Innovación",
-            icon: Glasses,
+            icon: Rocket,
             description: "Exploración continua de nuevas soluciones y tecnologías"
         }
     ];
@@ -104,21 +85,7 @@ const Skills = () => {
     return (
         <section className="py-24 bg-gradient-to-b from-light-body to-gray-50 dark:from-dark-body dark:to-gray-900">
             <div className="max-w-6xl mx-auto px-4">
-                 {/* Mi Objetivo */}
-                 <div className="mb-20">
-                    <h2 className="text-4xl font-bold text-center mb-8 text-light-text dark:text-dark-text">
-                        Mi Objetivo
-                    </h2>
-                    <div className="relative flex flex-col items-center p-8 rounded-xl bg-light-body dark:bg-dark-secondaryBg backdrop-blur-sm shadow-lg">
-                        <div className="flex-shrink-0 w-20 h-20 flex items-center justify-center rounded-full bg-light-text/10 dark:bg-dark-text/10 mb-6">
-                            <Rocket className="w-10 h-10 text-light-text dark:text-dark-text" strokeWidth={1.5} />
-                        </div>
-                        <p className="text-center text-lg text-light-text dark:text-dark-text max-w-3xl">
-                            "Desarrollar soluciones tecnológicas innovadoras que impacten positivamente en la vida de las personas, 
-                            mientras continúo creciendo profesionalmente y contribuyo al éxito de proyectos desafiantes"
-                        </p>
-                    </div>
-                </div>
+                
                 <h2 className="text-4xl font-bold text-center mb-16 text-light-text dark:text-dark-text">
                     Mis Habilidades
                 </h2>
@@ -158,9 +125,9 @@ const Skills = () => {
                                 className="group flex items-center gap-6 p-6 rounded-xl bg-light-body dark:bg-dark-secondaryBg backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
                             >
                                 <div className="flex-shrink-0 w-16 h-16 flex items-center justify-center rounded-full bg-light-text/10 dark:bg-dark-text/10 group-hover:bg-light-text/20 dark:group-hover:bg-dark-text/20 transition-colors duration-300">
-                                    {React.createElement(skill.icon, { 
+                                    {React.createElement(skill.icon, {
                                         className: "w-8 h-8 text-light-text dark:text-dark-text",
-                                        strokeWidth: 1.5 
+                                        strokeWidth: 1.5
                                     })}
                                 </div>
                                 <div>
@@ -175,7 +142,37 @@ const Skills = () => {
                         ))}
                     </div>
                 </div>
+                <div className="mt-20">
+                    <h3 className="text-2xl font-bold text-center mb-8 text-light-text dark:text-dark-text">
+                        Valores
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                        {values.map((value, index) => (
+                            <div
+                                key={index}
+                                className="group flex items-center gap-6 p-6 rounded-xl bg-light-body dark:bg-dark-secondaryBg backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                            >
+                                <div className="flex-shrink-0 w-16 h-16 flex items-center justify-center rounded-full bg-light-text/10 dark:bg-dark-text/10 group-hover:bg-light-text/20 dark:group-hover:bg-dark-text/20 transition-colors duration-300">
+                                    {React.createElement(value.icon, {
+                                        className: "w-8 h-8 text-light-text dark:text-dark-text",
+                                        strokeWidth: 1.5
+                                    })}
+                                </div>
+                                <div>
+                                    <h4 className="font-semibold text-lg text-light-text dark:text-dark-text mb-1">
+                                        {value.name}
+                                    </h4>
+                                    <p className="text-sm text-light-text/80 dark:text-dark-text/90">
+                                        {value.description}
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
             </div>
+
         </section>
     );
 };
