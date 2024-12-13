@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/IzaGithub.io/static/css/main.4387d225.css",
-    "main.js": "/IzaGithub.io/static/js/main.c354bf91.js",
+    "main.css": "/IzaGithub.io/static/css/main.1f9f5987.css",
+    "main.js": "/IzaGithub.io/static/js/main.39840d03.js",
     "static/js/453.f40f2823.chunk.js": "/IzaGithub.io/static/js/453.f40f2823.chunk.js",
     "static/media/t6.png": "/IzaGithub.io/static/media/t6.bf4b5a7de49f6aea738d.png",
     "static/media/t2.png": "/IzaGithub.io/static/media/t2.7b34047a14200fee189f.png",
@@ -9,11 +9,11 @@
     "static/media/iza.png": "/IzaGithub.io/static/media/iza.8c4c38a631acfe737625.png",
     "static/media/t1.png": "/IzaGithub.io/static/media/t1.7c5ef6b8ec2416b62169.png",
     "static/media/s6.webp": "/IzaGithub.io/static/media/s6.9f7542f706780bb22929.webp",
-    "static/media/IsaiasOrtiz.pdf": "/IzaGithub.io/static/media/IsaiasOrtiz.e77bb8ae41fb4498c3a9.pdf",
     "static/media/s3.webp": "/IzaGithub.io/static/media/s3.7f49b4113e74401c4972.webp",
     "static/media/s4.webp": "/IzaGithub.io/static/media/s4.6dd06ad6ef0b6c140895.webp",
     "static/media/s5.webp": "/IzaGithub.io/static/media/s5.27e11765423b443401b9.webp",
     "static/media/s2.webp": "/IzaGithub.io/static/media/s2.42d893d821c0c27b1891.webp",
+    "static/media/IsaiasOrtiz.pdf": "/IzaGithub.io/static/media/IsaiasOrtiz.eeb73e8cbace81b180a8.pdf",
     "static/media/s10.jpg": "/IzaGithub.io/static/media/s10.2d51e444ebf2b67dbedc.jpg",
     "static/media/s8.webp": "/IzaGithub.io/static/media/s8.05363aba3f98f84cd5a5.webp",
     "static/media/s12.jpg": "/IzaGithub.io/static/media/s12.7782a8d75f462331ddba.jpg",
@@ -30,12 +30,12 @@
     "static/media/slick.woff": "/IzaGithub.io/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/IzaGithub.io/index.html",
     "static/media/favicon.svg": "/IzaGithub.io/static/media/favicon.202571c7619e3a1596284bdbc0eecb64.svg",
-    "main.4387d225.css.map": "/IzaGithub.io/static/css/main.4387d225.css.map",
-    "main.c354bf91.js.map": "/IzaGithub.io/static/js/main.c354bf91.js.map",
+    "main.1f9f5987.css.map": "/IzaGithub.io/static/css/main.1f9f5987.css.map",
+    "main.39840d03.js.map": "/IzaGithub.io/static/js/main.39840d03.js.map",
     "453.f40f2823.chunk.js.map": "/IzaGithub.io/static/js/453.f40f2823.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4387d225.css",
-    "static/js/main.c354bf91.js"
+    "static/css/main.1f9f5987.css",
+    "static/js/main.39840d03.js"
   ]
 }
