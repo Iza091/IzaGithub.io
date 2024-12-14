@@ -15,7 +15,7 @@ import {
 const Skills = () => {
     const hardSkills = [
         { name: "React", icon: "devicon-react-original" },
-        { name: "JavaScript", icon: "devicon-javascript-plain" },
+        { name: "JS", icon: "devicon-javascript-plain" },
         { name: "HTML5", icon: "devicon-html5-plain" },
         { name: "CSS3", icon: "devicon-css3-plain" },
         { name: "Node.js", icon: "devicon-nodejs-plain" },
@@ -54,7 +54,7 @@ const Skills = () => {
         { 
             name: "Orientación a objetivos", 
             icon: Target, 
-            description: "Enfoque en resultados y metas"
+            description: "Enfocado en resultados y metas"
         },
 
     ];
@@ -73,7 +73,7 @@ const Skills = () => {
         {
             name: "Compromiso",
             icon: HandHeart,
-            description: "Dedicación total a los objetivos y necesidades del cliente"
+            description: "Dedicación total al trabajo"
         },
         {
             name: "Innovación",

@@ -64,6 +64,28 @@ module.exports = {
           '.slick-dots li.slick-active button:before': {
               transform: 'scale(1.3)',
           },
+           /* Barra de desplazamiento personalizada */
+           'body::-webkit-scrollbar': {
+            width: '10px',
+          },
+          'body::-webkit-scrollbar-thumb': {
+            backgroundColor: 'var(--tw-scrollbar-thumb)',
+            borderRadius: '10px',
+          },
+          'body::-webkit-scrollbar-track': {
+            backgroundColor: 'var(--tw-scrollbar-track)',
+          },
+          /* Modo claro */
+          ':root': {
+            '--tw-scrollbar-thumb': '#1f5a8a', /* Gris claro */
+            '--tw-scrollbar-track': '#f3f5f6', /* Fondo claro */
+          },
+  
+          /* Modo oscuro */
+          '.dark': {
+            '--tw-scrollbar-thumb': '#ff0077', /* Gris oscuro */
+            '--tw-scrollbar-track': '#1b2840', /* Fondo oscuro */
+          },
       });
   },
 
