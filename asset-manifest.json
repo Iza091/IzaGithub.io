@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/IzaGithub.io/static/css/main.1f9f5987.css",
-    "main.js": "/IzaGithub.io/static/js/main.39840d03.js",
+    "main.css": "/IzaGithub.io/static/css/main.55deff6c.css",
+    "main.js": "/IzaGithub.io/static/js/main.d1fff9f6.js",
     "static/js/453.f40f2823.chunk.js": "/IzaGithub.io/static/js/453.f40f2823.chunk.js",
     "static/media/t6.png": "/IzaGithub.io/static/media/t6.bf4b5a7de49f6aea738d.png",
     "static/media/t2.png": "/IzaGithub.io/static/media/t2.7b34047a14200fee189f.png",
@@ -30,12 +30,12 @@
     "static/media/slick.woff": "/IzaGithub.io/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/IzaGithub.io/index.html",
     "static/media/favicon.svg": "/IzaGithub.io/static/media/favicon.202571c7619e3a1596284bdbc0eecb64.svg",
-    "main.1f9f5987.css.map": "/IzaGithub.io/static/css/main.1f9f5987.css.map",
-    "main.39840d03.js.map": "/IzaGithub.io/static/js/main.39840d03.js.map",
+    "main.55deff6c.css.map": "/IzaGithub.io/static/css/main.55deff6c.css.map",
+    "main.d1fff9f6.js.map": "/IzaGithub.io/static/js/main.d1fff9f6.js.map",
     "453.f40f2823.chunk.js.map": "/IzaGithub.io/static/js/453.f40f2823.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1f9f5987.css",
-    "static/js/main.39840d03.js"
+    "static/css/main.55deff6c.css",
+    "static/js/main.d1fff9f6.js"
   ]
 }
