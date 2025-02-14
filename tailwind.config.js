@@ -37,37 +37,6 @@ module.exports = {
   plugins: [
     function ({ addComponents }) {
       addComponents({
-        /* Asegura que los dots estén correctamente alineados */
-        '.custom-dots': {
-          position: 'absolute !important',
-          bottom: '0px !important', // 🔹 Se colocan justo debajo del testimonio
-          left: '50%',
-          transform: 'translateX(-50%)',
-          display: 'flex !important',
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: '0 !important',
-          margin: '0 !important',
-      },
-
-        /* 🔹 Modo claro */
-        '.slick-dots li button:before': {
-          color: '#6b7280', // Gris
-          fontSize: '12px',
-          transition: 'color 0.3s ease, transform 0.3s ease',
-        },
-        '.slick-dots li.slick-active button:before': {
-          color: '#1e3a8a',
-          transform: 'scale(1.3)',
-        },
-
-        /* 🔹 Modo oscuro */
-        '.dark .slick-dots li button:before': {
-          color: '#9ca3af',
-        },
-        '.dark .slick-dots li.slick-active button:before': {
-          color: '#ff0077',
-        },
       });
     },
   ],

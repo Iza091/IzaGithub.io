@@ -141,7 +141,7 @@ const Portfolio = () => {
             <section id="about" className='py-20 bg-light-body dark:bg-dark-body'>
                 <AboutMe />
             </section>
-
+                
             {/* Projects Section */}
             <section id="proyectos" className="py-20 bg-light-secondaryBg dark:bg-dark-secondaryBg">
                 <Projects/>

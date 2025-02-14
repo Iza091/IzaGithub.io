@@ -68,7 +68,7 @@ const Contact = () => {
                     </div>
                 )}
 
-                <div className="max-w-2xl mx-auto border border-light-body dark:border-dark-tertiaryBg rounded-md p-6 bg-white dark:bg-dark-body shadow-md">
+                <div className="max-w-2xl mx-auto border border-light-secondaryBorderSubtle dark:border-dark-secondaryBorderSubtle rounded-md p-6 bg-white dark:bg-dark-body shadow-md">
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
