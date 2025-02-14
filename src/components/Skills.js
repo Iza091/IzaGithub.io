@@ -94,7 +94,7 @@ const Skills = () => {
                 {/* Habilidades Duras */}
                 <div className="mb-20">
                     <h3 className="text-2xl font-bold text-center mb-8 text-light-text dark:text-dark-text">
-                        Habilidades Duras
+                    •   Habilidades Duras:
                     </h3>
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
                         {hardSkills.map((skill, index) => (
@@ -117,7 +117,7 @@ const Skills = () => {
                 {/* Habilidades Blandas */}
                 <div>
                     <h3 className="text-2xl font-bold text-center mb-8 text-light-text dark:text-dark-text">
-                        Habilidades Blandas
+                    •  Habilidades Blandas:
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {softSkills.map((skill, index) => (
@@ -145,7 +145,7 @@ const Skills = () => {
                 </div>
                 <div className="mt-20">
                     <h3 className="text-2xl font-bold text-center mb-8 text-light-text dark:text-dark-text">
-                        Valores
+                    • Valores:
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                         {values.map((value, index) => (
