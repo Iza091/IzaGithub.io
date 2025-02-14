@@ -23,6 +23,7 @@ const Skills = () => {
         { name: "Android Studio", icon: "devicon-android-plain" },
         { name: "PHP", icon: "devicon-php-plain" },
         { name: "Vue.js", icon: "devicon-vuejs-plain" },
+        { name: "Nest.js", icon: "devicon-nestjs-plain" },
     ];
 
     const softSkills = [
