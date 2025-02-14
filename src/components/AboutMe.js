@@ -5,7 +5,7 @@ const AboutMe = () => {
         <section id="about-me" className="py-24 bg-gradient-to-b from-light-secondaryBg to-gray-90 dark:from-dark-secondaryBg dark:to-gray-900">
             <div className="max-w-6xl mx-auto px-4">
                 <h2 className="text-4xl font-bold text-center mb-12 text-light-text dark:text-dark-text">
-                   Sobre mí
+                   Sobre mí:
                 </h2>
                 <div className="relative flex flex-col md:flex-row items-center p-8 rounded-xl bg-light-body dark:bg-dark-secondaryBg backdrop-blur-sm shadow-lg">
                     {/* Imagen */}

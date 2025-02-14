@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import { Github, Linkedin, Menu } from 'lucide-react';
 import Contact from './Contact';
-import projects from './Projects';
+import Projects from './Projects';
 import Certificates from './Certificates';
 import Testimonials from './Testimonials';
 import Skills from "./Skills";
@@ -16,42 +16,12 @@ import ScrollToTopButton from './ScrollToTopButton';
 
 
 const Portfolio = () => {
-    const [selectedProject, setSelectedProject] = React.useState(null);
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { theme, toggleTheme } = useTheme();
-
-    // Add this useEffect to handle Escape key
-    useEffect(() => {
-        const handleEscapeKey = (event) => {
-            if (event.key === 'Escape' && selectedProject) {
-                closeModal();
-            }
-        };
-
-        // Add event listener when a project is selected
-        if (selectedProject) {
-            document.addEventListener('keydown', handleEscapeKey);
-        }
-
-        // Cleanup the event listener
-        return () => {
-            document.removeEventListener('keydown', handleEscapeKey);
-        };
-    }, [selectedProject]);
-
-    const openModal = (project) => {
-        setSelectedProject(project);
-    };
-
-    const closeModal = () => {
-        setSelectedProject(null);
-    };
-
-
     return (
         <div className="min-h-screen bg-light-body text-light-text dark:bg-dark-body dark:text-dark-text transition-colors duration-700">
             {/* Navbar */}
-            <nav className="bg-light-secondaryBg dark:bg-dark-secondaryBg text-light-primary dark:text-dark-primary shadow-sm">
+            <nav className="bg-light-secondaryBg dark:bg-dark-secondaryBg text-light-primary dark:text-dark-primary shadow-sm fixed w-full top-0 z-50">
                 <div className="max-w-6xl mx-auto px-4">
                     <div className="flex justify-between items-center h-16">
                         {/* Logo */}
@@ -81,7 +51,7 @@ const Portfolio = () => {
                                 }
                             }}
                         >
-                             <a href="#about" className="text-light-text dark:text-dark-text">Sobre Mi</a>
+                            <a href="#about" className="text-light-text dark:text-dark-text">Sobre Mi</a>
                             <a href="#proyectos" className="text-light-text dark:text-dark-text">Proyectos</a>
                             <a href="#habilidades" className="text-light-text dark:text-dark-text">Habilidades</a>
                             <a href="#certificados" className="text-light-text dark:text-dark-text">Certificados</a>
@@ -160,98 +130,24 @@ const Portfolio = () => {
                             className="py-2 px-4 rounded transition-colors duration-300 bg-light-link text-white hover:bg-light-link dark:bg-dark-link dark:hover:bg-dark-link"
                         >
                             Descargar CV
-                        </a>    
+                        </a>
                     </div>
-                    
+
                 </div>
             </section>
             <ScrollToTopButton />
             {/* Sobre Mi */}
 
             <section id="about" className='py-20 bg-light-body dark:bg-dark-body'>
-                <AboutMe/>
+                <AboutMe />
             </section>
+
             {/* Projects Section */}
             <section id="proyectos" className="py-20 bg-light-secondaryBg dark:bg-dark-secondaryBg">
-                <div className="max-w-6xl mx-auto px-4 ">
-                    <h2 className="text-3xl font-bold text-center mb-12">Proyectos</h2>
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {projects.map((project, index) => (
-                            <div
-                                key={index}
-                                className="bg-light-body dark:bg-dark-body rounded-lg shadow-md overflow-hidden cursor-pointer transition-transform hover:scale-105"
-                                onClick={() => openModal(project)}
-                            >
-                                <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
-                                <div className="p-6">
-                                    <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                                    <p className="text-light-text dark:text-dark-text">{project.description}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                <Projects/>
             </section>
 
-            {/* Project Details Modal */}
-            {selectedProject && (
-                <div
-                    className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50 p-4 transition-opacity duration-300 ease-in-out"
-                    onClick={closeModal}
-                >
-                    <div
-                        className="bg-white dark:bg-dark-body rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden relative transform transition-transform duration-300 ease-in-out scale-95 md:scale-100"
-                        onClick={(e) => e.stopPropagation()} // Evita cerrar al hacer clic dentro del modal
-                    >
-                        {/* Close Button */}
-                        <button
-                            onClick={closeModal}
-                            className="absolute top-4 right-4 text-2xl text-light-text dark:text-dark-link z-10 hover:text-red-500 transition-colors duration-200"
-                            aria-label="Cerrar Modal"
-                        >
-                            ✕
-                        </button>
-
-                        {/* Modal Content */}
-                        <div className="flex flex-col">
-                            {/* Image Section */}
-                            <img
-                                src={selectedProject.image}
-                                alt={selectedProject.title}
-                                className="w-full max-h-[50vh] object-cover"
-                            />
-
-                            {/* Details Section */}
-                            <div className="p-6 bg-light-body dark:bg-dark-body text-light-text dark:text-dark-text">
-                                <h3 className="text-2xl font-semibold mb-4 text-center">
-                                    {selectedProject.title}
-                                </h3>
-                                <p className="text-light-text dark:text-dark-text mb-4">
-                                    {selectedProject.description}
-                                </p>
-                                <div className="mb-4">
-                                    <strong className="text-light-text dark:text-dark-text">Rol:</strong>
-                                    <p className="text-light-text dark:text-dark-text">{selectedProject.role}</p>
-                                </div>
-                                <div className="flex items-center mb-4">
-                                    <strong className="text-light-text dark:text-dark-text">Repositorio:</strong>
-                                    <a
-                                        href={selectedProject.githubUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-centertext-light-text dark:text-dark-link ml-2 transition-colors duration-200"
-                                        aria-label="Github"
-                                    >
-                                        <Github className="h-6 w-6 mr-2" />
-                                        <span className="underline">Ver en GitHub</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )}
-
+           
 
             {/* Skills Section */}
             <section id="habilidades" className="py-20 bg-light-body dark:bg-dark-body">
