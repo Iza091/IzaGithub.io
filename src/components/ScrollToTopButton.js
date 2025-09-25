@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const ScrollToTopButton = () => {
   const [showButton, setShowButton] = useState(false);
@@ -9,14 +9,14 @@ const ScrollToTopButton = () => {
       setShowButton(window.scrollY > 300);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
@@ -29,9 +29,9 @@ const ScrollToTopButton = () => {
           transition-transform duration-300 hover:scale-110 hover:bg-light-link dark:hover:bg-dark-link 
           flex items-center justify-center z-[999] pointer-events-auto"
           style={{
-            zIndex: 9999, // Asegura que esté por encima de otros elementos
-            bottom: '20px', // Ajusta la posición según necesites
-            right: '20px',
+            zIndex: 9999,
+            bottom: "20px",
+            right: "20px",
           }}
           aria-label="Volver arriba"
         >

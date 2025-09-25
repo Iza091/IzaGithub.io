@@ -1,58 +1,51 @@
-import React, { useState, useEffect } from "react";
-import C1 from "./img/s1.webp";
-import C2 from "./img/s2.webp";
-import C3 from "./img/s3.webp";
-import C4 from "./img/s4.webp";
-import C5 from "./img/s5.webp";
-import C6 from "./img/s6.webp";
-import C7 from "./img/s7.webp";
-import C8 from "./img/s8.webp";
-import C9 from "./img/s9.webp";
-import C10 from "./img/s10.jpg";
-import C11 from "./img/s11.jpg";
-import C12 from "./img/s12.jpg";
+import { useCallback, useEffect, useState } from "react";
+import C1 from "./assets/cert/c1.webp";
+import C10 from "./assets/cert/c10.webp";
+import C11 from "./assets/cert/c11.webp";
+import C12 from "./assets/cert/c12.webp";
+import C13 from "./assets/cert/c13.webp";
+import C2 from "./assets/cert/c2.webp";
+import C3 from "./assets/cert/c3.webp";
+import C4 from "./assets/cert/c4.webp";
+import C5 from "./assets/cert/c5.webp";
+import C6 from "./assets/cert/c6.webp";
+import C7 from "./assets/cert/c7.webp";
+import C8 from "./assets/cert/c8.webp";
+import C9 from "./assets/cert/c9.webp";
+import ShowMoreButton from "./common/ShowMoreButton";
 
-const Certificates = () => {
-  const [selectedCertificate, setSelectedCertificate] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState("Todo");
+const Certificates = ({
+  showAll,
+  onShowMore,
+  onCategoryChange,
+  selectedCertificate,
+  setSelectedCertificate,
+}) => {
+  const [selectedCategory, setSelectedCategory] = useState("Certificados");
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Manejo del scroll de fondo cuando el modal está abierto
   useEffect(() => {
-    if (selectedCertificate) {
-      document.body.style.overflow = "hidden"; // 🔹 Bloquea el scroll del fondo
-    } else {
-      document.body.style.overflow = "unset"; // 🔹 Restaura el scroll al cerrar
-    }
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-    return () => {
-      document.body.style.overflow = "unset"; // 🔹 Asegura que se restaure al desmontar
-    };
-  }, [selectedCertificate]);
+  const openModal = (certificate) => setSelectedCertificate(certificate);
+  const closeModal = useCallback(
+    () => setSelectedCertificate(null),
+    [setSelectedCertificate]
+  );
 
-  // Manejo de la tecla ESC para cerrar el modal
   useEffect(() => {
     const handleEscapeKey = (event) => {
-      if (event.key === "Escape" && selectedCertificate) {
-        closeModal();
-      }
+      if (event.key === "Escape" && selectedCertificate) closeModal();
     };
-
     if (selectedCertificate) {
       document.addEventListener("keydown", handleEscapeKey);
     }
-
-    return () => {
-      document.removeEventListener("keydown", handleEscapeKey);
-    };
-  }, [selectedCertificate]);
-
-  const openModal = (certificate) => {
-    setSelectedCertificate(certificate);
-  };
-
-  const closeModal = () => {
-    setSelectedCertificate(null);
-  };
+    return () => document.removeEventListener("keydown", handleEscapeKey);
+  }, [selectedCertificate, closeModal]);
 
   const certificates = [
     {
@@ -140,11 +133,24 @@ const Certificates = () => {
       image: C12,
       category: "Certificados",
     },
+    {
+      title: "English Certification",
+      issuer: "EF SET",
+      date: "2025",
+      image: C13,
+      category: "Certificados",
+    },
   ];
 
-  const filteredCertificates = certificates.filter((cert) =>
-    selectedCategory === "Todo" ? true : cert.category === selectedCategory
-  );
+  const filterCertificates = () => {
+    const filtered = certificates.filter(
+      (c) => c.category === selectedCategory
+    );
+    return filtered;
+  };
+
+  const categories = ["Certificados", "Diplomas"];
+  const filteredCertificates = filterCertificates();
 
   return (
     <section
@@ -156,25 +162,30 @@ const Certificates = () => {
           Certificados
         </h2>
 
-        {/* Filtro de categorías */}
         <div className="flex justify-center mb-8 space-x-4">
-          {["Todo", "Certificados", "Diplomas"].map((category) => (
+          {categories.map((cat) => (
             <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
+              key={cat}
+              onClick={() => {
+                setSelectedCategory(cat);
+                onCategoryChange(cat);
+              }}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
-                selectedCategory === category
+                selectedCategory === cat
                   ? "bg-light-link text-white dark:bg-dark-link"
                   : "bg-light-body text-ligth-text dark:bg-dark-body dark:text-dark-text"
               }`}
             >
-              {category}
+              {cat}
             </button>
           ))}
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {filteredCertificates.map((cert, index) => (
+          {(isMobile && !showAll
+            ? filteredCertificates.slice(0, 3)
+            : filteredCertificates
+          ).map((cert, index) => (
             <div
               key={index}
               className="bg-light-body dark:bg-dark-body rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105 cursor-pointer"
@@ -203,7 +214,10 @@ const Certificates = () => {
           ))}
         </div>
 
-        {/* Modal */}
+        {isMobile && filteredCertificates.length > 3 && (
+          <ShowMoreButton onClick={onShowMore} isExpanded={showAll} />
+        )}
+
         {selectedCertificate && (
           <div
             className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50 p-4"
@@ -219,12 +233,11 @@ const Certificates = () => {
               >
                 ✕
               </button>
-
               <div className="flex flex-col items-center">
                 <img
                   src={selectedCertificate.image}
                   alt={selectedCertificate.title}
-                  className="w-full max-h-[70vh] object-contain"
+                  className="max-w-full max-h-[60vh] object-contain rounded-tl-lg mt-8"
                 />
                 <div className="p-6 text-center">
                   <h3 className="text-2xl font-semibold mb-2 text-light-text dark:text-dark-text">

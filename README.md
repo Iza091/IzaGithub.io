@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Hello World 👋  
+Welcome to my portfolio README. This is me in markdown form.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### `me:` [Click Me](https://izdev.vercel.app/)
 
-## Available Scripts
+> 📌 TL;DR: Full-stack developer, UI tweaker, code-breaker, Pokémon fan, dark mode advocate.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+### 🧠 I Even Noticed This  
+Small details for the curious developer in you:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 🧩 **Half designer, half developer** — I tweak my UI spacing as much as I refactor logic.
+- 🐧 **Linux by day, Windows Server by VM** — I like living in multiple OS worlds.
+- 🧪 **Parrot OS for security labs** — Yes, I break and patch for fun.
+- 🎮 **My fake game download site?** Just a honeypot to teach people about phishing 🧠
+- ⚙️ **Yes, I chose Chimchar in Platinum. Twice.** I like starting fires.
+- 🌀 **I keep Tailwind light** — because I like freedom, not bloated utility wars.
+- 📚 **React + CoreUI + NestJS = my playground** — And yes, I made them talk nicely together.
+- 🧑‍🔬 **I test my backend with Postman, but make it look like a sci-fi terminal.**
+- 🌍 **My portfolio isn't just responsive — it's reactive to who’s watching.**
+- 🔍 **Dark mode is the default. Light mode? Only if you *really* insist.**
+- ⚡ **I’ve animated more `gifs` in a README than I probably should, but you stayed, didn’t you?**
+- 👾 **Ask me why my CSS always has one sneaky transition property. I dare you.**
+- 🧵 **“Iza” isn’t short for anything, but it is optimized.**
+- 🔐 **I built fake malware pages for awareness. Don’t worry, they only *look* dangerous.**
+- 📖 **My GitHub is more than projects — it’s a personal journal in disguise.**
+- 🧠 **Everything I build has one secret purpose: to learn something I didn’t know yesterday.**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+### 🧰 My Toolbelt (Just the Essentials)
+- 🧱 **Frontend:** React, Vue, TailwindCSS, Vite  
+- ⚙️ **Backend:** NestJS, Node.js, MongoDB, Laravel  
+- 🧪 **Testing & Tools:** Postman, Insomnia, Git, Netcat, Parrot OS  
+- ☁️ **Deployments:** Vercel, Render, Heroku  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thanks for reading this far! If you're curious about anything else,  
+👋 [drop me a line](mailto:izagithub26@gmail.com) — I always reply.
