@@ -7,6 +7,7 @@ import izaortizImage from "./assets/iza.webp";
 import Certificates from "./Certificates";
 import Contact from "./Contact";
 import CV from "./download/IsaiasOrtiz.pdf";
+import Experience from "./Experience";
 import Projects from "./Projects";
 import ScrollToTopButton from "./ScrollToTopButton";
 import Skills from "./Skills";
@@ -294,6 +295,13 @@ const Portfolio = () => {
       <section id="about" className="py-20 bg-light-body dark:bg-dark-body">
         <AboutMe />
       </section>
+      <section
+        id="exp"
+        className=" py-20 dark:border-dark-secondaryBorderSubtle"
+      >
+        <Experience />
+      </section>
+
       {/* Sección Proyectos */}
       <section
         id="proyectos"
