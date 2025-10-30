@@ -1,6 +1,9 @@
 import { Github, Linkedin, Menu, Moon, Sun } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useTheme } from "../ThemeContext";
+import CertificatesSkeleton from "../utils/CertificatesSkeleton";
+import ProjectsSkeleton from "../utils/ProyectSkeleton";
+import TestimonialsSkeleton from "../utils/TestimonialsSkeleton";
 import AboutMe from "./AboutMe";
 import IzDev from "./assets/favicon.svg";
 import izaortizImage from "./assets/iza.webp";
@@ -101,6 +104,25 @@ const Portfolio = () => {
       document.body.style.overflow = "unset";
     };
   }, [selectedProject, selectedCertificate]);
+
+  // Skeleton loading state
+  const [isLoading, setIsLoading] = useState({
+    testimonials: true,
+    projects: true,
+    certificates: true,
+  });
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading({
+        testimonials: false,
+        projects: false,
+        certificates: false,
+      });
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="min-h-screen bg-light-body text-light-text dark:bg-dark-body dark:text-dark-text transition-colors duration-700">
@@ -290,7 +312,6 @@ const Portfolio = () => {
       </section>
       {/* Botón para volver arriba */}
       {!selectedProject && !selectedCertificate && <ScrollToTopButton />}
-      {/* <-- Solo si no hay modal */}
       {/* Sección Sobre Mi */}
       <section id="about" className="py-20 bg-light-body dark:bg-dark-body">
         <AboutMe />
@@ -308,12 +329,16 @@ const Portfolio = () => {
         ref={proyectosRef}
         className="py-20 bg-light-secondaryBg dark:bg-dark-secondaryBg"
       >
-        <Projects
-          showAll={showAllProjects}
-          onShowMore={handleShowMoreProjects}
-          selectedProject={selectedProject}
-          setSelectedProject={setSelectedProject}
-        />
+        {isLoading.projects ? (
+          <ProjectsSkeleton />
+        ) : (
+          <Projects
+            showAll={showAllProjects}
+            onShowMore={handleShowMoreProjects}
+            selectedProject={selectedProject}
+            setSelectedProject={setSelectedProject}
+          />
+        )}
       </section>
       {/* Sección Habilidades */}
       <section
@@ -332,35 +357,38 @@ const Portfolio = () => {
         ref={certificadosRef}
         className="py-20 bg-light-body dark:bg-dark-secondaryBg"
       >
-        <Certificates
-          showAll={showAllCertificates}
-          onShowMore={handleShowMoreCertificates}
-          onCategoryChange={resetShowAllCertificates}
-          selectedCertificate={selectedCertificate}
-          setSelectedCertificate={setSelectedCertificate}
-        />
+        {isLoading.certificates ? (
+          <CertificatesSkeleton />
+        ) : (
+          <Certificates
+            showAll={showAllCertificates}
+            onShowMore={handleShowMoreCertificates}
+            onCategoryChange={resetShowAllCertificates}
+            selectedCertificate={selectedCertificate}
+            setSelectedCertificate={setSelectedCertificate}
+          />
+        )}
       </section>
       {/* Sección Testimonios */}
       <section
         id="testimonios"
-        className=" bg-light-secondaryBg dark:bg-dark-secondaryBg"
+        className="bg-light-secondaryBg dark:bg-dark-secondaryBg"
       >
-        <Testimonials />
+        {isLoading.testimonials ? <TestimonialsSkeleton /> : <Testimonials />}
       </section>
       {/* Sección Contacto */}
-      <section id="contacto" className=" bg-light-body dark:bg-dark-body">
+      <section id="contacto" className="bg-light-body dark:bg-dark-body">
         <Contact />
       </section>
       {/* Footer */}
       <footer className="bg-light-body dark:bg-dark-body py-8">
         <div className="max-w-6xl mx-auto px-4 space-y-4">
-          {/* Contenedor para alinear verticalmente los elementos */}
           <div className="flex flex-col items-center space-y-4">
             {/* Texto de copyright */}
             <p className="text-light-text dark:text-dark-text">
               © {new Date().getFullYear()} IzDev. Todos los derechos reservados.
             </p>
-            {/* Iconos sociales */}
+
             <div className="flex space-x-6">
               <a
                 target="_blank"
