@@ -320,6 +320,7 @@ const Portfolio = () => {
         id="exp"
         className=" py-20 dark:border-dark-secondaryBorderSubtle"
       >
+        {/* Sección Experiencia */}
         <Experience />
       </section>
 
