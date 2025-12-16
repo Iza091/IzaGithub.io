@@ -23,11 +23,20 @@ const AboutMe = () => {
           {/* Texto */}
           <div className="text-center md:text-left">
             <p className="text-lg leading-relaxed text-light-text dark:text-dark-text">
-              Egresado en Ingeniería en Sistemas y Redes Informáticas (UGB
-              Usulután). Dev Apasionado por el desarrollo Full Stack, cuando no
-              estoy programando, me vas a encontrar jugando voleibol o jugando
-              al UNO, también jugando a videojuegos 🎮 sino también bailando mi
-              música favorita 🎶.
+              Ingeniero en Sistemas y Redes Informáticas{" "}
+              <a
+                className="text-light-link dark:text-dark-link underline"
+                href="https://titulos.ugb.edu.sv/Titulo/Validar/8248ded5-202f-453d-a94e-5dd23ef2b642"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                (UGB Usulután)
+              </a>
+              <br />
+              Apasionado por el desarrollo Full Stack, cuando no estoy
+              programando, me vas a encontrar jugando voleibol o jugando al UNO,
+              también jugando a videojuegos 🎮 sino también bailando mi música
+              favorita 🎶.
             </p>
           </div>
         </div>
