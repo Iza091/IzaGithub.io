@@ -33,10 +33,11 @@ const AboutMe = () => {
                 (UGB Usulután)
               </a>
               <br />
-              Apasionado por el desarrollo Full Stack, cuando no estoy
-              programando, me vas a encontrar jugando voleibol o jugando al UNO,
-              también jugando a videojuegos 🎮 sino también bailando mi música
-              favorita 🎶.
+              Especialista en soluciones escalables con base en infraestructura
+              de redes. Aplico la disciplina del deporte, el pensamiento lógico
+              de los videojuegos y la fluidez del baile para construir software
+              de alta calidad. Enfocado en el código limpio, el trabajo en
+              equipo y el aprendizaje continuo.
             </p>
           </div>
         </div>
