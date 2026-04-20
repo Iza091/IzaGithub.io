@@ -39,13 +39,13 @@ const allProjects = [
     githubUrl: "https://github.com/Iza091/SistemaAcademicoINU",
   },
   {
-    title: "Tienda de Mascotas",
+    title: "Pet Shop",
     description: "Todo lo que necesitas para el bienestar de tu mascota.",
     descriptionLong:
       "Es una e-comerse dedicada al bienestar animal. Ofrece una amplia variedad de productos, desde alimentos hasta accesorios para diferentes tipos de mascotas. Incluye funcionalidades como carrito de compras, gestión de inventario y sistema de búsqueda de productos.",
     image: Proyecto3,
     role: "Desarrollador FullStack",
-    githubUrl: "https://github.com/Iza091/TiendadeMascotas",
+    githubUrl: "https://github.com/Iza091/pet-shop-web",
   },
   {
     title: "Carrot Studio",
