@@ -1,4 +1,4 @@
-import { Github, Linkedin, Menu, Moon, Sun } from "lucide-react";
+import { Github, Linkedin, Menu, Moon, Sun, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useTheme } from "../ThemeContext";
 import CertificatesSkeleton from "../utils/CertificatesSkeleton";
@@ -140,10 +140,16 @@ const Portfolio = () => {
 
             {/* Botón menú móvil */}
             <button
-              className="md:hidden p-2"
+              className="md:hidden p-2 rounded-md hover:bg-light-secondaryBg dark:hover:bg-dark-secondaryBg transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle Menu"
+              aria-expanded={isMenuOpen}
             >
-              <Menu className="h-6 w-6 text-light-text dark:text-dark-text" />
+              {isMenuOpen ? (
+                <X className="h-6 w-6 text-light-text dark:text-dark-text transition-transform duration-200" />
+              ) : (
+                <Menu className="h-6 w-6 text-light-text dark:text-dark-text transition-transform duration-200" />
+              )}
             </button>
 
             {/* Menú escritorio */}
@@ -197,84 +203,111 @@ const Portfolio = () => {
             </div>
 
             {/* Botón de cambio de tema */}
-            <button
-              onClick={toggleTheme}
-              className={`p-2 rounded transition-colors duration-300 
-        ${
-          theme === "light"
-            ? "bg-light-primary text-white hover:bg-light-link"
-            : "bg-dark-link text-white hover:bg-dark-link"
-        }
-    `}
-              aria-label="Toggle Theme"
-            >
-              {theme === "light" ? (
-                <Moon className="w-5 h-5" />
-              ) : (
-                <Sun className="w-5 h-5" />
-              )}
-            </button>
+            <label className="dz-swap dz-swap-rotate">
+              <input
+                type="checkbox"
+                checked={theme === "dark"}
+                onChange={toggleTheme}
+                aria-label="Cambiar tema"
+              />
+              <Sun className="dz-swap-off w-5 h-5 text-light-text dark:text-dark-text" />
+              <Moon className="dz-swap-on w-5 h-5 text-light-text dark:text-dark-text" />
+            </label>
           </div>
         </div>
 
         {/* Menú móvil */}
-        {isMenuOpen && (
+        <div
+          className={`fixed inset-0 z-50 md:hidden transition-opacity duration-300 ${
+            isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
+        >
           <div
-            className="fixed inset-0 z-50 bg-black bg-opacity-50 md:hidden"
+            className="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300"
             onClick={() => setIsMenuOpen(false)}
+          />
+          <div
+            className={`absolute top-0 right-0 h-full w-72 bg-light-secondaryBg dark:bg-dark-secondaryBg shadow-xl transition-transform duration-300 ease-in-out overflow-y-auto ${
+              isMenuOpen ? "translate-x-0" : "translate-x-full"
+            }`}
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+            style={{ overscrollBehavior: "contain", touchAction: "pan-y" }}
+            onTouchMove={(e) => {
+              e.stopPropagation();
+            }}
           >
-            <div
-              className="bg-light-secondaryBg dark:bg-dark-secondaryBg w-64 px-2 pt-2 pb-3 space-y-1 absolute top-0 right-0 h-full shadow-lg"
+            <div className="flex items-center justify-between px-4 h-16 border-b border-light-tertiaryBorder dark:border-dark-tertiaryBorder">
+              <span className="text-light-text dark:text-dark-text font-semibold">Menú</span>
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                className="p-2 rounded-md hover:bg-light-body dark:hover:bg-dark-body transition-colors"
+                aria-label="Cerrar menú"
+              >
+                <X className="h-5 w-5 text-light-text dark:text-dark-text" />
+              </button>
+            </div>
+            <nav
+              className="flex flex-col px-2 py-3 space-y-1"
               onClick={(e) => {
-                e.stopPropagation();
                 const targetId = e.target.getAttribute("href")?.slice(1);
                 if (targetId) {
                   const targetElement = document.getElementById(targetId);
                   targetElement?.scrollIntoView({ behavior: "smooth" });
-                  setIsMenuOpen(false); // Cierra el menú después de desplazarse
+                  setIsMenuOpen(false);
                 }
               }}
             >
               <a
                 href="#about"
-                className="nav-link block px-3 py-2 text-light-text dark:text-dark-text"
+                className="nav-link px-3 py-2 text-light-text dark:text-dark-text rounded-md hover:bg-light-body dark:hover:bg-dark-body"
               >
                 Sobre Mi
               </a>
               <a
                 href="#proyectos"
-                className="nav-link block px-3 py-2 text-light-text dark:text-dark-text"
+                className="nav-link px-3 py-2 text-light-text dark:text-dark-text rounded-md hover:bg-light-body dark:hover:bg-dark-body"
               >
                 Proyectos
               </a>
               <a
                 href="#habilidades"
-                className="nav-link block px-3 py-2 text-light-text dark:text-dark-text"
+                className="nav-link px-3 py-2 text-light-text dark:text-dark-text rounded-md hover:bg-light-body dark:hover:bg-dark-body"
               >
                 Habilidades
               </a>
               <a
+                href="#experiencia"
+                className="nav-link px-3 py-2 text-light-text dark:text-dark-text rounded-md hover:bg-light-body dark:hover:bg-dark-body"
+              >
+                Experiencia
+              </a>
+              <a
                 href="#certificados"
-                className="nav-link block px-3 py-2 text-light-text dark:text-dark-text"
+                className="nav-link px-3 py-2 text-light-text dark:text-dark-text rounded-md hover:bg-light-body dark:hover:bg-dark-body"
               >
                 Certificados
               </a>
               <a
                 href="#testimonios"
-                className="nav-link block px-3 py-2 text-light-text dark:text-dark-text"
+                className="nav-link px-3 py-2 text-light-text dark:text-dark-text rounded-md hover:bg-light-body dark:hover:bg-dark-body"
               >
                 Testimonios
               </a>
               <a
                 href="#contacto"
-                className="nav-link block px-3 py-2 text-light-text dark:text-dark-text"
+                className="nav-link px-3 py-2 text-light-text dark:text-dark-text rounded-md hover:bg-light-body dark:hover:bg-dark-body"
               >
                 Contacto
               </a>
-            </div>
+            </nav>
           </div>
-        )}
+        </div>
       </nav>
+      {isMenuOpen && (
+        <style>{`body{overflow:hidden;touch-action:none;overscroll-behavior:none;}`}</style>
+      )}
       {/* Hero Section */}
       <section
         id="inicio"
@@ -323,7 +356,17 @@ const Portfolio = () => {
         {/* Sección Experiencia */}
         <Experience />
       </section>
-
+      {/* Sección Habilidades */}
+      <section
+        id="habilidades"
+        ref={habilidadesRef}
+        className="py-20 bg-light-body dark:bg-dark-body"
+      >
+        <Skills
+          showAllSoftSkills={showAllSoftSkills}
+          onShowMoreSoftSkills={handleShowMoreSoftSkills}
+        />
+      </section>
       {/* Sección Proyectos */}
       <section
         id="proyectos"
@@ -341,17 +384,7 @@ const Portfolio = () => {
           />
         )}
       </section>
-      {/* Sección Habilidades */}
-      <section
-        id="habilidades"
-        ref={habilidadesRef}
-        className="py-20 bg-light-body dark:bg-dark-body"
-      >
-        <Skills
-          showAllSoftSkills={showAllSoftSkills}
-          onShowMoreSoftSkills={handleShowMoreSoftSkills}
-        />
-      </section>
+
       {/* Sección Certificados */}
       <section
         id="certificados"

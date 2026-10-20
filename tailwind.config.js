@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   darkMode: "class",
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
@@ -53,23 +53,15 @@ module.exports = {
           color: "yellow",
         },
 
-        "body::-webkit-scrollbar": {
+        ".scrollbar-custom::-webkit-scrollbar": {
           width: "10px",
         },
-        "body::-webkit-scrollbar-thumb": {
+        ".scrollbar-custom::-webkit-scrollbar-thumb": {
           backgroundColor: "var(--tw-scrollbar-thumb)",
           borderRadius: "10px",
         },
-        "body::-webkit-scrollbar-track": {
+        ".scrollbar-custom::-webkit-scrollbar-track": {
           backgroundColor: "var(--tw-scrollbar-track)",
-        },
-        ":root": {
-          "--tw-scrollbar-thumb": "#1f5a8a",
-          "--tw-scrollbar-track": "#f3f5f6",
-        },
-        ".dark": {
-          "--tw-scrollbar-thumb": "#ff0077",
-          "--tw-scrollbar-track": "#1b2840",
         },
 
         ".swiper-pagination": {

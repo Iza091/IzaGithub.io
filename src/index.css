@@ -1,3 +1,18 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../tailwind.config.js";
+@plugin "daisyui" { prefix: "dz-"; themes: false; logs: false; }
+
+body {
+  @apply scrollbar-custom;
+}
+
+:root,
+:root-scroll {
+  --tw-scrollbar-thumb: #1f5a8a;
+  --tw-scrollbar-track: #f3f5f6;
+}
+
+.dark {
+  --tw-scrollbar-thumb: #ff0077;
+  --tw-scrollbar-track: #1b2840;
+}
