@@ -57,8 +57,8 @@ const testimonials = [
 ];
 
 const TestimonialCard = ({ testimonial }) => (
-  <div className="dz-card bg-light-body dark:bg-dark-body p-6 md:p-8 rounded-lg shadow-md text-center mx-auto max-w-2xl transition-all duration-300 flex flex-col h-full">
-    <div className="dz-card-body items-center text-center p-0 flex flex-col h-full">
+  <div className="dz-card bg-light-body dark:bg-dark-body p-6 md:p-8 rounded-lg shadow-md text-center mx-auto max-w-2xl transition-all duration-300">
+    <div className="dz-card-body items-center text-center p-0">
       <div className="dz-avatar mb-4 md:mb-6">
         <div className="w-20 h-20 md:w-24 md:h-24 rounded-full border-4 border-light-primary dark:border-dark-link">
           <img src={testimonial.image} alt={testimonial.name} />
@@ -75,11 +75,9 @@ const TestimonialCard = ({ testimonial }) => (
           {testimonial.role}
         </p>
       )}
-      <div className="mt-4 px-4 flex-1 flex items-center">
-        <p className="text-sm md:text-base text-light-text dark:text-dark-text line-clamp-[10] sm:line-clamp-[8]">
-          {testimonial.feedback}
-        </p>
-      </div>
+      <p className="text-sm md:text-base text-light-text dark:text-dark-text mt-4 px-4">
+        {testimonial.feedback}
+      </p>
 
       {testimonial.portfolioUrl && (
         <a
@@ -111,7 +109,7 @@ const Testimonials = () => {
         </h2>
 
         {/* Swiper Slider */}
-        <div className="relative min-h-[420px] sm:min-h-[380px] cursor-grab">
+        <div className="relative h-[550px] sm:h-[500px] cursor-grab">
           <Swiper
             modules={[Pagination, Autoplay]}
             spaceBetween={30}
@@ -125,13 +123,13 @@ const Testimonials = () => {
             className="h-full"
           >
             {testimonials.map((testimonial, index) => (
-              <SwiperSlide key={index} className="flex items-center">
+              <SwiperSlide key={index}>
                 <TestimonialCard testimonial={testimonial} />
               </SwiperSlide>
             ))}
           </Swiper>
           {/* Paginación personalizada */}
-          <div className="swiper-pagination !bottom-4 md:!bottom-2"></div>
+          <div className="swiper-pagination !bottom-16 md:!bottom-12"></div>
         </div>
       </div>
     </section>
