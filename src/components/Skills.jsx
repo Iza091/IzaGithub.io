@@ -12,8 +12,10 @@ import {
 } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import ShowMoreButton from "./common/ShowMoreButton";
+import { useTraduccion, combinar } from "../TraduccionContext";
 
 const Skills = ({ showAllSoftSkills, onShowMoreSoftSkills }) => {
+  const { t } = useTraduccion();
   const hardSkills = [
     // Frontend
     { name: "React", icon: "devicon-react-original", category: "Frontend" },
@@ -137,11 +139,18 @@ const Skills = ({ showAllSoftSkills, onShowMoreSoftSkills }) => {
   const visibleValues =
     isMobile && !showAllValues ? values.slice(0, 2) : values;
 
+  const softSkillsTrad = combinar(softSkills, t.habilidades.soft);
+  const valuesTrad = combinar(values, t.habilidades.listaValores);
+  const visibleSoftSkillsTrad =
+    isMobile && !showAllSoftSkills ? softSkillsTrad.slice(0, 3) : softSkillsTrad;
+  const visibleValuesTrad =
+    isMobile && !showAllValues ? valuesTrad.slice(0, 2) : valuesTrad;
+
   return (
     <section className="py-24 bg-gradient-to-b from-light-body to-gray-50 dark:from-dark-body dark:to-gray-900">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-16 text-light-text dark:text-dark-text">
-          Mis Habilidades
+          {t.habilidades.titulo}
         </h2>
 
         {/* Categorías */}
@@ -182,10 +191,10 @@ const Skills = ({ showAllSoftSkills, onShowMoreSoftSkills }) => {
         {/* Soft skills */}
         <div>
           <h3 className="text-2xl font-bold text-center mb-8 text-light-text dark:text-dark-text">
-            Habilidades Blandas
+            {t.habilidades.blandas}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {visibleSoftSkills.map((skill, index) => (
+            {visibleSoftSkillsTrad.map((skill, index) => (
               <div
                 key={index}
                 className="group flex items-center gap-4 md:gap-6 p-5 md:p-6 rounded-xl bg-light-body dark:bg-dark-secondaryBg shadow-lg border border-transparent hover:border-light-link/40 dark:hover:border-dark-link/40 transition-all duration-200"
@@ -221,10 +230,10 @@ const Skills = ({ showAllSoftSkills, onShowMoreSoftSkills }) => {
         {/* Valores */}
         <div className="mt-20">
           <h3 className="text-2xl font-bold text-center mb-8 text-light-text dark:text-dark-text">
-            Valores
+            {t.habilidades.valores}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-            {visibleValues.map((value, index) => (
+            {visibleValuesTrad.map((value, index) => (
               <div
                 key={index}
                 className="group flex items-center gap-4 md:gap-6 p-5 md:p-6 rounded-xl bg-light-body dark:bg-dark-secondaryBg shadow-lg border border-transparent hover:border-light-link/40 dark:hover:border-dark-link/40 transition-all duration-200"

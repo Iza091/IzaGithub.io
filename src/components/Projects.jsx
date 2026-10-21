@@ -7,6 +7,7 @@ import Proyecto4 from "./assets/proyects/project-4.webp";
 import Proyecto5 from "./assets/proyects/project-5.webp";
 import Proyecto6 from "./assets/proyects/project-6.webp";
 import ShowMoreButton from "./common/ShowMoreButton";
+import { useTraduccion, combinar } from "../TraduccionContext";
 
 // Lista de proyectos
 const allProjects = [
@@ -73,6 +74,7 @@ const Projects = ({
   selectedProject,
   setSelectedProject,
 }) => {
+  const { t } = useTraduccion();
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -114,8 +116,9 @@ const Projects = ({
   const openModal = (project) => setSelectedProject(project);
   const closeModal = () => setSelectedProject(null);
 
+  const projectsTrad = combinar(allProjects, t.proyectos.items);
   const visibleProjects =
-    isMobile && !showAll ? allProjects.slice(0, 3) : allProjects;
+    isMobile && !showAll ? projectsTrad.slice(0, 3) : projectsTrad;
 
   return (
     <section
@@ -123,7 +126,7 @@ const Projects = ({
       className="py-20 bg-light-secondaryBg dark:bg-dark-secondaryBg"
     >
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Proyectos:</h2>
+        <h2 className="text-3xl font-bold text-center mb-12">{t.proyectos.titulo}</h2>
 
         {/* Grid de proyectos */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -142,7 +145,7 @@ const Projects = ({
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
                   <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2 text-white text-sm font-medium">
                     <Eye className="w-4 h-4" />
-                    <span>Ver detalles</span>
+                    <span>{t.proyectos.verDetalles}</span>
                   </div>
                 </div>
               </div>
@@ -223,11 +226,11 @@ const Projects = ({
                         title="Ver código"
                       >
                         <Github className="w-4 h-4" />
-                        <span className="text-sm">Código</span>
+                        <span className="text-sm">{t.proyectos.codigo}</span>
                       </a>
                     ) : (
                       <span className="text-xs text-gray-500 dark:text-gray-400">
-                        No hay enlace
+                        {t.proyectos.noEnlace}
                       </span>
                     )}
                   </div>
@@ -266,11 +269,11 @@ const Projects = ({
                         className="inline-flex items-center gap-2 text-light-text/80 dark:text-dark-text/80 hover:text-light-link dark:hover:text-dark-link transition-colors"
                       >
                         <Github className="w-4 h-4" />
-                        <span className="text-sm">Código</span>
+                        <span className="text-sm">{t.proyectos.codigo}</span>
                       </a>
                     ) : (
                       <span className="text-sm text-gray-500 dark:text-gray-400">
-                        No disponible
+                        {t.proyectos.noDisponible}
                       </span>
                     )}
                   </div>

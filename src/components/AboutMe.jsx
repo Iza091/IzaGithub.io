@@ -1,6 +1,8 @@
 import ProfilePhoto from "./assets/iza.webp";
+import { useTraduccion } from "../TraduccionContext";
 
 const AboutMe = () => {
+  const { t } = useTraduccion();
   return (
     <section
       id="about-me"
@@ -8,36 +10,34 @@ const AboutMe = () => {
     >
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-light-text dark:text-dark-text">
-          Sobre mí:
+          {t.sobreMi.titulo}
         </h2>
         <div className="relative flex flex-col md:flex-row items-center p-8 rounded-xl bg-light-body dark:bg-dark-secondaryBg backdrop-blur-sm shadow-lg">
           {/* Imagen */}
-          <div className="flex-shrink-0 w-40 h-40 md:w-60 md:h-60 rounded-full overflow-hidden shadow-lg mb-6 md:mb-0 md:mr-8">
-            <img
-              src={ProfilePhoto}
-              alt="Isaías Ortiz"
-              className="w-full h-full object-cover"
-            />
+          <div className="dz-avatar flex-shrink-0 mb-6 md:mb-0 md:mr-8">
+            <div className="w-40 h-40 md:w-60 md:h-60 rounded-full border-4 border-light-primary dark:border-dark-link shadow-lg">
+              <img
+                src={ProfilePhoto}
+                alt="Isaías Ortiz"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
 
           {/* Texto */}
           <div className="text-center md:text-left">
             <p className="text-lg leading-relaxed text-light-text dark:text-dark-text">
-              Ingeniero en Sistemas y Redes Informáticas{" "}
+              {t.sobreMi.texto}
               <a
                 className="text-light-link dark:text-dark-link underline"
                 href="https://titulos.ugb.edu.sv/Titulo/Validar/8248ded5-202f-453d-a94e-5dd23ef2b642"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                (UGB Usulután)
+                {t.sobreMi.enlace}
               </a>
               <br />
-              Especialista en soluciones escalables con base en infraestructura
-              de redes. Aplico la disciplina del deporte, el pensamiento lógico
-              de los videojuegos y la fluidez del baile para construir software
-              de alta calidad. Enfocado en el código limpio, el trabajo en
-              equipo y el aprendizaje continuo.
+              {t.sobreMi.texto2}
             </p>
           </div>
         </div>

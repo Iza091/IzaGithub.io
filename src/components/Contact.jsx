@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useTraduccion } from "../TraduccionContext";
 
 const Contact = () => {
+  const { t } = useTraduccion();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [isFormFilled, setIsFormFilled] = useState(false);
@@ -26,6 +28,11 @@ const Contact = () => {
     );
   };
 
+  const limpiarFormulario = () => {
+    setFormData({ Name: "", Email: "", Subject: "", Message: "" });
+    setIsFormFilled(false);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -45,14 +52,7 @@ const Contact = () => {
 
       if (response.ok) {
         setShowSuccess(true);
-        setFormData({
-          Name: "",
-          Email: "",
-          Subject: "",
-          Message: "",
-        });
-        setIsFormFilled(false);
-
+        limpiarFormulario();
         setTimeout(() => {
           setShowSuccess(false);
         }, 5000);
@@ -71,12 +71,12 @@ const Contact = () => {
     >
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold mb-12 text-light-text dark:text-dark-text">
-          Contacto
+          {t.contacto.titulo}
         </h2>
 
         {showSuccess && (
           <div className="mb-6 p-4 bg-green-100 dark:bg-green-800 text-green-700 dark:text-green-200 rounded-md">
-            ¡Mensaje enviado con éxito!
+            {t.contacto.exito}
           </div>
         )}
 
@@ -86,9 +86,9 @@ const Contact = () => {
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-light-text dark:text-dark-text mb-1"
+                  className="dz-label block text-sm font-medium text-light-text dark:text-dark-text mb-1"
                 >
-                  Nombre
+                  {t.contacto.nombre}
                 </label>
                 <input
                   type="text"
@@ -97,16 +97,16 @@ const Contact = () => {
                   value={formData.Name}
                   onChange={handleChange}
                   required
-                  placeholder="Nombre"
-                  className="w-full px-4 py-2 border-2 border-black dark:border-gray-300 text-light-text dark:text-gray-800 bg-white dark:bg-white rounded-md  focus:border-transparent placeholder-gray-500 dark:placeholder-gray-500 transition-all"
+                  placeholder={t.contacto.nombre}
+                  className="dz-input w-full px-4 py-2 border-2! border-solid border-black dark:border-gray-300 text-light-text dark:text-gray-800 bg-white dark:bg-white rounded-md focus:border-transparent placeholder-gray-500 dark:placeholder-gray-500 transition-all"
                 />
               </div>
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-light-text dark:text-dark-text mb-1"
+                  className="dz-label block text-sm font-medium text-light-text dark:text-dark-text mb-1"
                 >
-                  Correo
+                  {t.contacto.correo}
                 </label>
                 <input
                   type="email"
@@ -115,8 +115,8 @@ const Contact = () => {
                   value={formData.Email}
                   onChange={handleChange}
                   required
-                  placeholder="Correo"
-                  className="w-full px-4 py-2 border-2 border-black dark:border-gray-300 text-light-text dark:text-gray-800 bg-white dark:bg-white rounded-md  focus:border-transparent placeholder-gray-500 dark:placeholder-gray-500 transition-all"
+                  placeholder={t.contacto.correo}
+                  className="dz-input w-full px-4 py-2 border-2! border-solid border-black dark:border-gray-300 text-light-text dark:text-gray-800 bg-white dark:bg-white rounded-md focus:border-transparent placeholder-gray-500 dark:placeholder-gray-500 transition-all"
                 />
               </div>
             </div>
@@ -124,9 +124,9 @@ const Contact = () => {
             <div>
               <label
                 htmlFor="subject"
-                className="block text-sm font-medium text-light-text dark:text-dark-text mb-1"
+                className="dz-label block text-sm font-medium text-light-text dark:text-dark-text mb-1"
               >
-                Asunto
+                {t.contacto.asunto}
               </label>
               <input
                 type="text"
@@ -135,17 +135,17 @@ const Contact = () => {
                 value={formData.Subject}
                 onChange={handleChange}
                 required
-                placeholder="Asunto"
-                className="w-full px-4 py-2 border-2 border-black dark:border-gray-300 text-light-text dark:text-gray-800 bg-white dark:bg-white rounded-md  focus:border-transparent placeholder-gray-500 dark:placeholder-gray-500 transition-all"
+                placeholder={t.contacto.asunto}
+                className="dz-input w-full px-4 py-2 border-2! border-solid border-black dark:border-gray-300 text-light-text dark:text-gray-800 bg-white dark:bg-white rounded-md focus:border-transparent placeholder-gray-500 dark:placeholder-gray-500 transition-all"
               />
             </div>
 
             <div>
               <label
                 htmlFor="message"
-                className="block text-sm font-medium text-light-text dark:text-dark-text mb-1"
+                className="dz-label block text-sm font-medium text-light-text dark:text-dark-text mb-1"
               >
-                Mensaje
+                {t.contacto.mensaje}
               </label>
               <textarea
                 id="message"
@@ -154,8 +154,8 @@ const Contact = () => {
                 value={formData.Message}
                 onChange={handleChange}
                 required
-                placeholder="Escribe un mensaje..."
-                className="w-full px-4 py-2 border-2 border-black dark:border-gray-300 text-light-text dark:text-gray-800 bg-white dark:bg-white rounded-md  focus:border-transparent placeholder-gray-500 dark:placeholder-gray-500 transition-all"
+                placeholder={t.contacto.placeholderMensaje}
+                className="dz-textarea w-full px-4 py-2 border-2! border-solid border-black dark:border-gray-300 text-light-text dark:text-gray-800 bg-white dark:bg-white rounded-md focus:border-transparent placeholder-gray-500 dark:placeholder-gray-500 transition-all resize-none"
               ></textarea>
             </div>
 
@@ -163,11 +163,11 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`inline-flex justify-center px-6 py-3 text-base font-medium rounded-md text-white bg-light-link hover:bg-light-link dark:bg-dark-link dark:hover:bg-dark-link ${
+                className={`dz-btn border-none inline-flex justify-center px-6 py-3 text-base font-medium rounded-md text-white bg-light-link hover:bg-light-link dark:bg-dark-link dark:hover:bg-dark-link ${
                   isSubmitting ? "opacity-50 cursor-not-allowed" : ""
                 }`}
               >
-                {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
+                {isSubmitting ? t.contacto.enviando : t.contacto.enviar}
               </button>
             </div>
           </form>
@@ -177,18 +177,10 @@ const Contact = () => {
             <div className="text-center mt-4">
               <button
                 type="button"
-                onClick={() => {
-                  setFormData({
-                    Name: "",
-                    Email: "",
-                    Subject: "",
-                    Message: "",
-                  });
-                  setIsFormFilled(false);
-                }}
+                onClick={limpiarFormulario}
                 className="px-4 py-2 text-sm font-medium text-light-text dark:text-dark-text bg-bg-light-link:bg-dark-link hover:bg-light-link:hover:bg-dark-link rounded-md transition-all"
               >
-                ✕ Cancelar
+                {t.contacto.cancelar}
               </button>
             </div>
           )}

@@ -1,6 +1,7 @@
 import { Github, Linkedin, Menu, Moon, Sun, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useTheme } from "../ThemeContext";
+import { useTraduccion } from "../TraduccionContext";
 import CertificatesSkeleton from "../utils/CertificatesSkeleton";
 import ProjectsSkeleton from "../utils/ProyectSkeleton";
 import TestimonialsSkeleton from "../utils/TestimonialsSkeleton";
@@ -16,18 +17,6 @@ import ScrollToTopButton from "./ScrollToTopButton";
 import Skills from "./Skills";
 import Testimonials from "./Testimonials";
 
-// Frases motivacionales o de humor para mostrar aleatoriamente en el hero
-const frases = [
-  `"El código es poesía"`,
-  `"Si funciona, no lo toques."`,
-  `"Exprésate siempre, podrás encontrar la respuesta dentro de ti." `,
-  `"¿Ya intentaste reiniciar?"`,
-  `"¡Hola Mundo!"`,
-  `" } //Por si se te olvida"`,
-  `"Elmo sabe que la programación es como un juego de Lego, pero con más piezas y menos instrucciones."`,
-  `"No confíes en nadie que dice que no hay errores en su código, porque seguro que no lo ha probado."`,
-];
-
 const Portfolio = () => {
   // Estado para el menú móvil
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,11 +24,15 @@ const Portfolio = () => {
   // Contexto para el tema (claro/oscuro)
   const { theme, toggleTheme } = useTheme();
 
+  // Contexto de idioma (es/en)
+  const { idioma, cambiarIdioma, t } = useTraduccion();
+
   // Selecciona una frase aleatoria solo una vez por sesión
   const fraseAleatoria = useMemo(() => {
+    const frases = t.hero.frases;
     const idx = Math.floor(Math.random() * frases.length);
     return frases[idx];
-  }, []);
+  }, [t]);
 
   // Función para navegar al inicio
   const handleLogoClick = () => {
@@ -168,51 +161,70 @@ const Portfolio = () => {
                 href="#about"
                 className="nav-link text-light-text dark:text-dark-text"
               >
-                Sobre Mi
+                {t.nav.sobreMi}
               </a>
               <a
                 href="#proyectos"
                 className="nav-link text-light-text dark:text-dark-text"
               >
-                Proyectos
+                {t.nav.proyectos}
               </a>
               <a
                 href="#habilidades"
                 className="nav-link text-light-text dark:text-dark-text"
               >
-                Habilidades
+                {t.nav.habilidades}
               </a>
               <a
                 href="#certificados"
                 className="nav-link text-light-text dark:text-dark-text"
               >
-                Certificados
+                {t.nav.certificados}
               </a>
               <a
                 href="#testimonios"
                 className="nav-link text-light-text dark:text-dark-text"
               >
-                Testimonios
+                {t.nav.testimonios}
               </a>
               <a
                 href="#contacto"
                 className="nav-link text-light-text dark:text-dark-text"
               >
-                Contacto
+                {t.nav.contacto}
               </a>
             </div>
 
             {/* Botón de cambio de tema */}
-            <label className="dz-swap dz-swap-rotate">
-              <input
-                type="checkbox"
-                checked={theme === "dark"}
-                onChange={toggleTheme}
-                aria-label="Cambiar tema"
-              />
-              <Sun className="dz-swap-off w-5 h-5 text-light-text dark:text-dark-text" />
-              <Moon className="dz-swap-on w-5 h-5 text-light-text dark:text-dark-text" />
-            </label>
+            <div className="flex items-center gap-2 sm:gap-3">
+              <label className="dz-swap dz-swap-rotate hidden sm:inline-flex">
+                <input
+                  type="checkbox"
+                  checked={theme === "dark"}
+                  onChange={toggleTheme}
+                  aria-label="Cambiar tema"
+                />
+                <Sun className="dz-swap-off w-5 h-5 text-light-text dark:text-dark-text" />
+                <Moon className="dz-swap-on w-5 h-5 text-light-text dark:text-dark-text" />
+              </label>
+
+              {/* Idioma ES/EN */}
+              <div className="flex items-center rounded-full border border-light-secondaryBorderSubtle dark:border-dark-secondaryBorderSubtle overflow-hidden text-[10px] sm:text-xs font-medium">
+                {["es", "en"].map((idi) => (
+                  <button
+                    key={idi}
+                    onClick={() => cambiarIdioma(idi)}
+                    className={`px-1.5 py-0.5 sm:px-2.5 sm:py-1 uppercase transition-colors ${
+                      idioma === idi
+                        ? "bg-light-link text-white dark:bg-dark-link"
+                        : "text-light-text dark:text-dark-text hover:bg-light-body dark:hover:bg-dark-body"
+                    }`}
+                  >
+                    {idi}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
@@ -239,14 +251,41 @@ const Portfolio = () => {
             }}
           >
             <div className="flex items-center justify-between px-4 h-16 border-b border-light-tertiaryBorder dark:border-dark-tertiaryBorder">
-              <span className="text-light-text dark:text-dark-text font-semibold">Menú</span>
-              <button
-                onClick={() => setIsMenuOpen(false)}
-                className="p-2 rounded-md hover:bg-light-body dark:hover:bg-dark-body transition-colors"
-                aria-label="Cerrar menú"
-              >
-                <X className="h-5 w-5 text-light-text dark:text-dark-text" />
-              </button>
+              <span className="text-light-text dark:text-dark-text font-semibold">{t.comun.menu}</span>
+              <div className="flex items-center gap-2">
+                <label className="dz-swap dz-swap-rotate">
+                  <input
+                    type="checkbox"
+                    checked={theme === "dark"}
+                    onChange={toggleTheme}
+                    aria-label="Cambiar tema"
+                  />
+                  <Sun className="dz-swap-off w-5 h-5 text-light-text dark:text-dark-text" />
+                  <Moon className="dz-swap-on w-5 h-5 text-light-text dark:text-dark-text" />
+                </label>
+                <div className="flex items-center rounded-full border border-light-secondaryBorderSubtle dark:border-dark-secondaryBorderSubtle overflow-hidden text-[10px] font-medium">
+                  {["es", "en"].map((idi) => (
+                    <button
+                      key={idi}
+                      onClick={() => cambiarIdioma(idi)}
+                      className={`px-1.5 py-0.5 uppercase transition-colors ${
+                        idioma === idi
+                          ? "bg-light-link text-white dark:bg-dark-link"
+                          : "text-light-text dark:text-dark-text"
+                      }`}
+                    >
+                      {idi}
+                    </button>
+                  ))}
+                </div>
+                <button
+                  onClick={() => setIsMenuOpen(false)}
+                  className="p-2 rounded-md hover:bg-light-body dark:hover:bg-dark-body transition-colors"
+                  aria-label="Cerrar menú"
+                >
+                  <X className="h-5 w-5 text-light-text dark:text-dark-text" />
+                </button>
+              </div>
             </div>
             <nav
               className="flex flex-col px-2 py-3 space-y-1"
@@ -263,43 +302,43 @@ const Portfolio = () => {
                 href="#about"
                 className="nav-link px-3 py-2 text-light-text dark:text-dark-text rounded-md hover:bg-light-body dark:hover:bg-dark-body"
               >
-                Sobre Mi
+                {t.nav.sobreMi}
               </a>
               <a
                 href="#proyectos"
                 className="nav-link px-3 py-2 text-light-text dark:text-dark-text rounded-md hover:bg-light-body dark:hover:bg-dark-body"
               >
-                Proyectos
+                {t.nav.proyectos}
               </a>
               <a
                 href="#habilidades"
                 className="nav-link px-3 py-2 text-light-text dark:text-dark-text rounded-md hover:bg-light-body dark:hover:bg-dark-body"
               >
-                Habilidades
+                {t.nav.habilidades}
               </a>
               <a
                 href="#experiencia"
                 className="nav-link px-3 py-2 text-light-text dark:text-dark-text rounded-md hover:bg-light-body dark:hover:bg-dark-body"
               >
-                Experiencia
+                {t.nav.experiencia}
               </a>
               <a
                 href="#certificados"
                 className="nav-link px-3 py-2 text-light-text dark:text-dark-text rounded-md hover:bg-light-body dark:hover:bg-dark-body"
               >
-                Certificados
+                {t.nav.certificados}
               </a>
               <a
                 href="#testimonios"
                 className="nav-link px-3 py-2 text-light-text dark:text-dark-text rounded-md hover:bg-light-body dark:hover:bg-dark-body"
               >
-                Testimonios
+                {t.nav.testimonios}
               </a>
               <a
                 href="#contacto"
                 className="nav-link px-3 py-2 text-light-text dark:text-dark-text rounded-md hover:bg-light-body dark:hover:bg-dark-body"
               >
-                Contacto
+                {t.nav.contacto}
               </a>
             </nav>
           </div>
@@ -315,17 +354,17 @@ const Portfolio = () => {
       >
         <div className="max-w-6xl mx-auto px-4 py-20 text-center">
           {/* Foto de perfil */}
-          <img
-            src={izaortizImage}
-            alt="IzDev"
-            className="w-32 h-32 rounded-full mx-auto mb-8"
-          />
+          <div className="dz-avatar mx-auto mb-8">
+            <div className="w-32 h-32 rounded-full border-4 border-light-primary dark:border-dark-link shadow-lg">
+              <img src={izaortizImage} alt="Isaías Ortiz" />
+            </div>
+          </div>
           {/* Nombre y título */}
           <h1 className="text-4xl font-bold mb-4 text-light-text dark:text-dark-text">
             Isaías Ortiz
           </h1>
           <p className="text-xl  text-light-text dark:text-dark-text mb-8">
-            Desarrollador Full Stack
+            {t.hero.rol}
           </p>
           {/* Frase aleatoria */}
           <p className="max-w-2xl mx-auto  text-light-text dark:text-dark-text">
@@ -338,7 +377,7 @@ const Portfolio = () => {
               download="IsaiasOrtiz.pdf"
               className="py-2 px-4 rounded transition-colors duration-300 bg-light-link text-white hover:bg-light-link dark:bg-dark-link dark:hover:bg-dark-link"
             >
-              Descargar CV
+              {t.hero.cv}
             </a>
           </div>
         </div>
@@ -420,7 +459,7 @@ const Portfolio = () => {
           <div className="flex flex-col items-center space-y-4">
             {/* Texto de copyright */}
             <p className="text-light-text dark:text-dark-text">
-              © {new Date().getFullYear()} IzDev. Todos los derechos reservados.
+              © {new Date().getFullYear()} IzDev. {t.comun.derechos}
             </p>
 
             <div className="flex space-x-6">

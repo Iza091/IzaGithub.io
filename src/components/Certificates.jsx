@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { useTraduccion } from "../TraduccionContext";
 import C1 from "./assets/cert/c1.webp";
 import C10 from "./assets/cert/c10.webp";
 import C11 from "./assets/cert/c11.webp";
@@ -22,6 +23,7 @@ const Certificates = ({
   setSelectedCertificate,
 }) => {
   const [selectedCategory, setSelectedCategory] = useState("Certificados");
+  const { t } = useTraduccion();
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -159,7 +161,7 @@ const Certificates = ({
     >
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12 text-light-text dark:text-dark-text">
-          Certificados
+          {t.certificados.titulo}
         </h2>
 
         <div className="flex justify-center mb-8 space-x-4">
@@ -176,7 +178,7 @@ const Certificates = ({
                   : "bg-light-body text-ligth-text dark:bg-dark-body dark:text-dark-text"
               }`}
             >
-              {cat}
+              {t.certificados.cats[cat]}
             </button>
           ))}
         </div>
