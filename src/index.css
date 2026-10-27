@@ -16,3 +16,29 @@ body {
   --tw-scrollbar-thumb: #ff0077;
   --tw-scrollbar-track: #1b2840;
 }
+
+:root {
+  scrollbar-color: #1f5a8a #f3f5f6; /* thumb y track */
+}
+
+.dark {
+  scrollbar-color: #ff0077 #1b2840;
+}
+
+/* Chrome, Edge y Safari */
+::-webkit-scrollbar-thumb {
+  background-color: #1f5a8a;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f3f5f6;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #ff0077;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background-color: #1b2840;
+}

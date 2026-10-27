@@ -69,6 +69,11 @@ const traducciones = {
       valores: "Valores",
       verMasBlandas: "Ver más habilidades blandas",
       verMasValores: "Ver más valores",
+      categorias: {
+        Frontend: "Frontend",
+        Backend: "Backend",
+        Database: "Bases de datos",
+      },
       soft: [
         {
           name: "Comunicación",
@@ -171,7 +176,7 @@ const traducciones = {
     },
     testimonios: {
       titulo: "Testimonios",
-      verPortafolio: "Ver Portafolio",
+      verPortafolio: "Portafolio",
       items: [
         {
           profession: "Ingeniero en Sistemas y Redes Informáticas",
@@ -289,6 +294,11 @@ const traducciones = {
       valores: "Values",
       verMasBlandas: "Show more soft skills",
       verMasValores: "Show more values",
+      categorias: {
+        Frontend: "Frontend",
+        Backend: "Backend",
+        Database: "Database",
+      },
       soft: [
         {
           name: "Communication",
@@ -387,7 +397,7 @@ const traducciones = {
     },
     testimonios: {
       titulo: "Testimonials",
-      verPortafolio: "View Portfolio",
+      verPortafolio: "Portfolio",
       items: [
         {
           profession: "Systems and Computer Networks Engineer",

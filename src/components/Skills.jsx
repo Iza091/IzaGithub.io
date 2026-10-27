@@ -11,8 +11,8 @@ import {
   Users,
 } from "lucide-react";
 import React, { useEffect, useState } from "react";
+import { combinar, useTraduccion } from "../TraduccionContext";
 import ShowMoreButton from "./common/ShowMoreButton";
-import { useTraduccion, combinar } from "../TraduccionContext";
 
 const Skills = ({ showAllSoftSkills, onShowMoreSoftSkills }) => {
   const { t } = useTraduccion();
@@ -142,7 +142,9 @@ const Skills = ({ showAllSoftSkills, onShowMoreSoftSkills }) => {
   const softSkillsTrad = combinar(softSkills, t.habilidades.soft);
   const valuesTrad = combinar(values, t.habilidades.listaValores);
   const visibleSoftSkillsTrad =
-    isMobile && !showAllSoftSkills ? softSkillsTrad.slice(0, 3) : softSkillsTrad;
+    isMobile && !showAllSoftSkills
+      ? softSkillsTrad.slice(0, 3)
+      : softSkillsTrad;
   const visibleValuesTrad =
     isMobile && !showAllValues ? valuesTrad.slice(0, 2) : valuesTrad;
 
@@ -165,7 +167,7 @@ const Skills = ({ showAllSoftSkills, onShowMoreSoftSkills }) => {
                   : "bg-light-secondaryBg text-light-text dark:bg-dark-secondaryBg dark:text-dark-text hover:bg-light-link/10 dark:hover:bg-dark-link/10"
               }`}
             >
-              {cat}
+              {t.habilidades.categorias[cat] ?? cat}
             </button>
           ))}
         </div>
@@ -173,18 +175,18 @@ const Skills = ({ showAllSoftSkills, onShowMoreSoftSkills }) => {
         {/* Hard skills */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 md:gap-8 mb-20">
           {visibleSkills.map((skill) => (
-              <div
-                key={skill.name}
-                className="group relative flex flex-col items-center p-4 md:p-6 rounded-xl bg-light-body dark:bg-dark-secondaryBg shadow-lg border border-transparent hover:border-light-link/40 dark:hover:border-dark-link/40 transition-all duration-200"
-              >
-                <i
-                  className={`${skill.icon} text-4xl md:text-6xl mb-2 md:mb-4 text-light-link dark:text-dark-link`}
-                  title={skill.name}
-                ></i>
-                <span className="font-medium text-sm md:text-base text-light-text dark:text-dark-text text-center">
-                  {skill.name}
-                </span>
-              </div>
+            <div
+              key={skill.name}
+              className="group relative flex flex-col items-center p-4 md:p-6 rounded-xl bg-light-body dark:bg-dark-secondaryBg shadow-lg border border-transparent hover:border-light-link/40 dark:hover:border-dark-link/40 transition-all duration-200"
+            >
+              <i
+                className={`${skill.icon} text-4xl md:text-6xl mb-2 md:mb-4 text-light-link dark:text-dark-link`}
+                title={skill.name}
+              ></i>
+              <span className="font-medium text-sm md:text-base text-light-text dark:text-dark-text text-center">
+                {skill.name}
+              </span>
+            </div>
           ))}
         </div>
 
@@ -201,7 +203,8 @@ const Skills = ({ showAllSoftSkills, onShowMoreSoftSkills }) => {
               >
                 <div className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-light-link/10 dark:bg-dark-link/10 transition-colors duration-200">
                   {React.createElement(skill.icon, {
-                    className: "w-7 h-7 md:w-8 md:h-8 text-light-link dark:text-dark-link",
+                    className:
+                      "w-7 h-7 md:w-8 md:h-8 text-light-link dark:text-dark-link",
                     strokeWidth: 1.5,
                   })}
                 </div>
@@ -240,7 +243,8 @@ const Skills = ({ showAllSoftSkills, onShowMoreSoftSkills }) => {
               >
                 <div className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-light-link/10 dark:bg-dark-link/10 transition-colors duration-200">
                   {React.createElement(value.icon, {
-                    className: "w-7 h-7 md:w-8 md:h-8 text-light-link dark:text-dark-link",
+                    className:
+                      "w-7 h-7 md:w-8 md:h-8 text-light-link dark:text-dark-link",
                     strokeWidth: 1.5,
                   })}
                 </div>
